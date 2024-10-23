@@ -39,7 +39,7 @@ const PanelManager = () => {
       {/* Modal */}
       {isModalOpen && (
         <div onClick={toggleModal} className="fixed inset-0 flex flex-col items-end justify-center z-50 bg-black bg-opacity-50">
-          <div className="bg-white rounded-lg p-6 shadow-lg">
+          <div onClick={(e) => e.stopPropagation()} className="bg-white rounded-lg p-6 shadow-lg">
             <div className='flex items-center'>
                 <h2 className="text-lg font-semibold mb-4">Gerenciar Painéis</h2>
                 <button onClick={toggleModal} className="mt-4 text-blue-500">Close</button>
