@@ -3,8 +3,7 @@ import { useState } from 'react';
 // Sample data structure for groups and items
 const groupsData = [
   {
-    title: "Titulo do grupo",
-    color: "#FFE2D1",
+    color: "#BBC8F5",
     items: [
       { id: 1, title: "Liberar"},
       { id: 2, title: "Manter Localização Física"},
@@ -14,6 +13,21 @@ const groupsData = [
       { id: 6, title: "Distribuir"},
       { id: 7, title: "Autodistribuir"},
       { id: 8, title: "Redistribuir"},
+    ],
+  },
+  {
+    title: "Titulo do grupo 2",
+    color: "#E1E6F9",
+    items: [
+      { id: 11, title: "Liberar"},
+      { id: 12, title: "Manter Localização Física"},
+      { id: 13, title: "Movimentar"},
+      { id: 14, title: "Palavras-Chave"},
+      { id: 15, title: "Providência"},
+      { id: 16, title: "Distribuir"},
+      { id: 17, title: "Autodistribuir"},
+      { id: 18, title: "Redistribuir"},
+ 
     ],
   },
 ];
@@ -53,16 +67,23 @@ const PanelManager = () => {
     {/* Modal */}
     {isModalOpen && (
         <div onClick={toggleModal} className="fixed inset-0 flex flex-col items-end justify-center z-50 bg-black bg-opacity-50">
-          <div onClick={(e) => e.stopPropagation()} className="bg-white p-6 shadow-lg h-full">
-            <div className='flex items-center'>
-              <button onClick={toggleModal} className="mt-4 text-blue-500">Toggle Modal</button>
+          <div onClick={(e) => e.stopPropagation()} className="bg-white pt-6 px-6 shadow-lg h-svh overflow-y-auto">
+            <div className='flex justify-between items-center'>
+                <h2 className="text-sm px-4 py-2 rounded-md bg-[#BBC8F5] w-full mb-2">
+                Titulo
+              </h2>
+              <button onClick={toggleModal} className="mt-4 text-blue-500">x</button>
             </div>
 
             <div>
               {groupsData.map(group => (
                 <div key={group.title}>
-                  <div className="flex flex-col">
-                    <span>{group.title}</span>
+                  <div className="flex flex-col gap-2">
+                  {group.title && (
+                    <h2 className="mt-4 text-sm px-4 py-2 rounded-md" style={{ backgroundColor: group.color }}>
+                        {group.title}
+                    </h2>
+                    )}
                     {group.items.map(item => (
                       <div key={item.id} className='flex gap-2 items-center'>
                         <button 
