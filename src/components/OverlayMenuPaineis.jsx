@@ -71,9 +71,9 @@ const PanelManager = ({ selectedItems, setSelectedItems }) => {
   };
 
   return (
-    <div>
+    <div className='mt-20'>
       <div
-        className="px-6 text-xs flex justify-end items-center text-[#919191] mt-6 mb-4 cursor-pointer"
+        className="text-xs flex justify-end items-center text-[#919191] cursor-pointer"
         onClick={toggleModal}
       >
         Gerenciar Painéis <i className="ms-1 fa-solid fa-cog"></i>

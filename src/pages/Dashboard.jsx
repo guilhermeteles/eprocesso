@@ -8,12 +8,14 @@ const App = () => {
   const [selectedItems, setSelectedItems] = useState([]);
 
   return (
-    <div className="min-h-screen flex bg-gray-100">
+    <div className="min-h-screen flex bg-gray-100 overflow-hidden h-svh">
       <Aside/>
       <div className='w-full flex flex-col align-center'>
         <Nav />
-        <PanelManager selectedItems={selectedItems} setSelectedItems={setSelectedItems} />
-        <Dashboard selectedItems={selectedItems} setSelectedItems={setSelectedItems} />;
+        <div className='overflow-y-auto p-6'>
+          <PanelManager selectedItems={selectedItems} setSelectedItems={setSelectedItems} />
+          <Dashboard selectedItems={selectedItems} setSelectedItems={setSelectedItems} />
+        </div>
         
       </div>
       

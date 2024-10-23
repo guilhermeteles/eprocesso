@@ -67,7 +67,7 @@ const Dashboard = ({ selectedItems, setSelectedItems }) => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 p-6">
+    <div className="mt-4">
       <div className="masonry-layout">
         {selectedItems.map((itemId, index) => {
           const card = cardsData.find(card => card.id === itemId);
@@ -81,7 +81,7 @@ const Dashboard = ({ selectedItems, setSelectedItems }) => {
               onDragOver={(e) => handleDragOver(e, index)}
               onDragLeave={handleDragLeave}
               onDrop={(e) => handleDrop(e, index)}
-              className={`draggable-card bg-white rounded-lg shadow-lg transition-all mb-6 ${
+              className={`draggable-card bg-white rounded-lg shadow-sm transition-all mb-6 ${
                 draggedItem === index ? 'opacity-50' : ''
               } ${draggedOverItem === index ? 'border-2 border-blue-500' : ''}`}
             >

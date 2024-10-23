@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faList, faClock, faChevronDown, faChevronRight } from '@fortawesome/free-solid-svg-icons'; // Icons for tree expand/collapse
 import { IconButton } from './IconButton'; // Import the IconButton component
+import { Link } from 'react-router-dom';
 
 export const DocumentsAside = () => {
   const [viewMode, setViewMode] = useState('tree'); // 'tree' or 'chronological'
@@ -179,72 +180,90 @@ export const DocumentsAside = () => {
         )}
       </div>
 
-      {/* Document List */}
-      <div className="p-4 bg-[#FBFCFD] rounded-md scroll-smooth overflow-y-auto h-svh grow">
-        {viewMode === 'tree' ? (
-          <ul>
-            {documents.map((parentDoc) => (
-              <li key={parentDoc.id} className="mb-2">
-                <div className="flex items-center">
-                  <button
-                    onClick={() => toggleExpand(parentDoc.id)}
-                    className="mr-1.5"
-                  >
-                    <FontAwesomeIcon
-                      icon={
-                        expandedParents[parentDoc.id]
-                          ? faChevronDown
-                          : faChevronRight
-                      }
-                      className="text-gray-700 h-2.5 w-2.5 mb-0.5"
-                    />
-                  </button>
+
+{/* Document List */}
+<div className="p-4 bg-[#FBFCFD] rounded-md scroll-smooth overflow-y-auto h-svh grow">
+  {viewMode === 'tree' ? (
+    <ul>
+      {documents.map((parentDoc) => (
+        <li key={parentDoc.id} className="mb-2">
+          <div className="flex items-center">
+            <button
+              onClick={() => toggleExpand(parentDoc.id)}
+              className="mr-1.5"
+            >
+              <FontAwesomeIcon
+                icon={
+                  expandedParents[parentDoc.id]
+                    ? faChevronDown
+                    : faChevronRight
+                }
+                className="text-gray-700 h-2.5 w-2.5 mb-0.5"
+              />
+            </button>
+            <input
+              type="checkbox"
+              checked={selectedDocuments.includes(parentDoc.id)}
+              onChange={() => handleCheckboxChange(parentDoc.id)}
+              className="mr-2"
+            />
+            <Link
+              to="/pdf-reader"
+              state={{ fileName: parentDoc.name }} // Passing file name in state
+              className="text-sm text-blue-600 hover:underline cursor-pointer"
+            >
+              {parentDoc.name}
+            </Link>
+          </div>
+
+          {/* Child Documents (If expanded) */}
+          {expandedParents[parentDoc.id] && (
+            <ul className="ml-6 mt-2">
+              {parentDoc.children.map((childDoc) => (
+                <li key={childDoc.id} className="flex items-center mb-1">
                   <input
                     type="checkbox"
-                    checked={selectedDocuments.includes(parentDoc.id)}
-                    onChange={() => handleCheckboxChange(parentDoc.id)}
+                    checked={selectedDocuments.includes(childDoc.id)}
+                    onChange={() => handleCheckboxChange(childDoc.id)}
                     className="mr-2"
                   />
-                  <label className="text-sm">{parentDoc.name}</label>
-                </div>
+                  <Link
+                    to="/pdf-reader"
+                    state={{ fileName: childDoc.name }} // Passing file name in state
+                    className="text-sm text-blue-600 hover:underline cursor-pointer"
+                  >
+                    {childDoc.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          )}
+        </li>
+      ))}
+    </ul>
+  ) : (
+    <ul className="mt-2">
+      {getFlattenedDocuments().map((doc) => (
+        <li key={doc.id} className="flex items-center mb-2">
+          <input
+            type="checkbox"
+            checked={selectedDocuments.includes(doc.id)}
+            onChange={() => handleCheckboxChange(doc.id)}
+            className="mr-2 self-start mt-1.5"
+          />
+          <Link
+            to="/pdf-reader"
+            state={{ fileName: doc.name }} // Passing file name in state
+            className="text-sm text-blue-600 hover:underline cursor-pointer"
+          >
+            {doc.name} &nbsp; <span className="text-xs text-[#919191]">{formatDate(doc.date)}</span>
+          </Link>
+        </li>
+      ))}
+    </ul>
+  )}
+</div>
 
-                {/* Child Documents (If expanded) */}
-                {expandedParents[parentDoc.id] && (
-                  <ul className="ml-6 mt-2">
-                    {parentDoc.children.map((childDoc) => (
-                      <li key={childDoc.id} className="flex items-center mb-1">
-                        <input
-                          type="checkbox"
-                          checked={selectedDocuments.includes(childDoc.id)}
-                          onChange={() => handleCheckboxChange(childDoc.id)}
-                          className="mr-2"
-                        />
-                        <label className="text-sm">{childDoc.name}</label>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <ul className="mt-2">
-            {getFlattenedDocuments().map((doc) => (
-              <li key={doc.id} className="flex items-center mb-2">
-                <input
-                  type="checkbox"
-                  checked={selectedDocuments.includes(doc.id)}
-                  onChange={() => handleCheckboxChange(doc.id)}
-                  className="mr-2 self-start mt-1.5"
-                />
-                <label className="text-sm">
-                  {doc.name}  &nbsp; <span className="text-xs text-[#919191]">{formatDate(doc.date)}</span>
-                </label>
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
 
       {/* Footer: Selected Documents and Actions */}
       {selectedDocuments.length > 0 && (
