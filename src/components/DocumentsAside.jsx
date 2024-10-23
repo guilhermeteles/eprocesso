@@ -12,32 +12,69 @@ export const DocumentsAside = () => {
     {
       id: 1,
       name: 'Parent Document 1',
+      date: '2024-10-13',
       children: [
-        { id: 4, name: 'Child Document 1.1' },
-        { id: 5, name: 'Child Document 1.2' },
+        { id: 4, name: 'Child Document 1.1', date: '2024-10-15' },
+        { id: 5, name: 'Child Document 1.2', date: '2024-10-18' },
       ],
     },
     {
       id: 2,
       name: 'Parent Document 2',
-      children: [{ id: 6, name: 'Child Document 2.1' }],
+      date: '2024-10-14',
+      children: [{ id: 6, name: 'Child Document 2.1', date: '2024-10-23' }],
     },
-    { id: 3, name: 'Parent Document 3', children: [] },
     {
-        id: 7,
-        name: 'Parent Document 1',
-        children: [
-          { id: 10, name: 'Child Document 1.1' },
-          { id: 11, name: 'Child Document 1.2' },
-        ],
-      },
-      {
-        id: 8,
-        name: 'Parent Document 2',
-        children: [{ id: 12, name: 'Child Document 2.1' }],
-      },
-      { id: 9, name: 'Parent Document 3', children: [] },
-  ]; // Example hierarchical structure
+      id: 3,
+      name: 'Parent Document 3',
+      date: '2024-10-15',
+      children: [],
+    },
+    {
+      id: 7,
+      name: 'Parent Document 4',
+      date: '2024-10-16',
+      children: [
+        { id: 10, name: 'Child Document 1.1', date: '2024-10-15' },
+        { id: 11, name: 'Child Document 1.2', date: '2024-10-21' },
+      ],
+    },
+    {
+      id: 8,
+      name: 'Parent Document 5',
+      date: '2024-10-17',
+      children: [{ id: 12, name: 'Child Document 2.1', date: '2024-10-14' }],
+    },
+    {
+      id: 9,
+      name: 'Parent Document 6',
+      date: '2024-10-11',
+      children: [],
+    },
+  ];
+
+
+  // Flattening documents into a single array for chronological display
+  const getFlattenedDocuments = () => {
+    const flattenedDocs = [];
+
+    documents.forEach((parentDoc) => {
+      flattenedDocs.push({ ...parentDoc }); // Add parent document
+
+      parentDoc.children.forEach((childDoc) => {
+        flattenedDocs.push({ ...childDoc, parentId: parentDoc.id }); // Add child document
+      });
+    });
+
+    // Sort by date
+    return flattenedDocs.sort((a, b) => new Date(a.date) - new Date(b.date));
+  };
+
+  const formatDate = (date) => {
+    const [year, month, day] = date.split('-');
+    return `${day}/${month}/${year}`;
+  };
+  
 
   // Toggle between tree and chronological views
   const toggleViewMode = () => {
@@ -144,71 +181,67 @@ export const DocumentsAside = () => {
       {/* Document List */}
       <div className="p-4 bg-[#FBFCFD] rounded-md scroll-smooth overflow-y-auto h-svh grow">
         {viewMode === 'tree' ? (
-          <div>
-            <ul className="">
-              {documents.map((parentDoc) => (
-                <li key={parentDoc.id} className="mb-2">
-                  <div className="flex items-center">
-                    <button
-                      onClick={() => toggleExpand(parentDoc.id)}
-                      className="mr-1.5"
-                    >
-                      <FontAwesomeIcon
-                        icon={
-                          expandedParents[parentDoc.id]
-                            ? faChevronDown
-                            : faChevronRight
-                        }
-                        className="text-gray-700 h-2.5 mb-0.5"
-                      />
-                    </button>
-                    <input
-                      type="checkbox"
-                      checked={selectedDocuments.includes(parentDoc.id)}
-                      onChange={() => handleCheckboxChange(parentDoc.id)}
-                      className="mr-2"
+          <ul>
+            {documents.map((parentDoc) => (
+              <li key={parentDoc.id} className="mb-2">
+                <div className="flex items-center">
+                  <button
+                    onClick={() => toggleExpand(parentDoc.id)}
+                    className="mr-1.5"
+                  >
+                    <FontAwesomeIcon
+                      icon={
+                        expandedParents[parentDoc.id]
+                          ? faChevronDown
+                          : faChevronRight
+                      }
+                      className="text-gray-700 h-2.5 mb-0.5"
                     />
-                    <label className="text-sm">{parentDoc.name}</label>
-                  </div>
-
-                  {/* Child Documents (If expanded) */}
-                  {expandedParents[parentDoc.id] && (
-                    <ul className="ml-6 mt-2">
-                      {parentDoc.children.map((childDoc) => (
-                        <li key={childDoc.id} className="flex items-center mb-1">
-                          <input
-                            type="checkbox"
-                            checked={selectedDocuments.includes(childDoc.id)}
-                            onChange={() => handleCheckboxChange(childDoc.id)}
-                            className="mr-2"
-                          />
-                          <label className="text-sm">{childDoc.name}</label>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </li>
-              ))}
-            </ul>
-          </div>
-        ) : (
-          <div>
-            <ul className="mt-2">
-              {documents.map((doc) => (
-                <li key={doc.id} className="flex items-center mb-2">
+                  </button>
                   <input
                     type="checkbox"
-                    checked={selectedDocuments.includes(doc.id)}
-                    onChange={() => handleCheckboxChange(doc.id)}
+                    checked={selectedDocuments.includes(parentDoc.id)}
+                    onChange={() => handleCheckboxChange(parentDoc.id)}
                     className="mr-2"
                   />
-                  <label className="text-sm">
-                    {doc.name} - (Date or Chronology here)
-                  </label>
-                </li>
-              ))}
-            </ul>
-          </div>
+                  <label className="text-sm">{parentDoc.name}</label>
+                </div>
+
+                {/* Child Documents (If expanded) */}
+                {expandedParents[parentDoc.id] && (
+                  <ul className="ml-6 mt-2">
+                    {parentDoc.children.map((childDoc) => (
+                      <li key={childDoc.id} className="flex items-center mb-1">
+                        <input
+                          type="checkbox"
+                          checked={selectedDocuments.includes(childDoc.id)}
+                          onChange={() => handleCheckboxChange(childDoc.id)}
+                          className="mr-2"
+                        />
+                        <label className="text-sm">{childDoc.name}</label>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <ul className="mt-2">
+            {getFlattenedDocuments().map((doc) => (
+              <li key={doc.id} className="flex items-center mb-2">
+                <input
+                  type="checkbox"
+                  checked={selectedDocuments.includes(doc.id)}
+                  onChange={() => handleCheckboxChange(doc.id)}
+                  className="mr-2 self-start mt-1.5"
+                />
+                <label className="text-sm">
+                  {doc.name}  &nbsp; <span className="text-xs text-[#919191]">{formatDate(doc.date)}</span>
+                </label>
+              </li>
+            ))}
+          </ul>
         )}
       </div>
 
