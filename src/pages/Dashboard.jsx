@@ -13,7 +13,7 @@ const App = () => {
       <div className='w-full flex flex-col align-center'>
         <Nav />
         <PanelManager selectedItems={selectedItems} setSelectedItems={setSelectedItems} />
-        <Dashboard selectedItems={selectedItems} />
+        <Dashboard selectedItems={selectedItems} setSelectedItems={setSelectedItems} />;
         
       </div>
       
