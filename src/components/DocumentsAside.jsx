@@ -269,7 +269,7 @@ export const DocumentsAside = () => {
           <Link
             to="/pdf-reader"
             state={{ fileName: doc.name }} // Passing file name in state
-            className="text-sm text-blue-600 hover:underline cursor-pointer"
+            className="text-sm text-[#3D4551] hover:underline cursor-pointer"
           >
             {doc.name} &nbsp; <span className="text-xs text-[#919191]">{formatDate(doc.date)}</span>
           </Link>
