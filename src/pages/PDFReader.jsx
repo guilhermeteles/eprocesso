@@ -16,7 +16,8 @@ const App = () => {
       <Aside />
       <div className='w-full flex flex-col align-center'>
         <Nav />
-        <div className="flex justify-between px-6">
+        <div className='overflow-y-auto p-6'>
+        <div className="flex justify-between px-6 mt-16">
         <h1 className="mt-4">Reading: {fileName}</h1>
         <button
           onClick={handleGoHome}
@@ -25,6 +26,10 @@ const App = () => {
           Fechar <i className="ms-1 fa-solid fa-xmark"></i>
         </button>
         </div>
+        </div>
+
+
+        
         
       </div>
     </div>
