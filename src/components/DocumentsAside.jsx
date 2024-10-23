@@ -195,7 +195,7 @@ export const DocumentsAside = () => {
                           ? faChevronDown
                           : faChevronRight
                       }
-                      className="text-gray-700 h-2.5 mb-0.5"
+                      className="text-gray-700 h-2.5 w-2.5 mb-0.5"
                     />
                   </button>
                   <input
