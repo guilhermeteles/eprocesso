@@ -87,29 +87,31 @@ export const DocumentsAside = () => {
         <h2 className="text-lg font-semibold">Documentos</h2>
 
         {/* Switch-like toggle */}
-        <div className="flex items-center">
-          <FontAwesomeIcon 
-            icon={faList} 
-            className={`cursor-pointer text-xl ${viewMode === 'tree' ? 'text-blue-500' : 'text-gray-400'}`} 
-            onClick={toggleViewMode} 
+      <div className="flex items-center space-x-2">
+        <FontAwesomeIcon 
+          icon={faList} 
+          className={`cursor-pointer text-xl ${viewMode === 'tree' ? 'text-blue-500' : 'text-gray-400'}`} 
+          onClick={toggleViewMode} 
+        />
+
+        {/* Toggle Switch */}
+        <div className="relative inline-flex items-center cursor-pointer">
+          <input
+            type="checkbox"
+            checked={viewMode === 'chronological'}
+            onChange={toggleViewMode}
+            className="sr-only peer"
           />
-          <div className="mx-2">
-            <label className="relative inline-flex items-center cursor-pointer">
-              <input
-                type="checkbox"
-                checked={viewMode === 'chronological'}
-                onChange={toggleViewMode}
-                className="sr-only peer"
-              />
-              <div className="w-10 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-blue-500 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-500"></div>
-            </label>
-          </div>
-          <FontAwesomeIcon 
-            icon={faClock} 
-            className={`cursor-pointer text-xl ${viewMode === 'chronological' ? 'text-blue-500' : 'text-gray-400'}`} 
-            onClick={toggleViewMode} 
-          />
+          <div className="w-10 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-blue-500 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-500"></div>
         </div>
+
+        <FontAwesomeIcon 
+          icon={faClock} 
+          className={`cursor-pointer text-xl ${viewMode === 'chronological' ? 'text-blue-500' : 'text-gray-400'}`} 
+          onClick={toggleViewMode} 
+        />
+      </div>
+
       </div>
 
       {/* Search Input */}
@@ -143,13 +145,13 @@ export const DocumentsAside = () => {
       <div className="p-4 bg-[#FBFCFD] rounded-md scroll-smooth overflow-y-auto h-svh grow">
         {viewMode === 'tree' ? (
           <div>
-            <ul className="mt-2">
+            <ul className="">
               {documents.map((parentDoc) => (
                 <li key={parentDoc.id} className="mb-2">
                   <div className="flex items-center">
                     <button
                       onClick={() => toggleExpand(parentDoc.id)}
-                      className="mr-2"
+                      className="mr-1.5"
                     >
                       <FontAwesomeIcon
                         icon={
@@ -157,7 +159,7 @@ export const DocumentsAside = () => {
                             ? faChevronDown
                             : faChevronRight
                         }
-                        className="text-gray-700"
+                        className="text-gray-700 h-2.5 mb-0.5"
                       />
                     </button>
                     <input

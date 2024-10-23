@@ -56,11 +56,12 @@ const Aside = () => {
       className="bg-white  shadow-lg p-4 flex flex-col h-screen relative" 
     >
       {/* Title for "Processo" */}
-      <span className="flex-inline grow-0 shrink rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-600">
-        Lote <a className="ms-1 underline" href="/">Nome do lote</a>
-        </span>
+      <span className="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-600 mr-auto">
+        Lote 
+        <a className="ms-1 underline" href="/">Nome do lote</a>
+      </span>
       <h2 className="font-semibold mt-4 mb-1 uppercase text-xs">Processo</h2>
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between mr-auto">
         <div className="flex items-center">
           <button onClick={toggleFavorite} className="mr-2">
             <FontAwesomeIcon 
@@ -78,7 +79,7 @@ const Aside = () => {
         </div>
       </div>
       <div className="text-xs flex justify-end items-center text-[#919191] mt-4">Gerenciar Indicadores<i className="ms-1 fa-solid fa-cog"></i></div>
-      <div className="flex flex-wrap gap-2 py-2">
+      <div className="flex flex-wrap gap-2 py-2 mb-4">
         <IconBadge text="Favorite" icon={<FontAwesomeIcon icon={faStar} />} color="yellow" />
         <IconBadge text="Clipboard" icon={<FontAwesomeIcon icon={faClipboard} />} color="blue" />
         <IconBadge text="Alert" icon={<FontAwesomeIcon icon={faStar} />} color="red" />
