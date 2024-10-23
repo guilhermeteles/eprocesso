@@ -1,8 +1,11 @@
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faList, faClock, faChevronDown, faChevronRight } from '@fortawesome/free-solid-svg-icons'; // Icons for tree expand/collapse
+import { faChevronDown, faChevronRight } from '@fortawesome/free-solid-svg-icons'; // Icons for tree expand/collapse
 import { IconButton } from './IconButton'; // Import the IconButton component
 import { Link } from 'react-router-dom';
+import { faCalendar } from '@fortawesome/free-regular-svg-icons';
+import { faStream } from '@fortawesome/free-solid-svg-icons';
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
 export const DocumentsAside = () => {
   const [viewMode, setViewMode] = useState('tree'); // 'tree' or 'chronological'
@@ -119,16 +122,17 @@ export const DocumentsAside = () => {
   };
 
   return (
-    <aside className="p-4 bg-gray-100 rounded-md overflow-hidden flex flex-col">
+    <aside className="bg-[#F7F9FA] rounded-lg overflow-hidden flex flex-col ">
+      <div className='pt-4 px-4 border-b border-[#EDEFF0]'>
       {/* Header: Toggle and Title */}
       <div className="flex justify-between items-center mb-4">
-        <h2 className="text-lg font-semibold">Documentos</h2>
+        <h2 className="text-md font-medium text-[#3D4551]">Documentos</h2>
 
         {/* Switch-like toggle */}
-      <div className="flex items-center space-x-2">
+      <div className="flex items-center space-x-1 mt-1">
         <FontAwesomeIcon 
-          icon={faList} 
-          className={`cursor-pointer text-xl ${viewMode === 'tree' ? 'text-blue-500' : 'text-gray-400'}`} 
+          icon={faStream} 
+          className={`cursor-pointer text-md ${viewMode === 'tree' ? 'text-blue-500' : 'text-gray-400'}`} 
           onClick={toggleViewMode} 
         />
 
@@ -141,12 +145,12 @@ export const DocumentsAside = () => {
             className="sr-only peer"
             
           />
-          <div onClick={toggleViewMode}  className="w-10 h-5 bg-gray-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-blue-500 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[4px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-blue-500"></div>
+          <div onClick={toggleViewMode}  className="w-10 h-5 bg-gray-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-blue-500 rounded-full peer dark:bg-white dark:border peer-checked:after:translate-x-full peer-checked:after:border after:content-[''] after:absolute after:top-[2px] after:left-[4px] after:bg-[#2672DE] after:border-[#2672DE] after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-white"></div>
         </div>
 
         <FontAwesomeIcon 
-          icon={faClock} 
-          className={`cursor-pointer text-xl ${viewMode === 'chronological' ? 'text-blue-500' : 'text-gray-400'}`} 
+          icon={faCalendar} 
+          className={`cursor-pointer text-md ${viewMode === 'chronological' ? 'text-blue-500' : 'text-gray-400'}`} 
           onClick={toggleViewMode} 
         />
       </div>
@@ -155,34 +159,45 @@ export const DocumentsAside = () => {
 
       {/* Search Input */}
       <div className="mb-4">
+      <div className="relative w-full">
         <input
           type="text"
           placeholder="O que você procura?"
-          className="text-sm w-full px-3 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-[#F7F9FA]"
+          className="text-sm w-full px-3 py-2 pr-10 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-[#fff]"
         />
+        <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+        
+        <FontAwesomeIcon 
+        icon={faMagnifyingGlass} 
+        className={`cursor-pointer text-md ${viewMode === 'chronological' ? 'text-blue-500' : 'text-gray-400'}`} 
+        onClick={toggleViewMode} 
+      />
+        </div>
+        </div>
 
         {/* Expand All / Contract All (Visible in Tree View) */}
         {viewMode === 'tree' && (
           <div className="mt-4 flex justify-between text-sm">
-            <button
-              className="text-xs text-blue-500 underline hover:text-blue-700"
-              onClick={expandAll}
-            >
-              Expandir Tudo
-            </button>
+            
             <button
               className="text-xs text-blue-500 underline hover:text-blue-700"
               onClick={contractAll}
             >
               Contrair Tudo
             </button>
+            <button
+              className="text-xs text-blue-500 underline hover:text-blue-700"
+              onClick={expandAll}
+            >
+              Expandir Tudo
+            </button>
           </div>
         )}
       </div>
-
+      </div>
 
 {/* Document List */}
-<div className="p-4 bg-[#FBFCFD] rounded-md scroll-smooth overflow-y-auto h-svh grow">
+<div className="p-4 bg-[#FBFCFD] rounded-md scroll-smooth overflow-y-auto h-svh grow overflow-x-hidden">
   {viewMode === 'tree' ? (
     <ul>
       {documents.map((parentDoc) => (
@@ -198,19 +213,19 @@ export const DocumentsAside = () => {
                     ? faChevronDown
                     : faChevronRight
                 }
-                className="text-gray-700 h-2.5 w-2.5 mb-0.5"
+                className="text-gray-700 h-2.5 w-2.5 mb-[3.5px]"
               />
             </button>
             <input
               type="checkbox"
               checked={selectedDocuments.includes(parentDoc.id)}
               onChange={() => handleCheckboxChange(parentDoc.id)}
-              className="mr-2"
+              className="mr-1.5"
             />
             <Link
               to="/pdf-reader"
               state={{ fileName: parentDoc.name }} // Passing file name in state
-              className="text-sm text-blue-600 hover:underline cursor-pointer"
+              className="text-sm text-[#3D4551] hover:underline cursor-pointer"
             >
               {parentDoc.name}
             </Link>
@@ -230,7 +245,7 @@ export const DocumentsAside = () => {
                   <Link
                     to="/pdf-reader"
                     state={{ fileName: childDoc.name }} // Passing file name in state
-                    className="text-sm text-blue-600 hover:underline cursor-pointer"
+                    className="text-sm text-[#3D4551] hover:underline cursor-pointer"
                   >
                     {childDoc.name}
                   </Link>
@@ -269,13 +284,13 @@ export const DocumentsAside = () => {
       {selectedDocuments.length > 0 && (
         <div className="mt-auto">
           <div className="flex bg-[#2672DE]">
-                <span className="p-2 py-2 text-white text-xs grow m-auto">
+                <span className="px-3 py-2 text-white text-xs grow m-auto font-medium">
                 {selectedDocuments.length} item(ns) selecionado(s)
                   
                 </span>
                 <button
                       onClick={clearSelection}
-                      className="bg-red-500 text-white p-1 text-sm my-2 me-2 rounded-sm text-xs"
+                      className="bg-[#F7F9FA] text-[#3D4551] pt-1 pb-1 px-2 text-xs my-2 me-2 rounded-sm "
                   >
                       Limpar
                   </button>

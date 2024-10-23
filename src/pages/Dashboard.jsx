@@ -8,7 +8,7 @@ const App = () => {
   const [selectedItems, setSelectedItems] = useState([]);
 
   return (
-    <div className="min-h-screen flex bg-gray-100 overflow-hidden h-svh">
+    <div className="min-h-screen flex bg-[#F7F9FA] overflow-hidden h-svh">
       <Aside/>
       <div className='w-full flex flex-col align-center'>
         <Nav />
