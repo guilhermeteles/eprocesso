@@ -43,7 +43,7 @@ const PanelManager = ({ selectedItems, setSelectedItems }) => {
 
       for (const group of groupsData) {
         for (const item of group.items) {
-          if (itemCount < 5) {
+          if (itemCount < 7) {
             initialSelectedItems.push(item.id);
             itemCount++;
           }

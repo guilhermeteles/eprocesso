@@ -18,7 +18,7 @@ const App = () => {
         <Nav />
         <div className='overflow-y-auto p-6'>
         <div className="flex justify-between px-6 mt-16">
-        <h1 className="mt-4">Reading: {fileName}</h1>
+        <h1 className="mt-4">Documento: {fileName}</h1>
         <button
           onClick={handleGoHome}
           className="mt-4 px-4 pt-1 pb-1.5 bg-gray-300 text-gray-900 rounded-md hover:bg-gray-400 transition duration-200 w-fit"
