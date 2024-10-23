@@ -5,7 +5,7 @@ const Dashboard = ({ selectedItems, setSelectedItems }) => {
   const [draggedOverItem, setDraggedOverItem] = useState(null);
 
   const cardsData = [
-    { id: 1, title: "Widget 1", content: "This is some content for Widget 1." },
+    { id: 1, title: "Widget 1", content: "This is some content for Widget 1. This is some content for Widget 1. This is some content for Widget 1." },
     { id: 2, title: "Widget 2", content: "This is some content for Widget 2." },
     { id: 3, title: "Widget 3", content: "This is some content for Widget 3." },
     { id: 4, title: "Widget 4", content: "This is some content for Widget 4." },
@@ -66,57 +66,41 @@ const Dashboard = ({ selectedItems, setSelectedItems }) => {
     setDraggedOverItem(null);
   };
 
-
-
   return (
     <div className="min-h-screen bg-gray-100 p-6">
+      <div className="masonry-layout">
+        {selectedItems.map((itemId, index) => {
+          const card = cardsData.find(card => card.id === itemId);
 
-
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6">
-      {selectedItems.map((itemId, index) => {
-  // Log the selectedItems and current itemId being processed
-  console.log("Selected Items:", selectedItems);
-  console.log("Processing Item ID:", itemId);
-
-  const card = cardsData.find(card => card.id === itemId);
-  
-  // Log the card found (or not found)
-  if (card) {
-    console.log("Found Card:", card);
-  } else {
-    console.log("Card not found for Item ID:", itemId);
-  }
-
-  return card ? (
-    <div
-      key={card.id}
-      draggable
-      onDragStart={(e) => handleDragStart(e, index)}
-      onDragEnd={handleDragEnd}
-      onDragOver={(e) => handleDragOver(e, index)}
-      onDragLeave={handleDragLeave}
-      onDrop={(e) => handleDrop(e, index)}
-      className={`draggable-card bg-white rounded-lg shadow-lg transition-all ${
-        draggedItem === index ? 'opacity-50' : ''
-      } ${draggedOverItem === index ? 'border-2 border-blue-500' : ''}`}
-    >
-      <div className="p-4">
-        <div className="flex justify-between items-start mb-4">
-          <h2 className="text-xl font-semibold">{card.title}</h2>
-          <div className="cursor-move p-2 rounded-lg hover:bg-gray-100 flex items-center">
-            <i className="text-gray-500 fa-solid fa-grip-vertical"></i>
-          </div>
-        </div>
-        <p className="text-gray-600">{card.content}</p>
-      </div>
-    </div>
-  ) : (
-    <div key={itemId} className="bg-gray-200 p-4 rounded-lg">
-      <p>Card not found for ID: {itemId}</p>
-    </div>
-  );
-})}
-
+          return card ? (
+            <div
+              key={card.id}
+              draggable
+              onDragStart={(e) => handleDragStart(e, index)}
+              onDragEnd={handleDragEnd}
+              onDragOver={(e) => handleDragOver(e, index)}
+              onDragLeave={handleDragLeave}
+              onDrop={(e) => handleDrop(e, index)}
+              className={`draggable-card bg-white rounded-lg shadow-lg transition-all mb-6 ${
+                draggedItem === index ? 'opacity-50' : ''
+              } ${draggedOverItem === index ? 'border-2 border-blue-500' : ''}`}
+            >
+              <div className="p-4">
+                <div className="flex justify-between items-start mb-4">
+                  <h2 className="text-xl font-semibold">{card.title}</h2>
+                  <div className="cursor-move p-2 rounded-lg hover:bg-gray-100 flex items-center">
+                    <i className="text-gray-500 fa-solid fa-grip-vertical"></i>
+                  </div>
+                </div>
+                <p className="text-gray-600">{card.content}</p>
+              </div>
+            </div>
+          ) : (
+            <div key={itemId} className="bg-gray-200 p-4 rounded-lg">
+              <p>Card not found for ID: {itemId}</p>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
