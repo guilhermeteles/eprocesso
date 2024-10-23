@@ -63,7 +63,19 @@ const groupsData = [
       { id: 24, title: "Retificar Resultado Monocrático", letter: "R" },
     ],
   },
+  {
+    title: "Legado",
+    color: "#EDEFF0",
+    items: [
+      { id: 25, title: "Apurar Grau do Processo", letter: "A" },
+      { id: 26, title: "Visualizar Apuração de Grau", letter: "V" },
+      { id: 27, title: "Consultar Questionamentos", letter: "C" },
+      { id: 28, title: "Indicar Processo para Pauta", letter: "I" },
+      { id: 29, title: "Julgar Admissibilidade", letter: "J" },
+    ],
+  },
 ];
+
 
 
 
