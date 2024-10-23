@@ -1,6 +1,7 @@
 // src/pages/Dashboard.jsx
 import Nav from '../components/Nav';
 import Aside from '../components/Aside';
+import PanelManager from '../components/OverlayMenuPaineis';
 
 const Dashboard = () => {
     return (
@@ -12,8 +13,8 @@ const Dashboard = () => {
           <div className="flex-1 flex flex-col">
             {/* Top Menu */}
             <Nav />
-
-            <div className="px-6 text-xs flex justify-end items-center text-[#919191] mt-6 mb-4">Gerenciar Painéis<i className="ms-1 fa-solid fa-cog"></i></div>
+            <PanelManager/>
+            
       
             {/* Main Content */}
             <div className="px-6 flex-1">
