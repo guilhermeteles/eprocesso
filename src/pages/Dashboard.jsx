@@ -9,13 +9,14 @@ const Dashboard = () => {
           <Aside/>
     
           {/* Main Content Area */}
-          <div className="flex-1 flex flex-col items-center">
+          <div className="flex-1 flex flex-col">
             {/* Top Menu */}
             <Nav />
 
-    
+            <div className="px-6 text-xs flex justify-end items-center text-[#919191] mt-6 mb-4">Gerenciar Painéis<i className="ms-1 fa-solid fa-cog"></i></div>
+      
             {/* Main Content */}
-            <div className="p-6 flex-1">
+            <div className="px-6 flex-1">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6">
                 {/* Card 1 */}
                 <div className="bg-white p-4 rounded-lg shadow-lg">

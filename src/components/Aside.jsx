@@ -2,6 +2,9 @@ import { useState, useRef } from 'react';
 import IconBadge from '../components/IconBadge';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faClipboard, faGripLinesVertical } from '@fortawesome/free-solid-svg-icons'; // Import the magnifying glass icon
+import { faStar as faStarSolid } from '@fortawesome/free-solid-svg-icons';
+import { faStar as faStarRegular } from '@fortawesome/free-regular-svg-icons';
+
 import { faUserAlt } from '@fortawesome/free-solid-svg-icons';
 import { DocumentsAside } from './DocumentsAside';
 
@@ -64,11 +67,12 @@ const Aside = () => {
       <div className="flex items-center justify-between mr-auto">
         <div className="flex items-center">
           <button onClick={toggleFavorite} className="mr-2">
-            <FontAwesomeIcon 
-              icon={faStar} 
-              color={isFavorited ? 'gold' : '#3D4551'}
-              className="cursor-pointer"
-            />
+          <FontAwesomeIcon 
+            icon={isFavorited ? faStarSolid : faStarRegular} 
+            color={isFavorited ? '#1351B4' : '#1351B4'}
+            className="cursor-pointer"
+            onClick={toggleFavorite}  // Assuming you have a toggle function
+          />
           </button>
           <span className="text-gray-700 text-md">{processoNumber}</span>
         </div>
