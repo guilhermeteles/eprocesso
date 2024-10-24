@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faChevronRight } from '@fortawesome/free-solid-svg-icons'; // Icons for tree expand/collapse
 import { IconButton } from './IconButton'; // Import the IconButton component
 import { Link } from 'react-router-dom';
 import { faCalendar } from '@fortawesome/free-regular-svg-icons';
 import { faStream } from '@fortawesome/free-solid-svg-icons';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export const DocumentsAside = () => {
   const [viewMode, setViewMode] = useState('tree'); // 'tree' or 'chronological'
@@ -408,21 +408,21 @@ const [chronos, setChronos] = useState('crescente'); // Set default view mode
       </div>
 
       {/* Search Input */}
-      <div className="mb-4">
-      <div className="relative w-full">
-        <input
-          type="text"
-          placeholder="O que você procura?"
-          className="text-sm w-full px-3 py-2 pr-10 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-[#fff]"
-        />
-        <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
-        
-        <FontAwesomeIcon 
-        icon={faMagnifyingGlass} 
-        className={`cursor-pointer text-md ${viewMode === 'chronological' ? 'text-blue-500' : 'text-gray-400'}`} 
-        onClick={toggleViewMode} 
-      />
-        </div>
+      <div className="mb-2">
+        <div className="relative w-full">
+            <input
+              type="text"
+              placeholder="O que você procura?"
+              className="text-sm w-full px-3 py-2 pr-10 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-[#fff]"
+            />
+            <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+            
+              <FontAwesomeIcon 
+              icon={faMagnifyingGlass} 
+              className={`cursor-pointer text-md ${viewMode === 'chronological' ? 'text-blue-500' : 'text-gray-400'}`} 
+              onClick={toggleViewMode} 
+            />
+          </div>
         </div>
 
         {/* Expand All / Contract All (Visible in Tree View) */}

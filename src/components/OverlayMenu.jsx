@@ -145,7 +145,7 @@ const OverlayMenu = ({ isOpen, onClose, onAddItemToGroup3 }) => {
     >
       <div
       onClick={(e) => e.stopPropagation()}
-      className={`fixed right-0 top-0 h-full w-80 bg-white shadow-lg transform transition-transform ${
+      className={`fixed right-0 top-0 h-full w-96 bg-white shadow-lg transform transition-transform ${
         isOpen ? 'translate-x-0' : 'translate-x-full'
       }`}
     >
