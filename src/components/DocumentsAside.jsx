@@ -13,49 +13,165 @@ export const DocumentsAside = () => {
   const [expandedParents, setExpandedParents] = useState({}); // Track which parents are expanded
 
   const documents = [
-    {
-      id: 1,
-      name: 'Parent Document 1',
-      date: '2024-10-13',
-      children: [
-        { id: 4, name: 'Child Document 1.1', date: '2024-10-15' },
-        { id: 5, name: 'Child Document 1.2', date: '2024-10-18' },
-      ],
-    },
-    {
-      id: 2,
-      name: 'Parent Document 2',
-      date: '2024-10-14',
-      children: [{ id: 6, name: 'Child Document 2.1', date: '2024-10-23' }],
-    },
-    {
-      id: 3,
-      name: 'Parent Document 3',
-      date: '2024-10-15',
-      children: [],
-    },
-    {
-      id: 7,
-      name: 'Parent Document 4',
-      date: '2024-10-16',
-      children: [
-        { id: 10, name: 'Child Document 1.1', date: '2024-10-15' },
-        { id: 11, name: 'Child Document 1.2', date: '2024-10-21' },
-      ],
-    },
-    {
-      id: 8,
-      name: 'Parent Document 5',
-      date: '2024-10-17',
-      children: [{ id: 12, name: 'Child Document 2.1', date: '2024-10-14' }],
-    },
-    {
-      id: 9,
-      name: 'Parent Document 6',
-      date: '2024-10-11',
-      children: [],
-    },
-  ];
+  {
+    id: 1,
+    name: 'Petição Inicial de Ação Civil',
+    date: '2024-10-13',
+    children: [
+      {
+        id: 2,
+        name: 'Citação',
+        date: '2024-10-14',
+        children: [
+          {
+            id: 3,
+            name: 'Resposta à Citação',
+            date: '2024-10-15',
+            children: [
+              {
+                id: 4,
+                name: 'Contestação',
+                date: '2024-10-16',
+                children: [
+                  {
+                    id: 5,
+                    name: 'Réplicas à Contestação',
+                    date: '2024-10-17',
+                    children: [
+                      { id: 6, name: 'Juntada de Documentos', date: '2024-10-18' },
+                      { id: 7, name: 'Pedido de Tutela Provisória', date: '2024-10-19' },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 8,
+    name: 'Ação de Indenização',
+    date: '2024-10-20',
+    children: [
+      {
+        id: 9,
+        name: 'Laudo Pericial',
+        date: '2024-10-21',
+        children: [
+          {
+            id: 10,
+            name: 'Manifestação sobre o Laudo',
+            date: '2024-10-22',
+            children: [
+              {
+                id: 11,
+                name: 'Pedido de Produção de Provas',
+                date: '2024-10-23',
+                children: [
+                  { id: 12, name: 'Provas Documentais', date: '2024-10-24' },
+                  { id: 13, name: 'Provas Testemunhais', date: '2024-10-25' },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 14,
+    name: 'Ação de Alimentos',
+    date: '2024-10-26',
+    children: [
+      {
+        id: 15,
+        name: 'Pedido de Alimentos',
+        date: '2024-10-27',
+        children: [
+          {
+            id: 16,
+            name: 'Decisão Judicial',
+            date: '2024-10-28',
+            children: [
+              {
+                id: 17,
+                name: 'Recurso de Apelação',
+                date: '2024-10-29',
+                children: [
+                  { id: 18, name: 'Contrarrazões', date: '2024-10-30' },
+                  { id: 19, name: 'Juntada de Novos Documentos', date: '2024-10-31' },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 20,
+    name: 'Embargos de Declaração',
+    date: '2024-11-01',
+    children: [
+      {
+        id: 21,
+        name: 'Decisão dos Embargos',
+        date: '2024-11-02',
+        children: [
+          {
+            id: 22,
+            name: 'Recurso Especial',
+            date: '2024-11-03',
+            children: [
+              {
+                id: 23,
+                name: 'Petição de Admissibilidade',
+                date: '2024-11-04',
+                children: [
+                  { id: 24, name: 'Parecer do Ministério Público', date: '2024-11-05' },
+                  { id: 25, name: 'Juntada de Novos Fatos', date: '2024-11-06' },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 26,
+    name: 'Ação de Usucapião',
+    date: '2024-11-07',
+    children: [
+      {
+        id: 27,
+        name: 'Certidão de Registro de Imóveis',
+        date: '2024-11-08',
+        children: [
+          {
+            id: 28,
+            name: 'Manifestação do Réu',
+            date: '2024-11-09',
+            children: [
+              {
+                id: 29,
+                name: 'Relatório de Vistoria',
+                date: '2024-11-10',
+                children: [
+                  { id: 30, name: 'Pedido de Desocupação', date: '2024-11-11' },
+                  { id: 31, name: 'Protesto de Irregularidade', date: '2024-11-12' },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+];
+
 
 
   // Flattening documents into a single array for chronological display
@@ -102,14 +218,24 @@ export const DocumentsAside = () => {
     }));
   };
 
-  // Expand all parent documents
-  const expandAll = () => {
-    const allExpanded = {};
-    documents.forEach((doc) => {
-      allExpanded[doc.id] = true;
-    });
-    setExpandedParents(allExpanded);
+  // Expand all parent documents and their children recursively
+const expandAll = () => {
+  const allExpanded = {};
+
+  // Recursive function to expand a document and its children
+  const expandDocument = (doc) => {
+    allExpanded[doc.id] = true; // Mark the current document as expanded
+    // If the document has children, expand each of them recursively
+    if (doc.children && doc.children.length > 0) {
+      doc.children.forEach((child) => expandDocument(child));
+    }
   };
+
+  // Loop through all top-level documents
+  documents.forEach((doc) => expandDocument(doc)); // Expand all documents
+
+  setExpandedParents(allExpanded); // Set the expanded state
+};
 
   // Contract all parent documents
   const contractAll = () => {
@@ -120,6 +246,51 @@ export const DocumentsAside = () => {
   const clearSelection = () => {
     setSelectedDocuments([]);
   };
+  
+// Recursive function to render documents
+const renderDocuments = (docList, depth = 0) => {
+  return (
+    <ul className="ml-4"> {/* Fixed left margin for indentation */}
+      {docList.map((doc) => (
+        <li key={doc.id} className="mb-2" style={{ marginLeft: '20px' }}> {/* Fixed indentation for all levels */}
+          <div className="flex items-center">
+            {/* Conditionally render the chevron icon only if the document has children */}
+            {doc.children && doc.children.length > 0 && (
+              <button
+                onClick={() => toggleExpand(doc.id)}
+                className="mr-1.5"
+              >
+                <FontAwesomeIcon
+                  icon={
+                    expandedParents[doc.id] ? faChevronDown : faChevronRight
+                  }
+                  className="text-gray-700 h-2.5 w-2.5 mb-[3.5px]"
+                />
+              </button>
+            )}
+            <input
+              type="checkbox"
+              checked={selectedDocuments.includes(doc.id)}
+              onChange={() => handleCheckboxChange(doc.id)}
+              className="mr-1.5"
+            />
+            <Link
+              to="/pdf-reader"
+              state={{ fileName: doc.name }} // Passing file name in state
+              className="text-sm text-[#3D4551] hover:underline cursor-pointer"
+            >
+              {doc.name}
+            </Link>
+          </div>
+
+          {/* Child Documents (If expanded) */}
+          {expandedParents[doc.id] && doc.children && doc.children.length > 0 && renderDocuments(doc.children, depth + 1)}
+        </li>
+      ))}
+    </ul>
+  );
+};
+
 
   return (
     <aside className="bg-[#F7F9FA] rounded-lg overflow-hidden flex flex-col ">
@@ -217,62 +388,40 @@ export const DocumentsAside = () => {
 <div className="p-4 bg-[#FBFCFD] rounded-md scroll-smooth overflow-y-auto h-svh grow overflow-x-hidden">
   {viewMode === 'tree' ? (
     <ul>
-      {documents.map((parentDoc) => (
-        <li key={parentDoc.id} className="mb-2">
-          <div className="flex items-center">
-            <button
-              onClick={() => toggleExpand(parentDoc.id)}
-              className="mr-1.5"
-            >
-              <FontAwesomeIcon
-                icon={
-                  expandedParents[parentDoc.id]
-                    ? faChevronDown
-                    : faChevronRight
-                }
-                className="text-gray-700 h-2.5 w-2.5 mb-[3.5px]"
-              />
-            </button>
-            <input
-              type="checkbox"
-              checked={selectedDocuments.includes(parentDoc.id)}
-              onChange={() => handleCheckboxChange(parentDoc.id)}
-              className="mr-1.5"
+    {documents.map((doc) => (
+      <li key={doc.id} className="mb-2">
+        <div className="flex items-center">
+          <button
+            onClick={() => toggleExpand(doc.id)}
+            className="mr-1.5"
+          >
+            <FontAwesomeIcon
+              icon={
+                expandedParents[doc.id] ? faChevronDown : faChevronRight
+              }
+              className="text-gray-700 h-2.5 w-2.5 mb-[3.5px]"
             />
-            <Link
-              to="/pdf-reader"
-              state={{ fileName: parentDoc.name }} // Passing file name in state
-              className="text-sm text-[#3D4551] hover:underline cursor-pointer"
-            >
-              {parentDoc.name}
-            </Link>
-          </div>
+          </button>
+          <input
+            type="checkbox"
+            checked={selectedDocuments.includes(doc.id)}
+            onChange={() => handleCheckboxChange(doc.id)}
+            className="mr-1.5"
+          />
+          <Link
+            to="/pdf-reader"
+            state={{ fileName: doc.name }} // Passing file name in state
+            className="text-sm text-[#3D4551] hover:underline cursor-pointer"
+          >
+            {doc.name}
+          </Link>
+        </div>
 
-          {/* Child Documents (If expanded) */}
-          {expandedParents[parentDoc.id] && (
-            <ul className="ml-6 mt-2">
-              {parentDoc.children.map((childDoc) => (
-                <li key={childDoc.id} className="flex items-center mb-1">
-                  <input
-                    type="checkbox"
-                    checked={selectedDocuments.includes(childDoc.id)}
-                    onChange={() => handleCheckboxChange(childDoc.id)}
-                    className="mr-2"
-                  />
-                  <Link
-                    to="/pdf-reader"
-                    state={{ fileName: childDoc.name }} // Passing file name in state
-                    className="text-sm text-[#3D4551] hover:underline cursor-pointer"
-                  >
-                    {childDoc.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          )}
-        </li>
-      ))}
-    </ul>
+        {/* Child Documents (If expanded) */}
+        {expandedParents[doc.id] && doc.children && doc.children.length > 0 && renderDocuments(doc.children)}
+      </li>
+    ))}
+  </ul>
   ) : (
     <ul className="mt-2">
       {getFlattenedDocuments().map((doc) => (
