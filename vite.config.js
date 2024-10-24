@@ -6,14 +6,6 @@ import { viteStaticCopy } from 'vite-plugin-static-copy'; // Ensure this is impo
 export default defineConfig({
   plugins: [
     react(),
-    viteStaticCopy({
-      targets: [
-        {
-          src: 'node_modules/pdfjs-dist/build/pdf.worker.min.mjs',
-          dest: 'pdfjs', // This directory should be served correctly
-        },
-      ],
-    }),
   ],
   css: {
     postcss: {
