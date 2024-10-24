@@ -172,24 +172,6 @@ export const DocumentsAside = () => {
   },
 ];
 
-
-
-  // Flattening documents into a single array for chronological display
-  const getFlattenedDocuments = () => {
-    const flattenedDocs = [];
-
-    documents.forEach((parentDoc) => {
-      flattenedDocs.push({ ...parentDoc }); // Add parent document
-
-      parentDoc.children.forEach((childDoc) => {
-        flattenedDocs.push({ ...childDoc, parentId: parentDoc.id }); // Add child document
-      });
-    });
-
-    // Sort by date
-    return flattenedDocs.sort((a, b) => new Date(a.date) - new Date(b.date));
-  };
-
   const formatDate = (date) => {
     const [year, month, day] = date.split('-');
     return `${day}/${month}/${year}`;
@@ -247,50 +229,147 @@ const expandAll = () => {
     setSelectedDocuments([]);
   };
   
-// Recursive function to render documents
-const renderDocuments = (docList, depth = 0) => {
-  return (
-    <ul className="ml-4"> {/* Fixed left margin for indentation */}
-      {docList.map((doc) => (
-        <li key={doc.id} className="mb-2" style={{ marginLeft: '20px' }}> {/* Fixed indentation for all levels */}
-          <div className="flex items-center">
-            {/* Conditionally render the chevron icon only if the document has children */}
-            {doc.children && doc.children.length > 0 && (
-              <button
-                onClick={() => toggleExpand(doc.id)}
+  // Recursive function to render documents
+  const renderDocuments = (docList, depth = 0) => {
+    return (
+      <ul className="ml-4"> {/* Fixed left margin for indentation */}
+        {docList.map((doc) => (
+          <li key={doc.id} className="mb-2" style={{ marginLeft: '20px' }}> {/* Fixed indentation for all levels */}
+            <div className="flex items-center">
+              {/* Conditionally render the chevron icon only if the document has children */}
+              {doc.children && doc.children.length > 0 && (
+                <button
+                  onClick={() => toggleExpand(doc.id)}
+                  className="mr-1.5"
+                >
+                  <FontAwesomeIcon
+                    icon={
+                      expandedParents[doc.id] ? faChevronDown : faChevronRight
+                    }
+                    className="text-gray-700 h-2.5 w-2.5 mb-[3.5px]"
+                  />
+                </button>
+              )}
+              <input
+                type="checkbox"
+                checked={selectedDocuments.includes(doc.id)}
+                onChange={() => handleCheckboxChange(doc.id)}
                 className="mr-1.5"
+              />
+              <Link
+                to="/pdf-reader"
+                state={{ fileName: doc.name }} // Passing file name in state
+                className="text-sm text-[#3D4551] hover:underline cursor-pointer"
               >
-                <FontAwesomeIcon
-                  icon={
-                    expandedParents[doc.id] ? faChevronDown : faChevronRight
-                  }
-                  className="text-gray-700 h-2.5 w-2.5 mb-[3.5px]"
-                />
-              </button>
-            )}
-            <input
-              type="checkbox"
-              checked={selectedDocuments.includes(doc.id)}
-              onChange={() => handleCheckboxChange(doc.id)}
-              className="mr-1.5"
-            />
-            <Link
-              to="/pdf-reader"
-              state={{ fileName: doc.name }} // Passing file name in state
-              className="text-sm text-[#3D4551] hover:underline cursor-pointer"
-            >
-              {doc.name}
-            </Link>
-          </div>
+                {doc.name}
+              </Link>
+            </div>
 
-          {/* Child Documents (If expanded) */}
-          {expandedParents[doc.id] && doc.children && doc.children.length > 0 && renderDocuments(doc.children, depth + 1)}
-        </li>
-      ))}
-    </ul>
-  );
+            {/* Child Documents (If expanded) */}
+            {expandedParents[doc.id] && doc.children && doc.children.length > 0 && renderDocuments(doc.children, depth + 1)}
+          </li>
+        ))}
+      </ul>
+    );
+  };
+
+
+  // Recursive function to render documents with an option for reverse order
+  const renderChronologicalDocuments = (docList, reverse = false) => {
+    // Reverse the list if the reverse parameter is true
+    const sortedDocList = reverse ? [...docList].reverse() : docList;
+
+    const listItems = sortedDocList.map((doc) => (
+      <li key={doc.id} className="flex items-center mb-2">
+        <input
+          type="checkbox"
+          checked={selectedDocuments.includes(doc.id)}
+          onChange={() => handleCheckboxChange(doc.id)}
+          className="mr-2 self-start mt-1.5"
+        />
+        <Link
+          to="/pdf-reader"
+          state={{ fileName: doc.name }} // Passing file name in state
+          className="text-sm text-[#3D4551] hover:underline cursor-pointer"
+        >
+          {doc.name} &nbsp;
+          <span className="text-xs text-[#919191]">{formatDate(doc.date)}</span>
+        </Link>
+      </li>
+    ));
+
+    // If the current document has children, call the function recursively
+    sortedDocList.forEach((doc) => {
+      if (doc.children && doc.children.length > 0) {
+        listItems.push(...renderChronologicalDocuments(doc.children, reverse).props.children);
+      }
+    });
+
+    return <ul className="mt-2">{listItems}</ul>;
+  };
+
+
+// Function to get all documents in a one-dimensional array and sort by date
+const AllDocumentsArray = (documents) => {
+  const flattenDocuments = (docs) => {
+    let result = []; // Initialize the result array
+
+    docs.forEach((doc) => {
+      result.push(doc); // Add the current document
+      if (doc.children && doc.children.length > 0) {
+        // Recursively flatten the children
+        result = result.concat(flattenDocuments(doc.children));
+      }
+    });
+
+    return result; // Return the flattened result
+  };
+
+  // Flatten the documents
+  const flattenedDocs = flattenDocuments(documents);
+
+  // Sort the flattened documents by date (assumes doc.date is a Date object or a string that can be parsed into a date)
+  const sortedDocs = flattenedDocs.sort((a, b) => {
+    return new Date(a.date) - new Date(b.date); // Change to b.date - a.date for descending order
+  });
+
+  return sortedDocs; // Return the sorted flattened documents
 };
 
+  // Component rendering the chronological view
+  const ChronologicalView = () => {
+    const flattenDocuments = AllDocumentsArray(documents); // Get top-level documents
+
+    return (
+      <div>
+        {renderChronologicalDocuments(flattenDocuments)}
+      </div>
+    );
+  };
+
+  // Component rendering the chronological view
+  const AntiChronologicalView = () => {
+    const flattenDocuments = AllDocumentsArray(documents).reverse(); // Get top-level documents
+
+    return (
+      <div>
+        {renderChronologicalDocuments(flattenDocuments)}
+      </div>
+    );
+  };
+
+
+const [chronos, setChronos] = useState('crescente'); // Set default view mode
+
+  // Function to change view to chronological
+  const showChronologicalView = () => {
+    setChronos('crescente');
+  };
+
+  // Function to change view to anti-chronological
+  const showAntiChronologicalView = () => {
+    setChronos('decrescente');
+  };
 
   return (
     <aside className="bg-[#F7F9FA] rounded-lg overflow-hidden flex flex-col ">
@@ -369,13 +448,13 @@ const renderDocuments = (docList, depth = 0) => {
             
             <button
               className="text-xs text-blue-500 underline hover:text-blue-700"
-              onClick={contractAll}
+              onClick={showChronologicalView}
             >
               Crescente
             </button>
             <button
               className="text-xs text-blue-500 underline hover:text-blue-700"
-              onClick={expandAll}
+              onClick={showAntiChronologicalView}
             >
               Decrescente
             </button>
@@ -423,25 +502,9 @@ const renderDocuments = (docList, depth = 0) => {
     ))}
   </ul>
   ) : (
-    <ul className="mt-2">
-      {getFlattenedDocuments().map((doc) => (
-        <li key={doc.id} className="flex items-center mb-2">
-          <input
-            type="checkbox"
-            checked={selectedDocuments.includes(doc.id)}
-            onChange={() => handleCheckboxChange(doc.id)}
-            className="mr-2 self-start mt-1.5"
-          />
-          <Link
-            to="/pdf-reader"
-            state={{ fileName: doc.name }} // Passing file name in state
-            className="text-sm text-[#3D4551] hover:underline cursor-pointer"
-          >
-            {doc.name} &nbsp; <span className="text-xs text-[#919191]">{formatDate(doc.date)}</span>
-          </Link>
-        </li>
-      ))}
-    </ul>
+    <div>
+    {chronos === 'crescente' ? <ChronologicalView /> : <AntiChronologicalView />}
+    </div>
   )}
 </div>
 
