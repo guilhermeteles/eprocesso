@@ -177,7 +177,7 @@ export const DocumentsAside = () => {
 
         {/* Expand All / Contract All (Visible in Tree View) */}
         {viewMode === 'tree' && (
-          <div className="mt-4 flex justify-between text-sm">
+          <div className="mt-6 flex justify-between text-sm">
             
             <button
               className="text-xs text-blue-500 underline hover:text-blue-700"
@@ -190,6 +190,23 @@ export const DocumentsAside = () => {
               onClick={expandAll}
             >
               Expandir Tudo
+            </button>
+          </div>
+        )}
+        {viewMode === 'chronological' && (
+          <div className="mt-6 flex justify-between text-sm">
+            
+            <button
+              className="text-xs text-blue-500 underline hover:text-blue-700"
+              onClick={contractAll}
+            >
+              Crescente
+            </button>
+            <button
+              className="text-xs text-blue-500 underline hover:text-blue-700"
+              onClick={expandAll}
+            >
+              Decrescente
             </button>
           </div>
         )}
