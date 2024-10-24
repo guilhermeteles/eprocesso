@@ -12,9 +12,6 @@ const groupsData = [
       { id: 3, title: "Notas" },
       { id: 4, title: "Temporalidade do processo" },
     ],
-    
-    
-    
   },
   {
     title: "Palavras-chaves",
