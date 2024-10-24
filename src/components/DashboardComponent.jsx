@@ -378,11 +378,11 @@ const Dashboard = ({ selectedItems, setSelectedItems }) => {
                 draggedItem === index ? 'opacity-50' : ''
               } ${draggedOverItem === index ? 'border-2 border-blue-500' : ''}`}
             >
-              <div className="p-4">
+              <div className="p-4  text-[#3D4551]">
                 <div className="flex justify-between items-start mb-4">
                   <div className='flex'>
                   <i className={`fas fa-${card.icon} me-2 mt-1.5`}></i>
-                  <h2 className="text-lg leading-6 font-semibold">{card.title}</h2>
+                  <h2 className="text-lg leading-6 font-semibold ">{card.title}</h2>
                   </div>
                   
                   

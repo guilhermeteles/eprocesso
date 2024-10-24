@@ -1,41 +1,10 @@
 import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-
-// Sample data structure for groups and items
-const groupsData = [
-  {
-    title: "Interessado",
-    color: "#C7EFE2", // You can adjust the color as needed
-    items: [
-      { id: 1, title: "Contribuinte Diferenciado" },
-      { id: 2, title: "Contribuinte Especial" },
-      { id: 3, title: "Existe Responsável Solidário/Subsidiário" },
-      { id: 4, title: "Grande Devedor" },
-      { id: 5, title: "Prioridade por Moléstia Grave ou Deficiência" },
-      { id: 6, title: "Prioridade Baseada no Estatuto do Idoso" },
-    ],
-  },
-  {
-    title: "Processo",
-    color: "#C7EFE2", // Adjust color if needed
-    items: [
-      { id: 7, title: "Cadastro Efetivado no SIEF Processos" },
-      { id: 8, title: "Contencioso de Baixa Complexidade" },
-      { id: 9, title: "Contencioso de Pequeno Valor" },
-      { id: 10, title: "Juntado ou Vinculado" },
-      { id: 11, title: "Nível de Sigilo" },
-      { id: 12, title: "Nota de Processo" },
-      { id: 13, title: "Prioridade do Processo" },
-      { id: 14, title: "Segredo de Justiça" },
-      { id: 15, title: "SJD Pendente" },
-    ],
-  },
-];
+import { groupsData } from './indicatorsData';
 
 const IndicatorsManager = ({ selectedIndicators, setselectedIndicators }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Initialize selectedIndicators if empty
   useEffect(() => {
     if (!selectedIndicators?.length) {
       const initialselectedIndicators = [];
@@ -86,7 +55,9 @@ const IndicatorsManager = ({ selectedIndicators, setselectedIndicators }) => {
               <h2 className="text-sm px-4 py-2 rounded-md bg-[#92D9BB] w-full mb-2 font-semibold text-[#3D4551]">
                 Gerenciar Indicadores
               </h2>
-              <button onClick={toggleModal} className="absolute right-[0px] top-[2px] text-white font-bold w-8 h-8"> <i className="fas fa-xmark"></i></button>
+              <button onClick={toggleModal} className="absolute right-[0px] top-[2px] text-white font-bold w-8 h-8">
+                <i className="fas fa-xmark"></i>
+              </button>
             </div>
 
             <div>
@@ -128,7 +99,6 @@ const IndicatorsManager = ({ selectedIndicators, setselectedIndicators }) => {
   );
 };
 
-// Define PropTypes for the component
 IndicatorsManager.propTypes = {
   selectedIndicators: PropTypes.arrayOf(PropTypes.number).isRequired,
   setselectedIndicators: PropTypes.func.isRequired,
