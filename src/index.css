@@ -22,6 +22,12 @@
   
   @screen xl {
     .masonry-layout {
+      column-count: 3;
+    }
+  }
+
+  @screen 2xl {
+    .masonry-layout {
       column-count: 4;
     }
   }

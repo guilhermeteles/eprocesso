@@ -5,24 +5,57 @@ const Dashboard = ({ selectedItems, setSelectedItems }) => {
   const [draggedOverItem, setDraggedOverItem] = useState(null);
 
   const cardsData = [
-    { id: 1, title: "Widget 1", content: "This is some content for Widget 1. This is some content for Widget 1. This is some content for Widget 1." },
-    { id: 2, title: "Widget 2", content: "This is some content for Widget 2." },
-    { id: 3, title: "Widget 3", content: "This is some content for Widget 3." },
-    { id: 4, title: "Widget 4", content: "This is some content for Widget 4." },
-    { id: 5, title: "Widget 5", content: "This is some content for Widget 5." },
-    { id: 6, title: "Widget 6", content: "This is some content for Widget 6." },
-    { id: 7, title: "Widget 7", content: "This is some content for Widget 7." },
-    { id: 8, title: "Widget 8", content: "This is some content for Widget 8." },
-    { id: 11, title: "Widget 9", content: "This is some content for Widget 1." },
-    { id: 12, title: "Widget 10", content: "This is some content for Widget 2." },
-    { id: 13, title: "Widget 11", content: "This is some content for Widget 3." },
-    { id: 14, title: "Widget 12", content: "This is some content for Widget 4." },
-    { id: 15, title: "Widget 13", content: "This is some content for Widget 5." },
-    { id: 16, title: "Widget 14", content: "This is some content for Widget 6." },
-    { id: 17, title: "Widget 15", content: "This is some content for Widget 7." },
-    { id: 18, title: "Widget 16", content: "This is some content for Widget 8." },
+    { id: 1, icon:'gavel', title: "Reuniões de Julgamento", 
+      content: `
+      <div class="flex flex-col gap-2">
+      <div class="bg-[#FBFCFD] p-3">
+        <div class="flex justify-between">
+          <div class="text-xs bg-[#FFF3F2] px-2 py-1">Pauta em suplementação</div>
+          <div class="text-md">11/08/2024</div>
+        </div>
+        <div class="mt-2">
+          <div class="font-bold">Reunião com o cliente</div>
+          <div class="text-sm">Apresentação da tela de visualização do projeto.</div>
+        </div>
+      </div>
+      <div class="bg-[#FBFCFD] p-3">
+        <div class="flex justify-between">
+          <div class="text-xs bg-[#E3F5E1] px-2 py-1">Agendada</div>
+          <div class="text-md">11/08/2024</div>
+        </div>
+        <div class="mt-2">
+          <div class="font-bold">Reunião com o cliente</div>
+          <div class="text-sm">Apresentação da tela de visualização do projeto.</div>
+        </div>
+      </div>
+      <div class="bg-[#FBFCFD] p-3">
+        <div class="flex justify-between">
+          <div class="text-xs bg-[#FFF5C2] px-2 py-1">Em agendamento</div>
+          <div class="text-md">11/08/2024</div>
+        </div>
+        <div class="mt-2">
+          <div class="font-bold">Reunião com o cliente</div>
+          <div class="text-sm">Apresentação da tela de visualização do projeto.</div>
+        </div>
+      </div>
+      </div>
+      ` },
+    { id: 2, icon:'tasks', title: "Pendências do Processo", content: "This is some content for Widget 2." },
+    { id: 3, icon:'edit', title: "Notas", content: "This is some content for Widget 3." },
+    { id: 4, icon:'clock', title: "Temporalidade do processo", content: "This is some content for Widget 4." },
+    { id: 5, icon:'info-circle', title: "Descrição do Processo", content: "This is some content for Widget 6." },
+    { id: 6, icon:'file-invoice-dollar', title: "Sobre a Inscrição na Dívida Ativa da União", content: "This is some content for Widget 7." },
+    { id: 7, icon:'paper-plane', title: "Sobre o Controle / Fluxo do Processo", content: "This is some content for Widget 8." },
+    { id: 8, icon:'clipboard-check', title: "Sobre o Estado do Processo", content: "This is some content for Widget 1." },
+    { id: 9, icon:'eye', title: "Sobre o Interessado", content: "This is some content for Widget 2." },
+    { id: 10, icon:'balance-scale-right', title: "Sobre o Julgamento", content: "This is some content for Widget 3." },
+    { id: 11, icon:'list-alt', title: "Sobre o Pedido Existente no Processo", content: "This is some content for Widget 4." },
+    { id: 12, icon:'user-tie', title: "Sobre o Responsável", content: "This is some content for Widget 5." },
+    { id: 13, icon:'check-double', title: "Sobre o Trabalho com o Processo", content: "This is some content for Widget 6." },
+    { id: 14, icon:'search-dollar', title: "Sobre os Valores", content: "This is some content for Widget 7." },
   ];
-
+  
+  
   const handleDragStart = (e, index) => {
     setDraggedItem(index);
     e.dataTransfer.effectAllowed = 'move';
@@ -87,12 +120,17 @@ const Dashboard = ({ selectedItems, setSelectedItems }) => {
             >
               <div className="p-4">
                 <div className="flex justify-between items-start mb-4">
-                  <h2 className="text-xl font-semibold">{card.title}</h2>
+                  <div className='flex'>
+                  <i className={`fas fa-${card.icon} me-2 mt-1.5`}></i>
+                  <h2 className="text-lg leading-6 font-semibold">{card.title}</h2>
+                  </div>
+                  
+                  
                   <div className="cursor-move p-2 rounded-lg hover:bg-gray-100 flex items-center">
                     <i className="text-gray-500 fa-solid fa-grip-vertical"></i>
                   </div>
                 </div>
-                <p className="text-gray-600">{card.content}</p>
+                <p className="text-gray-600"><div dangerouslySetInnerHTML={{ __html: card.content }} /></p>
               </div>
             </div>
           ) : (
