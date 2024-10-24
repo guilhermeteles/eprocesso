@@ -45,20 +45,16 @@ const Dashboard = ({ selectedItems, setSelectedItems }) => {
       content: `
       <div class="flex flex-col gap-2">
       <div class="bg-[#FBFCFD] p-4 rounded-md">
+        <div class="text-xs bg-[#FFF3F2] px-2 py-1 rounded-sm w-fit">Ciência pendente</div>
         <div class="mt-2">
-          <div class="font-bold">Reunião com o cliente</div>
+          <div class="font-bold">Nome da penência de ciência</div>
           <div class="text-sm">Apresentação da tela de visualização do projeto.</div>
         </div>
       </div>
       <div class="bg-[#FBFCFD] p-4 rounded-md">
+        <div class="text-xs bg-[#FFF5C2] px-2 py-1 rounded-sm w-fit">Manifestação pendente</div>
         <div class="mt-2">
-          <div class="font-bold">Reunião com o cliente</div>
-          <div class="text-sm">Apresentação da tela de visualização do projeto.</div>
-        </div>
-      </div>
-      <div class="bg-[#FBFCFD] p-4 rounded-md">
-        <div class="mt-2">
-          <div class="font-bold">Reunião com o cliente</div>
+          <div class="font-bold">Nome da penência de manifestação</div>
           <div class="text-sm">Apresentação da tela de visualização do projeto.</div>
         </div>
       </div>
@@ -110,121 +106,211 @@ const Dashboard = ({ selectedItems, setSelectedItems }) => {
     { id: 5, icon:'info-circle', title: "Descrição do Processo",
       content: `
       <div class="flex flex-col gap-2">
-        <div class="">
-          <div class="">
-            <div class=""></div>
-            <div class=""></div>
-          </div>
-          <div class=""></div>
-        </div>
+        <div class="text-xs">Prioridade do Processo</div>
+        <div class="text-sm font-semibold">Sem prioridade</div>
+        <div class="text-xs">Indicador se Existe Providência Aberta</div>
+        <div class="text-sm font-semibold"><div class=" bg-[#E3F5E1] px-2 py-1 rounded-sm w-fit">Sim</div></div>
+        <div class="text-xs">Providência(s)</div>
+        <div class="text-sm font-semibold">DESISTÊNCIA</div>
+        <div class="text-xs">Data(s) Prazo(s) de Providência(s)</div>
+        <div class="text-sm font-semibold">30/03/2024</div>
+        <div class="text-xs">Nome(s) Responsável(is) de Abertura da(s) Providência(s)</div>
+        <div class="text-sm font-semibold">FLORISVALDO FELÍCIO DE CARVALHO</div>
+        <div class="text-xs">Alerta de Providência com Prazo</div>
+        <div class="text-sm font-semibold"><div class=" bg-[#E3F5E1] px-2 py-1 rounded-sm w-fit">Sim</div></div>
+        <div class="text-xs">Alerta de Providência com Prazo Expirado</div>
+        <div class="text-sm font-semibold"><div class="bg-[#FFF3F2] px-2 py-1 rounded-sm w-fit">Não</div></div>
+        <div class="text-xs">Nome(s) Destinatário(s) da(s) Providência(s)</div>
+        <div class="text-sm font-semibold">DRF/SALVADOR/BA-FLORISVALDO FELICIO DE CARVALHO</div>
       </div>
       ` },
     { id: 6, icon:'file-invoice-dollar', title: "Sobre a Inscrição na Dívida Ativa da União",
       content: `
       <div class="flex flex-col gap-2">
-        <div class="">
-          <div class="">
-            <div class=""></div>
-            <div class=""></div>
-          </div>
-          <div class=""></div>
-        </div>
+        <div class="text-xs">Prioridade do Processo</div>
+        <div class="text-sm font-semibold">Sem prioridade</div>
+        <div class="text-xs">Indicador se Existe Providência Aberta</div>
+        <div class="text-sm font-semibold"><div class=" bg-[#E3F5E1] px-2 py-1 rounded-sm w-fit">Sim</div></div>
+        <div class="text-xs">Providência(s)</div>
+        <div class="text-sm font-semibold">DESISTÊNCIA</div>
+        <div class="text-xs">Data(s) Prazo(s) de Providência(s)</div>
+        <div class="text-sm font-semibold">30/03/2024</div>
+        <div class="text-xs">Nome(s) Responsável(is) de Abertura da(s) Providência(s)</div>
+        <div class="text-sm font-semibold">FLORISVALDO FELÍCIO DE CARVALHO</div>
+        <div class="text-xs">Alerta de Providência com Prazo</div>
+        <div class="text-sm font-semibold"><div class=" bg-[#E3F5E1] px-2 py-1 rounded-sm w-fit">Sim</div></div>
+        <div class="text-xs">Alerta de Providência com Prazo Expirado</div>
+        <div class="text-sm font-semibold"><div class="bg-[#FFF3F2] px-2 py-1 rounded-sm w-fit">Não</div></div>
+        <div class="text-xs">Nome(s) Destinatário(s) da(s) Providência(s)</div>
+        <div class="text-sm font-semibold">DRF/SALVADOR/BA-FLORISVALDO FELICIO DE CARVALHO</div>
       </div>
       ` },
     { id: 7, icon:'paper-plane', title: "Sobre o Controle / Fluxo do Processo",
       content: `
       <div class="flex flex-col gap-2">
-        <div class="">
-          <div class="">
-            <div class=""></div>
-            <div class=""></div>
-          </div>
-          <div class=""></div>
-        </div>
+        <div class="text-xs">Prioridade do Processo</div>
+        <div class="text-sm font-semibold">Sem prioridade</div>
+        <div class="text-xs">Indicador se Existe Providência Aberta</div>
+        <div class="text-sm font-semibold"><div class=" bg-[#E3F5E1] px-2 py-1 rounded-sm w-fit">Sim</div></div>
+        <div class="text-xs">Providência(s)</div>
+        <div class="text-sm font-semibold">DESISTÊNCIA</div>
+        <div class="text-xs">Data(s) Prazo(s) de Providência(s)</div>
+        <div class="text-sm font-semibold">30/03/2024</div>
+        <div class="text-xs">Nome(s) Responsável(is) de Abertura da(s) Providência(s)</div>
+        <div class="text-sm font-semibold">FLORISVALDO FELÍCIO DE CARVALHO</div>
+        <div class="text-xs">Alerta de Providência com Prazo</div>
+        <div class="text-sm font-semibold"><div class=" bg-[#E3F5E1] px-2 py-1 rounded-sm w-fit">Sim</div></div>
+        <div class="text-xs">Alerta de Providência com Prazo Expirado</div>
+        <div class="text-sm font-semibold"><div class="bg-[#FFF3F2] px-2 py-1 rounded-sm w-fit">Não</div></div>
+        <div class="text-xs">Nome(s) Destinatário(s) da(s) Providência(s)</div>
+        <div class="text-sm font-semibold">DRF/SALVADOR/BA-FLORISVALDO FELICIO DE CARVALHO</div>
       </div>
       ` },
     { id: 8, icon:'clipboard-check', title: "Sobre o Estado do Processo",
       content: `
       <div class="flex flex-col gap-2">
-        <div class="">
-          <div class="">
-            <div class=""></div>
-            <div class=""></div>
-          </div>
-          <div class=""></div>
-        </div>
+        <div class="text-xs">Prioridade do Processo</div>
+        <div class="text-sm font-semibold">Sem prioridade</div>
+        <div class="text-xs">Indicador se Existe Providência Aberta</div>
+        <div class="text-sm font-semibold"><div class=" bg-[#E3F5E1] px-2 py-1 rounded-sm w-fit">Sim</div></div>
+        <div class="text-xs">Providência(s)</div>
+        <div class="text-sm font-semibold">DESISTÊNCIA</div>
+        <div class="text-xs">Data(s) Prazo(s) de Providência(s)</div>
+        <div class="text-sm font-semibold">30/03/2024</div>
+        <div class="text-xs">Nome(s) Responsável(is) de Abertura da(s) Providência(s)</div>
+        <div class="text-sm font-semibold">FLORISVALDO FELÍCIO DE CARVALHO</div>
+        <div class="text-xs">Alerta de Providência com Prazo</div>
+        <div class="text-sm font-semibold"><div class=" bg-[#E3F5E1] px-2 py-1 rounded-sm w-fit">Sim</div></div>
+        <div class="text-xs">Alerta de Providência com Prazo Expirado</div>
+        <div class="text-sm font-semibold"><div class="bg-[#FFF3F2] px-2 py-1 rounded-sm w-fit">Não</div></div>
+        <div class="text-xs">Nome(s) Destinatário(s) da(s) Providência(s)</div>
+        <div class="text-sm font-semibold">DRF/SALVADOR/BA-FLORISVALDO FELICIO DE CARVALHO</div>
       </div>
       ` },
     { id: 9, icon:'eye', title: "Sobre o Interessado",
       content: `
       <div class="flex flex-col gap-2">
-        <div class="">
-          <div class="">
-            <div class=""></div>
-            <div class=""></div>
-          </div>
-          <div class=""></div>
-        </div>
+        <div class="text-xs">Prioridade do Processo</div>
+        <div class="text-sm font-semibold">Sem prioridade</div>
+        <div class="text-xs">Indicador se Existe Providência Aberta</div>
+        <div class="text-sm font-semibold"><div class=" bg-[#E3F5E1] px-2 py-1 rounded-sm w-fit">Sim</div></div>
+        <div class="text-xs">Providência(s)</div>
+        <div class="text-sm font-semibold">DESISTÊNCIA</div>
+        <div class="text-xs">Data(s) Prazo(s) de Providência(s)</div>
+        <div class="text-sm font-semibold">30/03/2024</div>
+        <div class="text-xs">Nome(s) Responsável(is) de Abertura da(s) Providência(s)</div>
+        <div class="text-sm font-semibold">FLORISVALDO FELÍCIO DE CARVALHO</div>
+        <div class="text-xs">Alerta de Providência com Prazo</div>
+        <div class="text-sm font-semibold"><div class=" bg-[#E3F5E1] px-2 py-1 rounded-sm w-fit">Sim</div></div>
+        <div class="text-xs">Alerta de Providência com Prazo Expirado</div>
+        <div class="text-sm font-semibold"><div class="bg-[#FFF3F2] px-2 py-1 rounded-sm w-fit">Não</div></div>
+        <div class="text-xs">Nome(s) Destinatário(s) da(s) Providência(s)</div>
+        <div class="text-sm font-semibold">DRF/SALVADOR/BA-FLORISVALDO FELICIO DE CARVALHO</div>
       </div>
       ` },
     { id: 10, icon:'balance-scale-right', title: "Sobre o Julgamento",
       content: `
       <div class="flex flex-col gap-2">
-        <div class="">
-          <div class="">
-            <div class=""></div>
-            <div class=""></div>
-          </div>
-          <div class=""></div>
-        </div>
+        <div class="text-xs">Prioridade do Processo</div>
+        <div class="text-sm font-semibold">Sem prioridade</div>
+        <div class="text-xs">Indicador se Existe Providência Aberta</div>
+        <div class="text-sm font-semibold"><div class=" bg-[#E3F5E1] px-2 py-1 rounded-sm w-fit">Sim</div></div>
+        <div class="text-xs">Providência(s)</div>
+        <div class="text-sm font-semibold">DESISTÊNCIA</div>
+        <div class="text-xs">Data(s) Prazo(s) de Providência(s)</div>
+        <div class="text-sm font-semibold">30/03/2024</div>
+        <div class="text-xs">Nome(s) Responsável(is) de Abertura da(s) Providência(s)</div>
+        <div class="text-sm font-semibold">FLORISVALDO FELÍCIO DE CARVALHO</div>
+        <div class="text-xs">Alerta de Providência com Prazo</div>
+        <div class="text-sm font-semibold"><div class=" bg-[#E3F5E1] px-2 py-1 rounded-sm w-fit">Sim</div></div>
+        <div class="text-xs">Alerta de Providência com Prazo Expirado</div>
+        <div class="text-sm font-semibold"><div class="bg-[#FFF3F2] px-2 py-1 rounded-sm w-fit">Não</div></div>
+        <div class="text-xs">Nome(s) Destinatário(s) da(s) Providência(s)</div>
+        <div class="text-sm font-semibold">DRF/SALVADOR/BA-FLORISVALDO FELICIO DE CARVALHO</div>
       </div>
       ` },
     { id: 11, icon:'list-alt', title: "Sobre o Pedido Existente no Processo",
       content: `
       <div class="flex flex-col gap-2">
-        <div class="">
-          <div class="">
-            <div class=""></div>
-            <div class=""></div>
-          </div>
-          <div class=""></div>
-        </div>
+        <div class="text-xs">Prioridade do Processo</div>
+        <div class="text-sm font-semibold">Sem prioridade</div>
+        <div class="text-xs">Indicador se Existe Providência Aberta</div>
+        <div class="text-sm font-semibold"><div class=" bg-[#E3F5E1] px-2 py-1 rounded-sm w-fit">Sim</div></div>
+        <div class="text-xs">Providência(s)</div>
+        <div class="text-sm font-semibold">DESISTÊNCIA</div>
+        <div class="text-xs">Data(s) Prazo(s) de Providência(s)</div>
+        <div class="text-sm font-semibold">30/03/2024</div>
+        <div class="text-xs">Nome(s) Responsável(is) de Abertura da(s) Providência(s)</div>
+        <div class="text-sm font-semibold">FLORISVALDO FELÍCIO DE CARVALHO</div>
+        <div class="text-xs">Alerta de Providência com Prazo</div>
+        <div class="text-sm font-semibold"><div class=" bg-[#E3F5E1] px-2 py-1 rounded-sm w-fit">Sim</div></div>
+        <div class="text-xs">Alerta de Providência com Prazo Expirado</div>
+        <div class="text-sm font-semibold"><div class="bg-[#FFF3F2] px-2 py-1 rounded-sm w-fit">Não</div></div>
+        <div class="text-xs">Nome(s) Destinatário(s) da(s) Providência(s)</div>
+        <div class="text-sm font-semibold">DRF/SALVADOR/BA-FLORISVALDO FELICIO DE CARVALHO</div>
       </div>
       ` },
     { id: 12, icon:'user-tie', title: "Sobre o Responsável",
       content: `
       <div class="flex flex-col gap-2">
-        <div class="">
-          <div class="">
-            <div class=""></div>
-            <div class=""></div>
-          </div>
-          <div class=""></div>
-        </div>
+        <div class="text-xs">Prioridade do Processo</div>
+        <div class="text-sm font-semibold">Sem prioridade</div>
+        <div class="text-xs">Indicador se Existe Providência Aberta</div>
+        <div class="text-sm font-semibold"><div class=" bg-[#E3F5E1] px-2 py-1 rounded-sm w-fit">Sim</div></div>
+        <div class="text-xs">Providência(s)</div>
+        <div class="text-sm font-semibold">DESISTÊNCIA</div>
+        <div class="text-xs">Data(s) Prazo(s) de Providência(s)</div>
+        <div class="text-sm font-semibold">30/03/2024</div>
+        <div class="text-xs">Nome(s) Responsável(is) de Abertura da(s) Providência(s)</div>
+        <div class="text-sm font-semibold">FLORISVALDO FELÍCIO DE CARVALHO</div>
+        <div class="text-xs">Alerta de Providência com Prazo</div>
+        <div class="text-sm font-semibold"><div class=" bg-[#E3F5E1] px-2 py-1 rounded-sm w-fit">Sim</div></div>
+        <div class="text-xs">Alerta de Providência com Prazo Expirado</div>
+        <div class="text-sm font-semibold"><div class="bg-[#FFF3F2] px-2 py-1 rounded-sm w-fit">Não</div></div>
+        <div class="text-xs">Nome(s) Destinatário(s) da(s) Providência(s)</div>
+        <div class="text-sm font-semibold">DRF/SALVADOR/BA-FLORISVALDO FELICIO DE CARVALHO</div>
       </div>
       ` },
     { id: 13, icon:'check-double', title: "Sobre o Trabalho com o Processo",
       content: `
       <div class="flex flex-col gap-2">
-        <div class="">
-          <div class="">
-            <div class=""></div>
-            <div class=""></div>
-          </div>
-          <div class=""></div>
-        </div>
+        <div class="text-xs">Prioridade do Processo</div>
+        <div class="text-sm font-semibold">Sem prioridade</div>
+        <div class="text-xs">Indicador se Existe Providência Aberta</div>
+        <div class="text-sm font-semibold"><div class=" bg-[#E3F5E1] px-2 py-1 rounded-sm w-fit">Sim</div></div>
+        <div class="text-xs">Providência(s)</div>
+        <div class="text-sm font-semibold">DESISTÊNCIA</div>
+        <div class="text-xs">Data(s) Prazo(s) de Providência(s)</div>
+        <div class="text-sm font-semibold">30/03/2024</div>
+        <div class="text-xs">Nome(s) Responsável(is) de Abertura da(s) Providência(s)</div>
+        <div class="text-sm font-semibold">FLORISVALDO FELÍCIO DE CARVALHO</div>
+        <div class="text-xs">Alerta de Providência com Prazo</div>
+        <div class="text-sm font-semibold"><div class=" bg-[#E3F5E1] px-2 py-1 rounded-sm w-fit">Sim</div></div>
+        <div class="text-xs">Alerta de Providência com Prazo Expirado</div>
+        <div class="text-sm font-semibold"><div class="bg-[#FFF3F2] px-2 py-1 rounded-sm w-fit">Não</div></div>
+        <div class="text-xs">Nome(s) Destinatário(s) da(s) Providência(s)</div>
+        <div class="text-sm font-semibold">DRF/SALVADOR/BA-FLORISVALDO FELICIO DE CARVALHO</div>
       </div>
       ` },
     { id: 14, icon:'search-dollar', title: "Sobre os Valores",
       content: `
       <div class="flex flex-col gap-2">
-        <div class="">
-          <div class="">
-            <div class=""></div>
-            <div class=""></div>
-          </div>
-          <div class=""></div>
-        </div>
+        <div class="text-xs">Prioridade do Processo</div>
+        <div class="text-sm font-semibold">Sem prioridade</div>
+        <div class="text-xs">Indicador se Existe Providência Aberta</div>
+        <div class="text-sm font-semibold"><div class=" bg-[#E3F5E1] px-2 py-1 rounded-sm w-fit">Sim</div></div>
+        <div class="text-xs">Providência(s)</div>
+        <div class="text-sm font-semibold">DESISTÊNCIA</div>
+        <div class="text-xs">Data(s) Prazo(s) de Providência(s)</div>
+        <div class="text-sm font-semibold">30/03/2024</div>
+        <div class="text-xs">Nome(s) Responsável(is) de Abertura da(s) Providência(s)</div>
+        <div class="text-sm font-semibold">FLORISVALDO FELÍCIO DE CARVALHO</div>
+        <div class="text-xs">Alerta de Providência com Prazo</div>
+        <div class="text-sm font-semibold"><div class=" bg-[#E3F5E1] px-2 py-1 rounded-sm w-fit">Sim</div></div>
+        <div class="text-xs">Alerta de Providência com Prazo Expirado</div>
+        <div class="text-sm font-semibold"><div class="bg-[#FFF3F2] px-2 py-1 rounded-sm w-fit">Não</div></div>
+        <div class="text-xs">Nome(s) Destinatário(s) da(s) Providência(s)</div>
+        <div class="text-sm font-semibold">DRF/SALVADOR/BA-FLORISVALDO FELICIO DE CARVALHO</div>
       </div>
       ` },
   ];
