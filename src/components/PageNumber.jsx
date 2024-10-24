@@ -16,7 +16,7 @@ const PageNumber = () => {
     };
   
     return (
-      <div className="inline-block   cursor-pointer h-8">
+      <div className="inline-block cursor-pointer">
         {isEditing ? (
           <input
             type="text"
@@ -24,7 +24,7 @@ const PageNumber = () => {
             onChange={(e) => setPageNumber(e.target.value)}
             onBlur={handleBlur}
             onKeyDown={handleKeyDown}
-            className="w-12 text-center text-[#3D4551] rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-12 h-8 text-center text-[#3D4551] rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             autoFocus
           />
         ) : (

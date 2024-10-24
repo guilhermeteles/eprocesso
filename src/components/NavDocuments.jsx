@@ -1,17 +1,13 @@
 import { useState } from 'react';
 import OverlayMenu from './OverlayMenu'; // Ensure the path is correct
-import { IconButton, OutlinedIconButton } from './IconButton'; // Import the IconButton component
+import { IconButton } from './IconButton'; // Import the IconButton component
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import PageNumber from './PageNumber'
 
 const NavDocuments = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [group3Items, setGroup3Items] = useState([]); // State to manage Group 3 items
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  const [setGroup3Items] = useState([]); // State to manage Group 3 items
 
   const closeMenu = () => {
     setIsMenuOpen(false);
@@ -29,13 +25,13 @@ const NavDocuments = () => {
 
   return (
     <>
-      <nav className="pt-3 ps-5 pe-3 absolute bottom-0 self-center bg-[#0050D8] shadow-md w-fit gap-0 sm:gap-4 flex sm:flex-row flex-col rounded-t-lg">
+      <nav className="pt-3 pb-2 ps-5 pe-3 absolute bottom-0 self-center bg-[#0050D8] shadow-md w-fit gap-0 sm:gap-4 flex sm:flex-row flex-col rounded-t-lg">
         
         {/* Group 0 */}
         <div className="flex flex-col text-white mb-1">
           {/* <label className="text-xs my-1">Páginas</label> */}
           <div className='flex items-center'>
-          <div id="page-number" className=" inline-block py-1 px-3 font-medium transition duration-300 ease-in-out hover:bg-gray-200 rounded-sm hover:text-[#3D4551] cursor-pointer"><PageNumber/></div>
+          <div id="page-number" className=" inline-block py-1 px-3 font-medium transition duration-300 ease-in-out rounded-sm hover:text-[#3D4551] cursor-pointer"><PageNumber/></div>
           </div>
           
 
