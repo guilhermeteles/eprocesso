@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import * as pdfjsLib from 'pdfjs-dist';
+import * as pdfjsLib from 'pdfjs-dist/legacy/build/pdf'; // Use legacy build for better compatibility
 import PropTypes from 'prop-types';
 import Aside from '../components/Aside';
 import Nav from '../components/Nav';
@@ -7,7 +7,7 @@ import NavDocuments from '../components/NavDocuments';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 // Initialize PDF.js worker
-pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjsLib.version}/pdf.worker.min.js`;
+pdfjsLib.GlobalWorkerOptions.workerSrc = '/pdfjs-dist/pdf.worker.min.mjs';
 
 const DEFAULT_PDF = '/assets/pdfs/exemplo.pdf';
 
@@ -42,7 +42,7 @@ const PDFViewer = ({ fileName = DEFAULT_PDF }) => {
 
             const renderContext = {
               canvasContext: context,
-              viewport: viewport
+              viewport: viewport,
             };
 
             await page.render(renderContext).promise;
@@ -102,7 +102,7 @@ const PDFViewer = ({ fileName = DEFAULT_PDF }) => {
 };
 
 PDFViewer.propTypes = {
-  fileName: PropTypes.string
+  fileName: PropTypes.string,
 };
 
 const App = () => {

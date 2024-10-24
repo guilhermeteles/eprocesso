@@ -42,7 +42,7 @@ const IndicatorsManager = ({ selectedIndicators, setselectedIndicators }) => {
   return (
     <div className='mt-2'>
       <div
-        className="text-xs flex justify-end items-center text-[#919191] cursor-pointer"
+        className="text-xs flex justify-end items-center text-[#919191] cursor-pointer mb-1"
         onClick={toggleModal}
       >
         Gerenciar Indicadores <i className="ms-1 fa-solid fa-cog"></i>
