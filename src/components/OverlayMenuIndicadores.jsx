@@ -12,7 +12,7 @@ const IndicatorsManager = ({ selectedIndicators, setselectedIndicators }) => {
 
       for (const group of groupsData) {
         for (const item of group.items) {
-          if (itemCount < 8) {
+          if (itemCount < 4) {
             initialselectedIndicators.push(item.id);
             itemCount++;
           }
