@@ -3,7 +3,7 @@ import { useState } from 'react';
 const Dashboard = ({ selectedItems, setSelectedItems }) => {
   const [draggedItem, setDraggedItem] = useState(null);
   const [draggedOverItem, setDraggedOverItem] = useState(null);
-  
+
 
   const cardsData = [
     { 
@@ -15,7 +15,7 @@ const Dashboard = ({ selectedItems, setSelectedItems }) => {
           <div class="break-words bg-[#FBFCFD] p-4 rounded-md">
               <div class="break-words flex justify-between">
                   <div class="break-words text-xs bg-[#FFF3F2] px-2 py-1 rounded-sm">Pauta em suplementação</div>
-                  <div class="break-words text-sm">Data: 11/08/2024</div>
+                  <div class="break-words text-sm">11/08/2024</div>
               </div>
               <div class="break-words mt-2">
                   <div class="break-words font-bold">Reunião com o Cliente</div>
@@ -25,7 +25,7 @@ const Dashboard = ({ selectedItems, setSelectedItems }) => {
           <div class="break-words bg-[#FBFCFD] p-4 rounded-md">
               <div class="break-words flex justify-between">
                   <div class="break-words text-xs bg-[#E3F5E1] px-2 py-1 rounded-sm">Agendada</div>
-                  <div class="break-words text-sm">Data: 11/08/2024</div>
+                  <div class="break-words text-sm">11/08/2024</div>
               </div>
               <div class="break-words mt-2">
                   <div class="break-words font-bold">Reunião com o Cliente</div>
@@ -35,7 +35,7 @@ const Dashboard = ({ selectedItems, setSelectedItems }) => {
           <div class="break-words bg-[#FBFCFD] p-4 rounded-md">
               <div class="break-words flex justify-between">
                   <div class="break-words text-xs bg-[#FFF5C2] px-2 py-1 rounded-sm">Em agendamento</div>
-                  <div class="break-words text-sm">Data prevista: 11/08/2024</div>
+                  <div class="break-words text-sm">11/08/2024</div>
               </div>
               <div class="break-words mt-2">
                   <div class="break-words font-bold">Reunião com a Equipe Técnica</div>
@@ -662,16 +662,17 @@ const Dashboard = ({ selectedItems, setSelectedItems }) => {
                 draggedItem === index ? 'opacity-50' : ''
               } ${draggedOverItem === index ? 'border-2 border-blue-500' : ''}`}
             >
-              <div className="p-4  text-[#3D4551]">
-                <div className="flex justify-between items-start mb-4">
+              <div className="p-6 text-[#3D4551]">
+                <div className="flex justify-between items-center mb-4">
                   <div className='flex'>
                   <i className={`fas fa-${card.icon} me-2 mt-1.5`}></i>
-                  <h2 className="text-lg leading-6 font-semibold ">{card.title}</h2>
+                  <h2 className="text-lg leading-6 font-semibold">{card.title}</h2>
                   </div>
                   
                   
-                  <div className="cursor-move p-2 rounded-lg hover:bg-gray-100 flex items-center">
-                    <i className="text-gray-500 fa-solid fa-grip-vertical"></i>
+                  <div className="cursor-grab p-2 rounded-lg hover:border-gray-200  border-white border h-fit flex items-center">
+                    {/* <span className="absolute tooltiptext">Arrastar</span> */}
+                    <i className="text-gray-200 fa-solid fa-grip-lines rotate-45"></i>
                   </div>
                 </div>
                 <p className="text-gray-600"><div dangerouslySetInnerHTML={{ __html: card.content }} /></p>

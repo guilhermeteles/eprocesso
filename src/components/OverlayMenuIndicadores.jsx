@@ -52,10 +52,10 @@ const IndicatorsManager = ({ selectedIndicators, setselectedIndicators }) => {
         <div onClick={toggleModal} className="fixed inset-0 flex flex-col items-end justify-center z-50 bg-black bg-opacity-50">
           <div onClick={(e) => e.stopPropagation()} className="bg-white p-6 shadow-lg h-svh overflow-y-auto w-96">
             <div className='flex justify-between items-center relative'>
-              <h2 className="text-sm px-4 py-2 rounded-md bg-[#92D9BB] w-full mb-2 font-semibold text-[#3D4551]">
+              <h2 className="text-lg px-4 py-2 rounded-md border border-2 border-[#92D9BB] w-full mb-2 font-semibold text-[#3D4551] bg-[#F5F6F7]">
                 Gerenciar Indicadores
               </h2>
-              <button onClick={toggleModal} className="absolute right-[0px] top-[2px] text-white font-bold w-8 h-8">
+              <button onClick={toggleModal} className="absolute right-[3px] top-[7.5px] text-[#3D4551] font-bold w-8 h-8">
                 <i className="fas fa-xmark"></i>
               </button>
             </div>
@@ -64,7 +64,7 @@ const IndicatorsManager = ({ selectedIndicators, setselectedIndicators }) => {
               {groupsData.map((group, groupIndex) => (
                 <div key={`${group.color}-${groupIndex}`} className="flex flex-col gap-2">
                   {group.title && (
-                    <h2 className="my-4 text-sm px-4 py-2 rounded-md font-semibold text-[#3D4551] mb-2" style={{ backgroundColor: group.color }}>
+                    <h2 className="my-4 text-lg px-4 py-2 rounded-md font-semibold text-[#3D4551] mb-2 border border-2 bg-[#F5F6F7]" style={{ borderColor: group.color }}>
                       {group.title}
                     </h2>
                   )}
@@ -74,16 +74,16 @@ const IndicatorsManager = ({ selectedIndicators, setselectedIndicators }) => {
                         onClick={() => toggleButtonState(item.id)}
                         style={{
                           border: `2px solid ${group.color}`,
-                          color: selectedIndicators.includes(item.id) ? 'white' : '#3D4551',
+                          color: selectedIndicators.includes(item.id) ? 'white' : '#92D9BB',
                           backgroundColor: selectedIndicators.includes(item.id) ? group.color : 'transparent',
                           borderRadius: '0.25rem',
                         }}
                         className="flex items-center justify-center h-8 w-8"
                       >
                         {selectedIndicators.includes(item.id) ? (
-                          <i className="fas fa-eye-slash"></i>
+                          <i className="fas fa-check"></i>
                         ) : (
-                          <i className="fas fa-eye"></i>
+                          <i className="fas fa-minus"></i>
                         )}
                       </button>
                       <span>{item.title}</span>

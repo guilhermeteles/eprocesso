@@ -18,8 +18,8 @@ import {
   
   export const groupsData = [
     {
-      title: "Interessado",
-      color: "#C7EFE2",
+      title: "Indicadores do Interessado",
+      color: "#92D9BB",
       items: [
         { id: 1, color:"#EDF5FF", icon: faNotEqual, title: "Contribuinte Diferenciado", status:"Diferenciado" },
         { id: 2, color:"#FFF5C2", icon: faUserTag, title: "Contribuinte Especial", status:"Parcialmente" },
@@ -30,8 +30,8 @@ import {
       ],
     },
     {
-      title: "Processo",
-      color: "#C7EFE2",
+      title: "Indicadores do Processo",
+      color: "#92D9BB",
       items: [
         { id: 7, color:"#EDF5FF", icon: faLaptop, title: "Cadastro Efetivado no SIEF Processos", status:"SIEF" },
         { id: 8, color:"#FFF5C2", icon: faThList, title: "Contencioso de Baixa Complexidade", status:"Alta complexidade" },

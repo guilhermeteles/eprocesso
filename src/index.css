@@ -33,11 +33,9 @@
   }
 
   .draggable-card {
-    break-inside: avoid-column; 
+    /* break-inside: avoid-column;  */
     margin-bottom: 1.5rem; /* Tailwind's mb-6 */
     display: inline-block; /* Ensures proper layout of items */
     width: 100%;
   }
 }
-
-  
