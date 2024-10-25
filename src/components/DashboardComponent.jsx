@@ -99,15 +99,15 @@ const Dashboard = ({ selectedItems, setSelectedItems }) => {
       <div class="break-words flex flex-col gap-2">
           <div class="break-words bg-[#F8DFE2] h-12 rounded-md flex justify-between items-center px-4">
               <div class="break-words font-semibold">Usuário</div>
-              <div class="break-words font-black">20 dias</div>
+              <div class="break-words font-bold">20 dias</div>
           </div>
           <div class="break-words bg-[#FEE685] h-12 rounded-md flex justify-between items-center px-4">
               <div class="break-words font-semibold">Atividade</div>
-              <div class="break-words font-black">40 dias</div>
+              <div class="break-words font-bold">40 dias</div>
           </div>
           <div class="break-words bg-[#D4E5FF] h-12 rounded-md flex justify-between items-center px-4">
               <div class="break-words font-semibold">Equipe</div>
-              <div class="break-words font-black">45 dias</div>
+              <div class="break-words font-bold">45 dias</div>
           </div>
       </div>
       ` 
