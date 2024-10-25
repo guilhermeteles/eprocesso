@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
+import { faMagnifyingGlass, faTimes, faMinus } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 // Sample data structure for groups and items
 const groupsData = [
@@ -76,9 +78,6 @@ const groupsData = [
   },
 ];
 
-
-
-
 const ToggleButton = ({ isToggled, onToggle, color, letter }) => {
   const filledStyle = {
     backgroundColor: color,
@@ -93,19 +92,18 @@ const ToggleButton = ({ isToggled, onToggle, color, letter }) => {
     <button
       onClick={onToggle}
       style={isToggled ? filledStyle : outlinedStyle}
-      className="w-8 h-8 rounded flex items-center justify-center shrink-0 text-sm" // Fixed size
+      className="w-8 h-8 rounded flex items-center justify-center shrink-0 text-sm"
     >
-      {letter}
+      {isToggled ? letter : <FontAwesomeIcon icon={faMinus} />} {/* Conditional rendering */}
     </button>
   );
 };
 
-// PropTypes for ToggleButton
 ToggleButton.propTypes = {
   isToggled: PropTypes.bool.isRequired,
   onToggle: PropTypes.func.isRequired,
   color: PropTypes.string.isRequired,
-  letter: PropTypes.string.isRequired, // Added letter prop
+  letter: PropTypes.string.isRequired,
 };
 
 const OverlayMenu = ({ isOpen, onClose, onAddItemToGroup3 }) => {
@@ -118,6 +116,8 @@ const OverlayMenu = ({ isOpen, onClose, onAddItemToGroup3 }) => {
     }, {})
   );
 
+  const [searchTerm, setSearchTerm] = useState(''); // Search term state
+
   const handleToggle = (id, title, color, letter) => {
     const newToggleState = !toggles[id];
     setToggles((prevToggles) => ({
@@ -125,68 +125,104 @@ const OverlayMenu = ({ isOpen, onClose, onAddItemToGroup3 }) => {
       [id]: newToggleState,
     }));
 
-    // Add or remove item to/from Group 3 based on toggle state
     if (newToggleState) {
-      onAddItemToGroup3({ color, letter, name: title }); // Pass color and letter along with name
+      onAddItemToGroup3({ color, letter, name: title });
     } else {
-      // If toggled off, remove the item from group3Items
-      onAddItemToGroup3({ color, letter, name: title }, true); // Pass `true` to indicate removal
+      onAddItemToGroup3({ color, letter, name: title }, true);
     }
   };
 
-  if (!isOpen) return null; // Don't render if not open
+  const handleSearchChange = (e) => {
+    setSearchTerm(e.target.value); // Update search term state as user types
+  };
+
+  const handleClearSearch = () => {
+    setSearchTerm(''); // Clear the search input
+  };
+
+  const filteredGroups = groupsData.map(group => ({
+    ...group,
+    items: group.items.filter(item =>
+      item.title.toLowerCase().includes(searchTerm.toLowerCase())
+    ),
+  }));
+
+  if (!isOpen) return null;
 
   return (
     <div
-    onClick={onClose}
-      className={`fixed inset-0 bg-black bg-opacity-50 transition-opacity ${
+      onClick={onClose}
+      className={`fixed inset-0 bg-black bg-opacity-50 transition-opacity z-50 ${
         isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
       }`}
     >
       <div
-      onClick={(e) => e.stopPropagation()}
-      className={`fixed right-0 top-0 h-full w-96 bg-white shadow-lg transform transition-transform ${
-        isOpen ? 'translate-x-0' : 'translate-x-full'
-      }`}
-    >
-        <button
-          className="absolute top-4 right-4 text-gray-600"
-          onClick={onClose}
-        >
-          &times;
-        </button>
-
-        {/* Fixed Search Input */}
-        <div className="p-4">
-          <input
-            type="text"
-            placeholder="O que você procura?"
-            className="w-full p-2 border rounded"
-          />
+        onClick={(e) => e.stopPropagation()}
+        className={`fixed right-0 top-0 h-full w-96 bg-white shadow-lg transform transition-transform ${
+          isOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}
+      >
+        <div className='flex  pl-7 pr-5 pt-6 justify-between items-center'>
+        <h2 className="text-lg rounded-md w-full font-semibold text-[#3D4551]">
+                Favoritar ou Visitar Links
+              </h2>
+              <button onClick={onClose} className="hover:text-[#3D4551] text-gray-300 font-bold w-8 h-8">
+                <i className="fas fa-xmark"></i>
+              </button>
+        </div>
+        
+        {/* Search Area */}
+        <div className="p-6 border-b-1 border-b">
+          <div className="relative w-full">
+            <input
+              type="text"
+              placeholder="O que você procura?"
+              value={searchTerm}
+              onChange={handleSearchChange}
+              className="border border-1 text-sm w-full px-3 py-2 pr-10 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-[#F7F9FA]"
+            />
+            <div className="absolute inset-y-0 right-0 flex items-center pr-3">
+              {searchTerm ? (
+                <FontAwesomeIcon
+                  icon={faTimes} // "X" mark when search term is not empty
+                  className="cursor-pointer text-md"
+                  onClick={handleClearSearch} // Clear search term when clicked
+                />
+              ) : (
+                <FontAwesomeIcon
+                  icon={faMagnifyingGlass} // Magnifying glass when search term is empty
+                  className="cursor-pointer text-md"
+                />
+              )}
+            </div>
+          </div>
         </div>
 
         {/* Scrollable Content Area */}
         <div className="flex-grow overflow-y-auto p-6" style={{ maxHeight: 'calc(100% - 64px)' }}>
-          {groupsData.map((group) => (
-            <div key={group.title} className="mb-4">
-              <h2 className="text-sm px-4 py-2 rounded-md" style={{ backgroundColor: group.color }}>
-                {group.title}
-              </h2>
-              <ul>
-                {group.items.map((item) => (
-                  <li key={item.id} className="flex items-center py-2">
-                    <ToggleButton
-                      isToggled={toggles[item.id]}
-                      onToggle={() => handleToggle(item.id, item.title, group.color, item.letter)} // Pass color and letter here
-                      color={group.color}
-                      letter={item.letter} // Pass the letter prop
-                    />
-                    <span className="ml-2 text-sm">{item.title}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          {filteredGroups
+            .filter(group => group.items.length > 0) // Only show groups with items
+            .map((group) => (
+              <div key={group.title} className="mb-4">
+                <h2 className="text-sm px-4 py-2 rounded-md" style={{ backgroundColor: group.color }}>
+                  {group.title}
+                </h2>
+                <ul>
+                  {group.items.map((item) => (
+                    <li key={item.id} className="flex items-center py-2 ">
+                      <ToggleButton
+                        isToggled={toggles[item.id]}
+                        onToggle={() => handleToggle(item.id, item.title, group.color, item.letter)}
+                        color={group.color}
+                        letter={item.letter}
+
+                      />
+                      <a className="ml-2 text-sm" href="#">{item.title}</a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
         </div>
       </div>
     </div>

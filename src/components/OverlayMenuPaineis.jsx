@@ -84,17 +84,17 @@ const PanelManager = ({ selectedItems, setSelectedItems }) => {
           
 
             <div className='flex justify-between items-center relative'>
-              <h2 className="mb-4 text-lg px-4 py-2 rounded-md border-2 border-[#BBC8F5] w-full mb-2 font-semibold text-[#3D4551] bg-[#F5F6F7]">
+              <h2 className="mb-4 text-md px-4 py-2 rounded-md border-2 border-[#BBC8F5] w-full mb-2 font-semibold text-[#3D4551] bg-[#F5F6F7]">
                 Gerenciar Painéis
               </h2>
-              <button onClick={toggleModal} className="absolute right-[3px] top-[7.5px] text-[#3D4551] font-bold w-8 h-8"> <i className="fas fa-xmark"></i></button>
+              <button onClick={toggleModal} className="absolute right-[3px] top-[5px] text-[#3D4551] font-bold w-8 h-8"> <i className="fas fa-xmark"></i></button>
             </div>
 
             <div>
               {groupsData.map((group, groupIndex) => (
                 <div key={`${group.color}-${groupIndex}`} className="flex flex-col gap-2">
                   {group.title && (
-                    <h2 className="my-4 text-lg px-4 py-2 rounded-md bg-[#F5F6F7] border border-2 font-semibold" style={{ borderColor: group.color }}>
+                    <h2 className="my-4 text-md px-4 py-2 rounded-md bg-[#F5F6F7] border border-2 font-semibold" style={{ borderColor: group.color }}>
                       {group.title}
                     </h2>
                   )}
