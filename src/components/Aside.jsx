@@ -141,7 +141,7 @@ const Aside = () => {
 
       <DocumentsAside />
 
-      <div className="mt-4 relative flex">
+      {/* <div className="mt-4 relative flex">
         <FontAwesomeIcon 
           icon={faUserAlt} 
           className="text-[#1351B4] me-2 mt-1 w-3 h-3 bg-gray-200 p-1 rounded-full" 
@@ -150,7 +150,7 @@ const Aside = () => {
           <p>Joana Nogueira Martins</p>
           <p className="text-xs font-light">123.456.789-01</p>
         </div>
-      </div>
+      </div> */}
 
       <div 
         className="absolute right-[6.5px] top-1/2 transform -translate-y-1/2 cursor-ew-resize" 
