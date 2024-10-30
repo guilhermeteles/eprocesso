@@ -34,7 +34,7 @@ export const IconButton = ({ icon, name, color, onClick, letter, textColor = '#F
       }}
     >
       <i className={icon} style={{ color: textColor }}></i>
-      <span  style={{ color: textColor }} className="text-sm">{letter}</span>
+      <span style={{ color: textColor }} className="text-sm">{letter}</span>
     </button>
   );
 };
@@ -49,7 +49,7 @@ IconButton.propTypes = {
 };
 
 
-export const OutlinedIconButton = ({ icon, name, onClick }) => {
+export const OutlinedIconButton = ({ icon, name, onClick, textColor = '#FFFFFF' }) => {
   const borderColor = '#DFE1E2'; // gray-50 in hex
   const iconColor = '#0050D8'; // blue-600 in hex
   const hoverBorderColor = darkenColor(borderColor, 5); // Darken by 5% for hover effect
@@ -78,7 +78,7 @@ export const OutlinedIconButton = ({ icon, name, onClick }) => {
         e.currentTarget.style.borderColor = hoverBorderColor; // Change back to hover border color on release
       }}
     >
-      <i className={icon} style={{ color: iconColor }}></i> {/* Icon color */}
+      <i className={icon} style={{ color: textColor }}></i> {/* Icon color */}
     </button>
   );
 };
@@ -87,4 +87,5 @@ OutlinedIconButton.propTypes = {
   icon: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   onClick: PropTypes.func,
+  textColor: PropTypes.string, // New textColor prop
 };
