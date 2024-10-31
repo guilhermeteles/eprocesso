@@ -427,7 +427,7 @@ const [chronos, setChronos] = useState('crescente'); // Set default view mode
 
         {/* Expand All / Contract All (Visible in Tree View) */}
         {viewMode === 'tree' && (
-          <div className="mt-6 flex justify-between text-sm">
+          <div className="mt-4 flex justify-between text-sm">
             
             <button
               className="text-xs text-blue-500 underline hover:text-blue-700"

@@ -76,7 +76,7 @@ const Aside = () => {
       style={{ width }} 
       className="bg-white shadow-lg py-4 px-5 flex flex-col h-screen relative" 
     >
-      {/* <span className="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-600 mr-auto">
+      <span className="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-600 mr-auto">
         Lote: 
         <a className="ms-1 font-semibold hover:underline" onClick={() => handleBatchClick('123')} href="#" >Lote Fiscal Integrado</a>
       </span>
@@ -137,11 +137,11 @@ const Aside = () => {
         ) : (
           <span className="text-gray-500 text-sm">Nenhum indicador selecionado</span>
         )}
-      </div> */}
+      </div>
 
       <DocumentsAside />
 
-      {/* <div className="mt-4 relative flex">
+      <div className="mt-4 relative flex">
         <FontAwesomeIcon 
           icon={faUserAlt} 
           className="text-[#1351B4] me-2 mt-1 w-3 h-3 bg-gray-200 p-1 rounded-full" 
@@ -150,7 +150,7 @@ const Aside = () => {
           <p>Joana Nogueira Martins</p>
           <p className="text-xs font-light">123.456.789-01</p>
         </div>
-      </div> */}
+      </div>
 
       <div 
         className="absolute right-[6.5px] top-1/2 transform -translate-y-1/2 cursor-ew-resize" 
