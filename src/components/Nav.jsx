@@ -1,28 +1,6 @@
-import { useState } from 'react';
-import OverlayMenu from './OverlayMenu'; // Ensure the path is correct
-import { IconButton, OutlinedIconButton } from './IconButton'; // Import the IconButton component
+import { IconButton } from './IconButton'; // Import the IconButton component
 
 const Nav = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [group3Items, setGroup3Items] = useState([]); // State to manage Group 3 items
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
-  const closeMenu = () => {
-    setIsMenuOpen(false);
-  };
-
-  const addItemToGroup3 = (item, remove = false) => {
-    if (remove) {
-      // Remove item from Group 3
-      setGroup3Items((prevItems) => prevItems.filter(i => i.name !== item.name)); // Adjust condition based on your logic
-    } else {
-      // Add the new item to Group 3
-      setGroup3Items((prevItems) => [...prevItems, item]); // Add the new item to Group 3
-    }
-  };
 
   return (
     <>
@@ -127,34 +105,7 @@ const Nav = () => {
           </div>
         </div>
 
-        {/* Group 4 - Overlay Menu Trigger */}
-        <div className="flex flex-col">
-          <label className="text-gray-700 text-xs my-1">Favoritos</label>
-          <div className="flex space-x-1">
-            {group3Items.map((item, index) => (
-              <IconButton
-                key={index} 
-                letter={item.letter} 
-                name={item.name} 
-                color={item.color} // Customize the color if needed
-                textColor="#3D4551"
-              />
-            ))}
-            <OutlinedIconButton 
-              icon="fa-solid fa-bars" 
-              name="Profile" 
-              onClick={toggleMenu}
-              textColor='#1A4480'
-            />
-          </div>
-        </div>
       </nav>
-
-      <OverlayMenu 
-        isOpen={isMenuOpen} 
-        onClose={closeMenu} 
-        onAddItemToGroup3={addItemToGroup3} // Pass function to add/remove items
-      />
     </>
   );
 };

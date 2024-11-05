@@ -4,7 +4,6 @@ import { IconButton } from './IconButton'; // Import the IconButton component
 import { Link } from 'react-router-dom';
 import { faCalendar } from '@fortawesome/free-regular-svg-icons';
 import { faStream } from '@fortawesome/free-solid-svg-icons';
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export const DocumentsAside = () => {
@@ -280,7 +279,7 @@ const expandAll = () => {
     const sortedDocList = reverse ? [...docList].reverse() : docList;
 
     const listItems = sortedDocList.map((doc) => (
-      <li key={doc.id} className="flex items-center mb-2">
+      <li key={doc.id} className="flex items-center mb-2  whitespace-nowrap">
         <input
           type="checkbox"
           checked={selectedDocuments.includes(doc.id)}
@@ -372,190 +371,176 @@ const [chronos, setChronos] = useState('crescente'); // Set default view mode
   };
 
   return (
-    <aside className="bg-[#F7F9FA] rounded-lg overflow-hidden flex flex-col ">
+    <aside className="bg-[#F7F9FA] rounded-lg flex flex-col h-full">
       <div className='pt-4 px-4 border-b border-[#EDEFF0]'>
-      {/* Header: Toggle and Title */}
-      <div className="flex justify-between items-center mb-4">
-        <h2 className="text-md font-medium text-[#3D4551]">Documentos</h2>
+        {/* Header: Toggle and Title */}
+        <div className="flex justify-between items-center mb-4">
+          <h2 className="text-md font-medium text-[#3D4551]">Documentos</h2>
 
-        {/* Switch-like toggle */}
-      <div className="flex items-center space-x-1 mt-1">
-        <FontAwesomeIcon 
-          icon={faStream} 
-          className={`cursor-pointer text-md ${viewMode === 'tree' ? 'text-blue-500' : 'text-gray-400'}`} 
-          onClick={toggleViewMode} 
-        />
-
-        {/* Toggle Switch */}
-        <div className="relative inline-flex items-center cursor-pointer">
-          <input
-            type="checkbox"
-            checked={viewMode === 'chronological'}
-            onChange={toggleViewMode}
-            className="sr-only peer"
-            
-          />
-          <div onClick={toggleViewMode}  className="w-10 h-5 bg-gray-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-blue-500 rounded-full peer dark:bg-white dark:border peer-checked:after:translate-x-full peer-checked:after:border after:content-[''] after:absolute after:top-[2px] after:left-[4px] after:bg-[#2672DE] after:border-[#2672DE] after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-white"></div>
-        </div>
-
-        <FontAwesomeIcon 
-          icon={faCalendar} 
-          className={`cursor-pointer text-md ${viewMode === 'chronological' ? 'text-blue-500' : 'text-gray-400'}`} 
-          onClick={toggleViewMode} 
-        />
-      </div>
-
-      </div>
-
-      {/* Search Input */}
-      <div className="mb-2">
-        <div className="relative w-full">
-            <input
-              type="text"
-              placeholder="O que você procura?"
-              className="text-sm w-full px-3 py-2 pr-10 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-[#fff]"
-            />
-            <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
-            
-              <FontAwesomeIcon 
-              icon={faMagnifyingGlass} 
-              className={`cursor-pointer text-md ${viewMode === 'chronological' ? 'text-blue-500' : 'text-gray-400'}`} 
-              onClick={toggleViewMode} 
-            />
-          </div>
-        </div>
-
-        {/* Expand All / Contract All (Visible in Tree View) */}
-        {viewMode === 'tree' && (
-          <div className="mt-4 flex justify-between text-sm">
-            
-            <button
-              className="text-xs text-blue-500 underline hover:text-blue-700"
-              onClick={contractAll}
-            >
-              Contrair Tudo
-            </button>
-            <button
-              className="text-xs text-blue-500 underline hover:text-blue-700"
-              onClick={expandAll}
-            >
-              Expandir Tudo
-            </button>
-          </div>
-        )}
-        {viewMode === 'chronological' && (
-          <div className="mt-6 flex justify-between text-sm">
-            
-            <button
-              className="text-xs text-blue-500 underline hover:text-blue-700"
-              onClick={showChronologicalView}
-            >
-              Crescente
-            </button>
-            <button
-              className="text-xs text-blue-500 underline hover:text-blue-700"
-              onClick={showAntiChronologicalView}
-            >
-              Decrescente
-            </button>
-          </div>
-        )}
-      </div>
-      </div>
-
-{/* Document List */}
-<div className="p-4 bg-[#FBFCFD] rounded-md scroll-smooth overflow-y-auto h-svh grow overflow-x-hidden">
-  {viewMode === 'tree' ? (
-    <ul>
-    {documents.map((doc) => (
-      <li key={doc.id} className="mb-2">
-        <div className="flex items-center">
-          <button
-            onClick={() => toggleExpand(doc.id)}
-            className="mr-1.5"
-          >
+          {/* Switch-like toggle */}
+          <div className="flex items-center space-x-1 mt-1">
             <FontAwesomeIcon
-              icon={
-                expandedParents[doc.id] ? faChevronDown : faChevronRight
-              }
-              className="text-gray-700 h-2.5 w-2.5 mb-[3.5px]"
+              icon={faStream}
+              className={`cursor-pointer text-md ${viewMode === 'tree' ? 'text-blue-500' : 'text-gray-400'}`}
+              onClick={toggleViewMode}
             />
-          </button>
-          <input
-            type="checkbox"
-            checked={selectedDocuments.includes(doc.id)}
-            onChange={() => handleCheckboxChange(doc.id)}
-            className="mr-1.5"
-          />
-          <Link
-            to="/pdf-reader"
-            state={{ fileName: doc.name }} // Passing file name in state
-            className="text-sm text-[#3D4551] hover:underline cursor-pointer"
-          >
-            {doc.name}
-          </Link>
+
+            {/* Toggle Switch */}
+            <div className="relative inline-flex items-center cursor-pointer">
+              <input
+                type="checkbox"
+                checked={viewMode === 'chronological'}
+                onChange={toggleViewMode}
+                className="sr-only peer"
+
+              />
+              <div onClick={toggleViewMode} className="w-10 h-5 bg-gray-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-blue-500 rounded-full peer dark:bg-white dark:border peer-checked:after:translate-x-full peer-checked:after:border after:content-[''] after:absolute after:top-[2px] after:left-[4px] after:bg-[#2672DE] after:border-[#2672DE] after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-white"></div>
+            </div>
+
+            <FontAwesomeIcon
+              icon={faCalendar}
+              className={`cursor-pointer text-md ${viewMode === 'chronological' ? 'text-blue-500' : 'text-gray-400'}`}
+              onClick={toggleViewMode}
+            />
+          </div>
+
         </div>
 
-        {/* Child Documents (If expanded) */}
-        {expandedParents[doc.id] && doc.children && doc.children.length > 0 && renderDocuments(doc.children)}
-      </li>
-    ))}
-  </ul>
-  ) : (
-    <div>
-    {chronos === 'crescente' ? <ChronologicalView /> : <AntiChronologicalView />}
-    </div>
-  )}
-</div>
+
+        <div className="mb-2">
+
+
+          {/* Expand All / Contract All (Visible in Tree View) */}
+          {viewMode === 'tree' && (
+            <div className="mt-4 flex justify-between text-sm">
+
+              <button
+                className="text-xs text-blue-500 underline hover:text-blue-700"
+                onClick={contractAll}
+              >
+                Contrair Tudo
+              </button>
+              <button
+                className="text-xs text-blue-500 underline hover:text-blue-700"
+                onClick={expandAll}
+              >
+                Expandir Tudo
+              </button>
+            </div>
+          )}
+          {viewMode === 'chronological' && (
+            <div className="mt-4 flex justify-between text-sm">
+
+              <button
+                className="text-xs text-blue-500 underline hover:text-blue-700"
+                onClick={showChronologicalView}
+              >
+                Crescente
+              </button>
+              <button
+                className="text-xs text-blue-500 underline hover:text-blue-700"
+                onClick={showAntiChronologicalView}
+              >
+                Decrescente
+              </button>
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Document List */}
+      <div className="p-4 bg-[#FBFCFD] rounded-md scroll-smooth overflow-auto grow">
+        {viewMode === 'tree' ? (
+          <ul>
+            {documents.map((doc) => (
+              <li key={doc.id} className="mb-2 whitespace-nowrap">
+                <div className="flex items-center">
+                  <button
+                    onClick={() => toggleExpand(doc.id)}
+                    className="mr-1.5"
+                  >
+                    <FontAwesomeIcon
+                      icon={
+                        expandedParents[doc.id] ? faChevronDown : faChevronRight
+                      }
+                      className="text-gray-700 h-2.5 w-2.5 mb-[3.5px]"
+                    />
+                  </button>
+                  <input
+                    type="checkbox"
+                    checked={selectedDocuments.includes(doc.id)}
+                    onChange={() => handleCheckboxChange(doc.id)}
+                    className="mr-1.5"
+                  />
+                  <Link
+                    to="/pdf-reader"
+                    state={{ fileName: doc.name }} // Passing file name in state
+                    className="text-sm text-[#3D4551] hover:underline cursor-pointer "
+                  >
+                    {doc.name}
+                  </Link>
+                </div>
+
+                {/* Child Documents (If expanded) */}
+                {expandedParents[doc.id] && doc.children && doc.children.length > 0 && renderDocuments(doc.children)}
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <div>
+            {chronos === 'crescente' ? <ChronologicalView /> : <AntiChronologicalView />}
+          </div>
+        )}
+      </div>
 
 
       {/* Footer: Selected Documents and Actions */}
       {selectedDocuments.length > 0 && (
         <div className="mt-auto">
           <div className="flex bg-[#2672DE]">
-                <span className="px-3 py-2 text-white text-xs grow m-auto font-medium">
-                {selectedDocuments.length} item(ns) selecionado(s)
-                  
-                </span>
-                <button
-                      onClick={clearSelection}
-                      className="bg-[#F7F9FA] text-[#3D4551] pt-1 pb-1 px-2 text-xs my-2 me-2 rounded-sm "
-                  >
-                      Limpar
-                  </button>
+            <span className="px-3 py-2 text-white text-xs grow m-auto font-medium">
+              {selectedDocuments.length} item(ns) selecionado(s)
+
+            </span>
+            <button
+              onClick={clearSelection}
+              className="bg-[#F7F9FA] text-[#3D4551] pt-1 pb-1 px-2 text-xs my-2 me-2 rounded-sm "
+            >
+              Limpar
+            </button>
           </div>
           <div className="flex space-x-2 bg-[#0050D8] flex p-2 rounded-b-lg">
             {/* Group 1 */}
-        <div className="flex flex-col">
-          <div className="flex space-x-1">
-            <IconButton 
-              icon="fa-solid fa-file-contract" 
-              name="Home" 
-              color="#1A4480" 
-            />
-            <IconButton 
-              icon="fa-solid fa-calendar-days" 
-              name="Profile" 
-              color="#1A4480" 
-            />
-            <IconButton 
-              icon="fa-solid fa-info-circle" 
-              name="Settings" 
-              color="#1A4480" 
-            />
-            <IconButton 
-              icon="fa-solid fa-user" 
-              name="Notifications" 
-              color="#1A4480" 
-            />
-            <IconButton 
-              icon="fa-solid fa-lock" 
-              name="Messages" 
-              color="#1A4480" 
-            />
-          </div>
-        </div>
-            
+            <div className="flex flex-col">
+              <div className="flex space-x-1">
+                <IconButton
+                  icon="fa-solid fa-file-contract"
+                  name="Home"
+                  color="#1A4480"
+                />
+                <IconButton
+                  icon="fa-solid fa-calendar-days"
+                  name="Profile"
+                  color="#1A4480"
+                />
+                <IconButton
+                  icon="fa-solid fa-info-circle"
+                  name="Settings"
+                  color="#1A4480"
+                />
+                <IconButton
+                  icon="fa-solid fa-user"
+                  name="Notifications"
+                  color="#1A4480"
+                />
+                <IconButton
+                  icon="fa-solid fa-lock"
+                  name="Messages"
+                  color="#1A4480"
+                />
+              </div>
+            </div>
+
           </div>
         </div>
       )}

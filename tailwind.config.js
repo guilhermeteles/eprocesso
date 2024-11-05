@@ -8,6 +8,9 @@ export default {
       fontFamily: {
         sans: ['Rawline', 'sans-serif'],
       },
+      fontSize: {
+        '2xs': '0.625rem', // Adjust this value as needed
+      },
     },
   },
   plugins: [],
