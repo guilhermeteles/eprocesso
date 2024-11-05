@@ -504,7 +504,7 @@ const [chronos, setChronos] = useState('crescente'); // Set default view mode
             </span>
             <button
               onClick={clearSelection}
-              className="bg-[#F7F9FA] text-[#3D4551] pt-1 pb-1 px-2 text-xs my-2 me-2 rounded-sm "
+              className="bg-white text-[#3D4551] py-1.5 px-3 text-xs font-semibold my-2 me-2 rounded-full "
             >
               Limpar
             </button>
