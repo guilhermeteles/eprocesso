@@ -24,7 +24,7 @@ const Dashboard = () => {
                 <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3">
 
                     {/* First Card - 2 Columns */}
-                    <div className="col-span-2 bg-white p-6 rounded-lg shadow-md flex flex-col sm:flex-row h-fit items-end">
+                    <div className="col-span-2 bg-white p-6 shadow-[0_3px_10px_rgb(0,0,0,0.1)] flex flex-col sm:flex-row h-fit items-end">
                         <div className="flex flex-col sm:flex-2 p-4">
                             <div className='flex gap-1'>
                                 <button onClick={toggleFavorite}>
@@ -134,7 +134,7 @@ const Dashboard = () => {
 
 
                     {/* Second Card - 1 Column */}
-                    <div className="bg-white p-6 rounded-lg shadow-md flex flex-col gap-4">
+                    <div className="bg-white p-6 shadow-[0_3px_10px_rgb(0,0,0,0.1)] flex flex-col gap-4">
                         <h2 className="text-xl font-semibold text-gray-800">Notas</h2>
                         <p className="text-gray-600 bg-yellow-50 px-3 py-2 rounded-md">
                             <div className="flex justify-between mb-2">
