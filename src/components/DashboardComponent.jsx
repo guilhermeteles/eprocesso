@@ -20,7 +20,7 @@ const Dashboard = () => {
 
     return (
         <div className='overflow-y-auto'>
-            <div className="container mx-auto px-4 py-8 sm:pt-32 pt-64">
+            <div className="container mx-auto px-12 py-8 sm:pt-32 pt-64">
                 <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3">
 
                     {/* First Card - 2 Columns */}
