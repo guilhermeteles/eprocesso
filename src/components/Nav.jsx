@@ -4,7 +4,7 @@ const Nav = () => {
 
   return (
     <>
-      <nav className="absolute self-center bg-white px-3 py-3 sm:pt-2 sm:py-0 shadow-md w-fit gap-0 sm:gap-4 flex sm:flex-row flex-col rounded-b-lg z-40">
+      <nav className="absolute self-center bg-white px-3 py-3 sm:pt-2 sm:py-0 shadow-md w-fit gap-0 sm:gap-4 flex sm:flex-row flex-col z-40">
         {/* Group 1 */}
         <div className="flex flex-col mb-2">
           <label className="text-gray-700 text-xs my-1">Navegação do Processo</label>
