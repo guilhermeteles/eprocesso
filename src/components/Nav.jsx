@@ -6,6 +6,16 @@ import { useState } from 'react';
 import { faLink } from '@fortawesome/free-solid-svg-icons';
 import { faFolder } from '@fortawesome/free-regular-svg-icons';
 import { faFolderOpen } from '@fortawesome/free-regular-svg-icons';
+import { faLinkSlash } from '@fortawesome/free-solid-svg-icons';
+import { faShareAlt } from '@fortawesome/free-solid-svg-icons';
+import { faShare } from '@fortawesome/free-solid-svg-icons';
+import { faUserAltSlash } from '@fortawesome/free-solid-svg-icons';
+import { faArchive } from '@fortawesome/free-solid-svg-icons';
+import { faBoxArchive } from '@fortawesome/free-solid-svg-icons/faBoxArchive';
+import { faBoxOpen } from '@fortawesome/free-solid-svg-icons';
+import { faFileZipper } from '@fortawesome/free-regular-svg-icons';
+import { faBoxesPacking } from '@fortawesome/free-solid-svg-icons';
+import { faTrashAlt } from '@fortawesome/free-regular-svg-icons';
 
 const Nav = () => {
   const [isOverlayOpen, setIsOverlayOpen] = useState(false);
@@ -13,7 +23,7 @@ const Nav = () => {
   const toggleOverlayMenu = () => {
     setIsOverlayOpen((prev) => !prev);
   };
-  
+
   return (
     <div className=''>
       <nav className="flex gap-6 bg-white mx-8 px-4 shadow-lg">
@@ -21,6 +31,11 @@ const Nav = () => {
         <div className="flex flex-col mb-2">
           <label className="text-gray-700 text-xs my-1 font-medium">Consultas</label>
           <div className="flex gap-1">
+            <OutlinedIconButton
+              icon="fa-solid fa-link"
+              name="Home"
+              textColor='#1351B4'
+            />
             <OutlinedIconButton
               icon="fa-solid fa-file-contract"
               name="Home"
@@ -160,29 +175,56 @@ const Nav = () => {
       <div className='bg-[#1351B4] w-100 mx-8 px-4 py-2 flex gap-6 text-sm'>
         <div className='bg-[#1A4480] py-2 flex rounded rounded-full text-white items-center px-4 gap-3'>
           <FontAwesomeIcon
-            icon={faLock}
+            icon={faShareAlt}
             className='text-orange-500'
           />
           <FontAwesomeIcon
             icon={faLink}
           />
-          <div style={{ position: 'relative', display: 'inline-block' }}>
-    {/* Folder Icon */}
-    <FontAwesomeIcon icon={faFolderOpen} size="" />
+    <FontAwesomeIcon
+            icon={faTrashAlt}
+          />
     
-    {/* Centered 'A' */}
-    <span style={{
-      position: 'absolute',
-      top: '66%',
-      left: '50%',
-      transform: 'translate(-50%, -50%)',
-      fontSize: '.45rem',
-      fontWeight: 'bold',
-      color: '#1A4480', // Adjust color as needed
-    }}>
-      A
-    </span>
-  </div>
+          <FontAwesomeIcon
+            icon={faBoxesPacking}
+          />
+          {/* <FontAwesomeIcon
+            icon={faLinkSlash}
+          /> */}
+          {/* <div style={{ position: 'relative', display: 'inline-block' }}>
+  
+            <FontAwesomeIcon icon={faFolderOpen} size="" />
+
+    
+            <span style={{
+              position: 'absolute',
+              top: '66%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              fontSize: '.45rem',
+              fontWeight: 'bold',
+              color: '#1A4480', // Adjust color as needed
+            }}>
+              A
+            </span>
+          </div> */}
+          {/* <div style={{ position: 'relative', display: 'inline-block' }}>
+
+            <FontAwesomeIcon icon={faFolder} size="" />
+
+   
+            <span style={{
+              position: 'absolute',
+              top: '55%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              fontSize: '.45rem',
+              fontWeight: 'bold',
+              color: 'white',
+            }}>
+              A
+            </span>
+          </div> */}
 
         </div>
         <div className='flex items-center text-white font-semibold '>
@@ -223,7 +265,7 @@ const Nav = () => {
         </div>
 
       </div>
-      <OverlayMenu isOpen={isOverlayOpen} onClose={toggleOverlayMenu} onAddItemToGroup3={() => {}} />
+      <OverlayMenu isOpen={isOverlayOpen} onClose={toggleOverlayMenu} onAddItemToGroup3={() => { }} />
     </div>
   );
 };

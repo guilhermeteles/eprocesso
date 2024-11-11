@@ -126,7 +126,7 @@ const Dashboard = () => {
                                 icon={faEdit}
                                 className='mr-2'
                             />
-                            Notas do Processo</h2>
+                            Notas</h2>
                         <p className="text-gray-600 bg-yellow-50 px-3 py-2 rounded-md">
                             <div className="flex justify-between mb-2">
                                 <span className="text-xs font-bold">
@@ -142,7 +142,7 @@ const Dashboard = () => {
                         <p className="text-gray-600 bg-yellow-50 px-3 py-2 rounded-md">
                             <div className="flex justify-between mb-2">
                                 <span className="text-xs font-bold">
-                                    Usuário
+                                    Equipe
                                 </span>
                                 <span className="text-xs">
                                     10/02/2023
@@ -154,7 +154,7 @@ const Dashboard = () => {
                         <p className="text-gray-600 bg-yellow-50 px-3 py-2 rounded-md">
                             <div className="flex justify-between mb-2">
                                 <span className="text-xs font-bold">
-                                    Usuário
+                                    Processo
                                 </span>
                                 <span className="text-xs">
                                     10/02/2023
