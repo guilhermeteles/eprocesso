@@ -5,6 +5,7 @@ import OverlayMenu from './OverlayMenu'
 import { useState } from 'react';
 import { faLink } from '@fortawesome/free-solid-svg-icons';
 import { faFolder } from '@fortawesome/free-regular-svg-icons';
+import { faFolderOpen } from '@fortawesome/free-regular-svg-icons';
 
 const Nav = () => {
   const [isOverlayOpen, setIsOverlayOpen] = useState(false);
@@ -167,17 +168,17 @@ const Nav = () => {
           />
           <div style={{ position: 'relative', display: 'inline-block' }}>
     {/* Folder Icon */}
-    <FontAwesomeIcon icon={faFolder} size="" />
+    <FontAwesomeIcon icon={faFolderOpen} size="" />
     
     {/* Centered 'A' */}
     <span style={{
       position: 'absolute',
-      top: '60%',
+      top: '66%',
       left: '50%',
       transform: 'translate(-50%, -50%)',
-      fontSize: '.4rem',
+      fontSize: '.45rem',
       fontWeight: 'bold',
-      color: 'white', // Adjust color as needed
+      color: '#1A4480', // Adjust color as needed
     }}>
       A
     </span>
