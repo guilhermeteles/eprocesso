@@ -16,26 +16,16 @@ const App = () => {
   return (
     <div className="flex bg-gray-100">
       <Aside />
-      <div className='w-full flex flex-col align-center px-6 relative'>
+      <div className='w-full h-svh flex flex-col align-center px-6 relative'>
         <Nav />
-        <div className="w-full bg-[#F7F9FA] border mt-20 rounded-t-lg overflow-y-auto h-[calc(100vh-80px)]">
-        
-          <div className="right-1 w-full">
-            <div className="flex justify-end w-full items-center ">
-              
-              <button 
-                onClick={handleGoHome} 
-                className="top-28 right-[68px] z-50 absolute bg-[#E41D3D20] px-2 pt-0.5 pb-1 border border-[2px] border-[#E41D3D] text-[#E41D3D] rounded-md hover:bg-[#E41D3D33] transition duration-200"
-              >
-                Fechar <i className="ms-1 fa-solid fa-xmark"></i>
-              </button>
-            </div>
-          </div>
-          <div className="p-4 relative">
-          <div className="top-8 left-7 absolute bg-[rgba(255,255,255,.7)] flex items-center px-3 pt-0.5 pb-1 border border-[2px] border-[#ddd] rounded-md">
-                <h1 className="me-2">Documento:</h1>
-                <span className="font-bold">{fileName}</span>
-              </div>
+        <div className='bg-white mx-8 grow relative overflow-hidden flex'>
+          <button
+            onClick={handleGoHome}
+            className="top-2 right-6 z-50 absolute bg-[#E41D3D20] px-4 pt-0.5 pb-1 border border-[2px] border-[#E41D3D] text-[#E41D3D] rounded-full hover:bg-[#E41D3D33] transition duration-200"
+          >
+            Fechar <i className="ms-1 fa-solid fa-xmark"></i>
+          </button>
+          <div className='bg-black w-full grow overflow-auto'>
             <img src={Img1} alt="Description of the image" />
           </div>
         </div>

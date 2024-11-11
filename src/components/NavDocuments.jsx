@@ -25,13 +25,13 @@ const NavDocuments = () => {
 
   return (
     <>
-      <nav className="pt-3 pb-2 ps-5 pe-3 absolute bottom-0 self-center bg-[#0050D8] shadow-md w-fit gap-0 sm:gap-4 flex sm:flex-row flex-col rounded-t-lg">
+      <nav className="pt-3 pb-2 ps-5 pe-3 absolute bottom-0 self-center bg-[#1351B4] shadow-md w-fit gap-0 sm:gap-4 flex sm:flex-row flex-col rounded-t-lg">
         
         {/* Group 0 */}
         <div className="flex flex-col text-white mb-1">
           {/* <label className="text-xs my-1">Páginas</label> */}
           <div className='flex items-center'>
-          <div id="page-number" className=" inline-block py-1 px-3 font-medium transition duration-300 ease-in-out rounded-sm hover:text-[#3D4551] cursor-pointer"><PageNumber/></div>
+          <div id="page-number" className=" inline-block py-1 px-3 font-medium transition duration-300 ease-in-out rounded-sm hover:text-[#aaa] cursor-pointer"><PageNumber/></div>
           </div>
           
 
@@ -42,7 +42,7 @@ const NavDocuments = () => {
           {/* <label className="text-white text-xs my-1">Global</label> */}
           <div className="flex space-x-1">
           <IconButton 
-            icon="fa-solid fa-file-signature" 
+            icon="fa-solid fa-signature" 
             name="Home" 
             color="#1A4480"
           />
