@@ -17,7 +17,7 @@ export const IconButton = ({ icon, name, color, onClick, letter, textColor = '#F
   return (
     <button
       onClick={onClick}
-      className="w-8 h-8 rounded focus:outline-none flex justify-center items-center"
+      className="w-8 h-8 rounded rounded-full focus:outline-none flex justify-center items-center"
       style={{ backgroundColor: color }} // Base color
       title={name}
       onMouseEnter={(e) => {
@@ -50,15 +50,15 @@ IconButton.propTypes = {
 
 
 export const OutlinedIconButton = ({ icon, name, onClick, textColor = '#FFFFFF' }) => {
-  const borderColor = '#DFE1E2'; // gray-50 in hex
-  const iconColor = '#0050D8'; // blue-600 in hex
+  const borderColor = '#1351B4'; // gray-50 in hex
+  const iconColor = '#1351B4'; // blue-600 in hex
   const hoverBorderColor = darkenColor(borderColor, 5); // Darken by 5% for hover effect
   const activeBorderColor = darkenColor(borderColor, 15); // Darken by 15% for active effect
 
   return (
     <button
       onClick={onClick}
-      className="w-8 h-8 rounded text-white border focus:outline-none"
+      className="w-8 h-8 rounded rounded-full text-white border focus:outline-none flex items-center justify-center"
       style={{
         backgroundColor: 'white', // White background
         borderColor: borderColor, // Border color

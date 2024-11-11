@@ -1,111 +1,203 @@
-import { IconButton } from './IconButton'; // Import the IconButton component
+import { OutlinedIconButton } from './IconButton'; // Import the IconButton component
+import { faLock, faFile, faUser } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Nav = () => {
 
   return (
     <>
-      <nav className="absolute self-center bg-white px-3 py-3 sm:pt-2 sm:py-0 shadow-md w-fit gap-0 sm:gap-4 flex sm:flex-row flex-col z-40">
+      <nav className="flex gap-4 bg-white mx-8 px-4">
         {/* Group 1 */}
         <div className="flex flex-col mb-2">
-          <label className="text-gray-700 text-xs my-1">Navegação do Processo</label>
-          <div className="flex space-x-1">
-            <IconButton 
+          <label className="text-gray-700 text-xs my-1 font-medium">Consultas</label>
+          <div className="flex gap-1">
+            <OutlinedIconButton 
               icon="fa-solid fa-file-contract" 
               name="Home" 
-              color="#C3EBFA"
-              textColor='#1A4480'
+              textColor='#1351B4'
             />
-            <IconButton 
+            <OutlinedIconButton 
               icon="fa-solid fa-calendar-days" 
               name="Profile" 
-              color="#C3EBFA"
-              textColor='#1A4480'
+              textColor='#1351B4'
             />
-            <IconButton 
+            <OutlinedIconButton 
               icon="fa-solid fa-info-circle" 
               name="Settings" 
-              color="#C3EBFA"
-              textColor='#1A4480'
+              textColor='#1351B4'
             />
-            <IconButton 
+            <OutlinedIconButton 
               icon="fa-solid fa-user" 
               name="Notifications" 
-              color="#C3EBFA"
-              textColor='#1A4480'
+              textColor='#1351B4'
             />
-            <IconButton 
+            <OutlinedIconButton 
               icon="fa-solid fa-lock" 
               name="Messages" 
-              color="#C3EBFA"
-              textColor='#1A4480'
+              textColor='#1351B4'
             />
           </div>
         </div>
-
-        {/* Group 2 */}
+        {/* Group 1 */}
         <div className="flex flex-col mb-2">
-          <label className="text-gray-700 text-xs my-1">Ações do Processo</label>
-          <div className="flex space-x-1">
-            <IconButton 
+          <label className="text-gray-700 text-xs my-1 font-medium">Processo</label>
+          <div className="flex gap-1">
+            <OutlinedIconButton 
               icon="fa-solid fa-arrow-right" 
-              name="Analytics" 
-              color="#2672DE" 
+              name="Home" 
+              textColor='#1351B4'
             />
-            <IconButton 
+            <OutlinedIconButton 
+              icon="fa-solid fa-arrow-rotate-right" 
+              name="Profile" 
+              textColor='#1351B4'
+            />
+            <OutlinedIconButton 
               icon="fa-solid fa-arrow-up" 
-              name="Reports" 
-              color="#2672DE" 
+              name="Settings" 
+              textColor='#1351B4'
             />
-            <IconButton 
-              icon="fa-solid fa-people-arrows" 
-              name="Tasks" 
-              color="#2672DE" 
+            <OutlinedIconButton 
+              icon="fa-solid fa-user-group" 
+              name="Notifications" 
+              textColor='#1351B4'
             />
-            <IconButton 
-              icon="fa-solid fa-download" 
-              name="Feedback" 
-              color="#2672DE" 
+            <OutlinedIconButton 
+              icon="fa-solid fa-circle-info" 
+              name="Notifications" 
+              textColor='#1351B4'
             />
-            <IconButton 
-              icon="fa-solid fa-file" 
-              name="Help" 
-              color="#2672DE" 
+            <OutlinedIconButton 
+              icon="fa-solid fa-calendar-days" 
+              name="Messages" 
+              textColor='#1351B4'
+            />
+            <OutlinedIconButton 
+              icon="fa-solid fa-ellipsis-vertical" 
+              name="Messages" 
+              textColor='#1351B4'
             />
           </div>
         </div>
-        {/* Group 3 */}
-        <div className="flex flex-col">
-        <label className="text-gray-700 text-xs my-1">Ações dos Documentos</label>
-          <div className="flex space-x-1">
-            <IconButton 
+        {/* Group 1 */}
+        <div className="flex flex-col mb-2">
+          <label className="text-gray-700 text-xs my-1 font-medium">Documentos</label>
+          <div className="flex gap-1">
+          <OutlinedIconButton 
+              icon="fa-solid fa-bookmark" 
+              name="Home" 
+              textColor='#1351B4'
+            />
+            <OutlinedIconButton 
+              icon="fa-solid fa-file-arrow-up" 
+              name="Home" 
+              textColor='#1351B4'
+            />
+            <OutlinedIconButton 
+              icon="fa-solid fa-file-medical" 
+              name="Profile" 
+              textColor='#1351B4'
+            />
+            <OutlinedIconButton 
+              icon="fa-solid fa-file-signature" 
+              name="Settings" 
+              textColor='#1351B4'
+            />
+            <OutlinedIconButton 
+              icon="fa-solid fa-trash-can" 
+              name="Messages"  
+              textColor='#1351B4'
+            />
+            <OutlinedIconButton 
+              icon="fa-solid fa-circle-info" 
+              name="Notifications" 
+              textColor='#1351B4'
+            />
+            <OutlinedIconButton 
+              icon="fa-solid fa-download" 
+              name="Notifications" 
+              textColor='#1351B4'
+            />
+            <OutlinedIconButton 
+            icon="fa-solid fa-ellipsis-vertical" 
+            name="Messages"  
+            textColor='#1351B4'
+          />
+          </div>
+        </div>
+        {/* Group 1 */}
+        <div className="flex flex-col mb-2">
+          <label className="text-gray-700 text-xs my-1 font-medium">Notas</label>
+          <div className="flex gap-1">
+            <OutlinedIconButton 
               icon="fa-solid fa-file-contract" 
               name="Home" 
-              color="#1A4480" 
+              textColor='#1351B4'
             />
-            <IconButton 
+            <OutlinedIconButton 
               icon="fa-solid fa-calendar-days" 
               name="Profile" 
-              color="#1A4480" 
+              textColor='#1351B4'
             />
-            <IconButton 
-              icon="fa-solid fa-info-circle" 
-              name="Settings" 
-              color="#1A4480" 
-            />
-            <IconButton 
-              icon="fa-solid fa-user" 
-              name="Notifications" 
-              color="#1A4480" 
-            />
-            <IconButton 
-              icon="fa-solid fa-lock" 
-              name="Messages" 
-              color="#1A4480" 
-            />
+            
           </div>
         </div>
+       
 
       </nav>
+      <div className='bg-[#1351B4] w-100 mx-8 px-4 py-2 flex gap-4 text-sm'>
+      <div className='bg-[#1A4480] py-2 flex rounded rounded-full text-white items-center px-4 gap-3'>
+            <FontAwesomeIcon
+              icon={faLock}
+            />
+            <FontAwesomeIcon
+              icon={faLock}
+            />
+            <FontAwesomeIcon
+              icon={faLock}
+            />
+            <FontAwesomeIcon
+              icon={faLock}
+            />
+        </div>
+        <div className='flex items-center text-white font-semibold '>
+            <FontAwesomeIcon
+              icon={faFile}
+              className="me-2"
+            />
+            10090.000003/0419-05
+        </div>
+        <div className='flex items-center text-white'>
+            <FontAwesomeIcon
+              icon={faUser}
+              className="me-2"
+            />
+            
+            <span className='font-semibold mr-2'>
+            05136946504
+            </span>
+            UOLIRHEZOWL UVORXRL WV XZIEZOSL
+        </div>
+        <div className="flex items-center text-white relative">
+          <div className="relative">
+            <FontAwesomeIcon icon={faLock} className="me-2" />
+            <span className="absolute inset-0 flex items-center justify-center text-[8px] font-black text-[#1351B4] top-[7px] right-[8.5px]">
+              E
+            </span>
+          </div>
+          Básico
+        </div>
+        <div className="flex items-center text-white relative">
+          <div className="relative">
+            <FontAwesomeIcon icon={faLock} className="me-2" />
+            <span className="absolute inset-0 flex items-center justify-center text-[8px] font-black text-[#1351B4] top-[7px] right-[8.5px]">
+              I
+            </span>
+          </div>
+          Básico
+        </div>
+        
+      </div>
     </>
   );
 };

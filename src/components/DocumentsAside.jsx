@@ -12,170 +12,167 @@ export const DocumentsAside = () => {
   const [expandedParents, setExpandedParents] = useState({}); // Track which parents are expanded
 
   const documents = [
-  {
-    id: 1,
-    name: 'Petição Inicial de Ação Civil',
-    date: '2024-10-13',
-    children: [
-      {
-        id: 2,
-        name: 'Citação',
-        date: '2024-10-14',
-        children: [
-          {
-            id: 3,
-            name: 'Resposta à Citação',
-            date: '2024-10-15',
-            children: [
-              {
-                id: 4,
-                name: 'Contestação',
-                date: '2024-10-16',
-                children: [
-                  {
-                    id: 5,
-                    name: 'Réplicas à Contestação',
-                    date: '2024-10-17',
-                    children: [
-                      { id: 6, name: 'Juntada de Documentos', date: '2024-10-18' },
-                      { id: 7, name: 'Pedido de Tutela Provisória', date: '2024-10-19' },
-                    ],
-                  },
-                ],
-              },
-            ],
-          },
-        ],
-      },
-    ],
-  },
-  {
-    id: 8,
-    name: 'Ação de Indenização',
-    date: '2024-10-20',
-    children: [
-      {
-        id: 9,
-        name: 'Laudo Pericial',
-        date: '2024-10-21',
-        children: [
-          {
-            id: 10,
-            name: 'Manifestação sobre o Laudo',
-            date: '2024-10-22',
-            children: [
-              {
-                id: 11,
-                name: 'Pedido de Produção de Provas',
-                date: '2024-10-23',
-                children: [
-                  { id: 12, name: 'Provas Documentais', date: '2024-10-24' },
-                  { id: 13, name: 'Provas Testemunhais', date: '2024-10-25' },
-                ],
-              },
-            ],
-          },
-        ],
-      },
-    ],
-  },
-  {
-    id: 14,
-    name: 'Ação de Alimentos',
-    date: '2024-10-26',
-    children: [
-      {
-        id: 15,
-        name: 'Pedido de Alimentos',
-        date: '2024-10-27',
-        children: [
-          {
-            id: 16,
-            name: 'Decisão Judicial',
-            date: '2024-10-28',
-            children: [
-              {
-                id: 17,
-                name: 'Recurso de Apelação',
-                date: '2024-10-29',
-                children: [
-                  { id: 18, name: 'Contrarrazões', date: '2024-10-30' },
-                  { id: 19, name: 'Juntada de Novos Documentos', date: '2024-10-31' },
-                ],
-              },
-            ],
-          },
-        ],
-      },
-    ],
-  },
-  {
-    id: 20,
-    name: 'Embargos de Declaração',
-    date: '2024-11-01',
-    children: [
-      {
-        id: 21,
-        name: 'Decisão dos Embargos',
-        date: '2024-11-02',
-        children: [
-          {
-            id: 22,
-            name: 'Recurso Especial',
-            date: '2024-11-03',
-            children: [
-              {
-                id: 23,
-                name: 'Petição de Admissibilidade',
-                date: '2024-11-04',
-                children: [
-                  { id: 24, name: 'Parecer do Ministério Público', date: '2024-11-05' },
-                  { id: 25, name: 'Juntada de Novos Fatos', date: '2024-11-06' },
-                ],
-              },
-            ],
-          },
-        ],
-      },
-    ],
-  },
-  {
-    id: 26,
-    name: 'Ação de Usucapião',
-    date: '2024-11-07',
-    children: [
-      {
-        id: 27,
-        name: 'Certidão de Registro de Imóveis',
-        date: '2024-11-08',
-        children: [
-          {
-            id: 28,
-            name: 'Manifestação do Réu',
-            date: '2024-11-09',
-            children: [
-              {
-                id: 29,
-                name: 'Relatório de Vistoria',
-                date: '2024-11-10',
-                children: [
-                  { id: 30, name: 'Pedido de Desocupação', date: '2024-11-11' },
-                  { id: 31, name: 'Protesto de Irregularidade', date: '2024-11-12' },
-                ],
-              },
-            ],
-          },
-        ],
-      },
-    ],
-  },
-];
-
-  const formatDate = (date) => {
-    const [year, month, day] = date.split('-');
-    return `${day}/${month}/${year}`;
-  };
+    {
+      id: 1,
+      name: 'Petição Inicial de Ação Civil',
+      page: '81-85',
+      children: [
+        {
+          id: 2,
+          name: 'Citação',
+          page: '46-50',
+          children: [
+            {
+              id: 3,
+              name: 'Resposta à Citação',
+              page: '101-102',
+              children: [
+                {
+                  id: 4,
+                  name: 'Contestação',
+                  page: '110-114',
+                  children: [
+                    {
+                      id: 5,
+                      name: 'Réplicas à Contestação',
+                      page: '36-40',
+                      children: [
+                        { id: 6, name: 'Juntada de Documentos', page: '1-5' },
+                        { id: 7, name: 'Pedido de Tutela Provisória', page: '57-61' },
+                      ],
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+    {
+      id: 8,
+      name: 'Ação de Indenização',
+      page: '16-20',
+      children: [
+        {
+          id: 9,
+          name: 'Laudo Pericial',
+          page: '103-104',
+          children: [
+            {
+              id: 10,
+              name: 'Manifestação sobre o Laudo',
+              page: '67-71',
+              children: [
+                {
+                  id: 11,
+                  name: 'Pedido de Produção de Provas',
+                  page: '72-76',
+                  children: [
+                    { id: 12, name: 'Provas Documentais', page: '115-119' },
+                    { id: 13, name: 'Provas Testemunhais', page: '77-78' },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+    {
+      id: 14,
+      name: 'Ação de Alimentos',
+      page: '6-10',
+      children: [
+        {
+          id: 15,
+          name: 'Pedido de Alimentos',
+          page: '11-15',
+          children: [
+            {
+              id: 16,
+              name: 'Decisão Judicial',
+              page: '54-56',
+              children: [
+                {
+                  id: 17,
+                  name: 'Recurso de Apelação',
+                  page: '21-25',
+                  children: [
+                    { id: 18, name: 'Contrarrazões', page: '41-45' },
+                    { id: 19, name: 'Juntada de Novos Documentos', page: '28-30' },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+    {
+      id: 20,
+      name: 'Embargos de Declaração',
+      page: '96-100',
+      children: [
+        {
+          id: 21,
+          name: 'Decisão dos Embargos',
+          page: '31-35',
+          children: [
+            {
+              id: 22,
+              name: 'Recurso Especial',
+              page: '50-53',
+              children: [
+                {
+                  id: 23,
+                  name: 'Petição de Admissibilidade',
+                  page: '125-126',
+                  children: [
+                    { id: 24, name: 'Parecer do Ministério Público', page: '62-66' },
+                    { id: 25, name: 'Juntada de Novos Fatos', page: '120-124' },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+    {
+      id: 26,
+      name: 'Ação de Usucapião',
+      page: '3-5',
+      children: [
+        {
+          id: 27,
+          name: 'Certidão de Registro de Imóveis',
+          page: '86-90',
+          children: [
+            {
+              id: 28,
+              name: 'Manifestação do Réu',
+              page: '47-50',
+              children: [
+                {
+                  id: 29,
+                  name: 'Relatório de Vistoria',
+                  page: '105-109',
+                  children: [
+                    { id: 30, name: 'Pedido de Desocupação', page: '95-99' },
+                    { id: 31, name: 'Protesto de Irregularidade', page: '35-40' },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+  ];
   
+  
+
 
   // Toggle between tree and chronological views
   const toggleViewMode = () => {
@@ -229,83 +226,88 @@ const expandAll = () => {
   };
   
   // Recursive function to render documents
-  const renderDocuments = (docList, depth = 0) => {
-    return (
-      <ul className="ml-4"> {/* Fixed left margin for indentation */}
-        {docList.map((doc) => (
-          <li key={doc.id} className="mb-2" style={{ marginLeft: '20px' }}> {/* Fixed indentation for all levels */}
-            <div className="flex items-center">
-              {/* Conditionally render the chevron icon only if the document has children */}
-              {doc.children && doc.children.length > 0 && (
-                <button
-                  onClick={() => toggleExpand(doc.id)}
-                  className="mr-1.5"
-                >
-                  <FontAwesomeIcon
-                    icon={
-                      expandedParents[doc.id] ? faChevronDown : faChevronRight
-                    }
-                    className="text-gray-700 h-2.5 w-2.5 mb-[3.5px]"
-                  />
-                </button>
-              )}
-              <input
-                type="checkbox"
-                checked={selectedDocuments.includes(doc.id)}
-                onChange={() => handleCheckboxChange(doc.id)}
-                className="mr-1.5"
-              />
-              <Link
-                to="/pdf-reader"
-                state={{ fileName: doc.name }} // Passing file name in state
-                className="text-sm text-[#3D4551] hover:underline cursor-pointer"
-              >
-                {doc.name}
-              </Link>
-            </div>
-
-            {/* Child Documents (If expanded) */}
-            {expandedParents[doc.id] && doc.children && doc.children.length > 0 && renderDocuments(doc.children, depth + 1)}
-          </li>
-        ))}
-      </ul>
-    );
+  const renderDocuments = (docList) => {
+    return docList.map((doc) => (
+      <li key={doc.id} className="whitespace-nowrap">
+        <div className="flex items-center">
+          <button
+            onClick={() => toggleExpand(doc.id)}
+            className="mr-1.5"
+          >
+            <FontAwesomeIcon
+              icon={
+                expandedParents[doc.id] ? faChevronDown : faChevronRight
+              }
+              className="text-gray-700 h-2.5 w-2.5 mb-[3.5px]"
+            />
+          </button>
+          <input
+            type="checkbox"
+            checked={selectedDocuments.includes(doc.id)}
+            onChange={() => handleCheckboxChange(doc.id)}
+            className="mr-1.5"
+          />
+          <Link
+            to="/pdf-reader"
+            state={{ fileName: doc.name }} // Passing file name in state
+            className="text-sm text-[#3D4551] hover:underline cursor-pointer"
+          >
+            <span className="text-xs text-[#aaa] mr-1">{doc.page}</span>
+            {doc.name}&nbsp;&nbsp;&nbsp;&nbsp;
+          </Link>
+        </div>
+  
+        {/* Recursively render children if expanded */}
+        {expandedParents[doc.id] && doc.children && doc.children.length > 0 && (
+          <ul className="ml-4">
+            {renderDocuments(doc.children)}
+          </ul>
+        )}
+      </li>
+    ));
   };
+  
 
 
   // Recursive function to render documents with an option for reverse order
   const renderChronologicalDocuments = (docList, reverse = false) => {
-    // Reverse the list if the reverse parameter is true
-    const sortedDocList = reverse ? [...docList].reverse() : docList;
-
+    // Sort the list by the numeric starting page
+    const sortedDocList = [...docList].sort((a, b) => {
+      const startPageA = parseInt(a.page.split('-')[0], 10);
+      const startPageB = parseInt(b.page.split('-')[0], 10);
+      return reverse ? startPageB - startPageA : startPageA - startPageB;
+    });
+  
     const listItems = sortedDocList.map((doc) => (
-      <li key={doc.id} className="flex items-center mb-2  whitespace-nowrap">
+      <li key={doc.id} className="flex items-center whitespace-nowrap">
         <input
           type="checkbox"
           checked={selectedDocuments.includes(doc.id)}
           onChange={() => handleCheckboxChange(doc.id)}
-          className="mr-2 self-start mt-1.5"
+          className="mr-2 self-start mt-[5px]"
         />
         <Link
           to="/pdf-reader"
           state={{ fileName: doc.name }} // Passing file name in state
           className="text-sm text-[#3D4551] hover:underline cursor-pointer"
         >
-          {doc.name} &nbsp;
-          <span className="text-xs text-[#919191]">{formatDate(doc.date)}</span>
+          <span className="text-xs text-[#aaa]">{doc.page}</span>
+          &nbsp;
+          {doc.name}&nbsp;&nbsp;&nbsp;&nbsp;
         </Link>
       </li>
     ));
-
+  
     // If the current document has children, call the function recursively
-    sortedDocList.forEach((doc) => {
-      if (doc.children && doc.children.length > 0) {
-        listItems.push(...renderChronologicalDocuments(doc.children, reverse).props.children);
-      }
-    });
-
+    // sortedDocList.forEach((doc) => {
+    //   if (doc.children && doc.children.length > 0) {
+    //     listItems.push(...renderChronologicalDocuments(doc.children, reverse).props.children);
+    //   }
+    // });
+  
     return <ul className="mt-2">{listItems}</ul>;
   };
+  
 
 
 // Function to get all documents in a one-dimensional array and sort by date
@@ -371,14 +373,47 @@ const [chronos, setChronos] = useState('crescente'); // Set default view mode
   };
 
   return (
-    <aside className="bg-[#F7F9FA] rounded-lg flex flex-col h-full">
-      <div className='pt-4 px-4 border-b border-[#EDEFF0]'>
+    <aside className="bg-[#fff] flex flex-col h-full">
+      <div className='p-4 border-b border-[#EDEFF0]'>
         {/* Header: Toggle and Title */}
-        <div className="flex justify-between items-center mb-4">
-          <h2 className="text-md font-medium text-[#3D4551]">Documentos</h2>
+        <div className="flex justify-between">
+          {/* <h2 className="text-md font-medium text-[#3D4551]">Documentos</h2> */}
+          {viewMode === 'tree' && (
+            <div className=" flex justify-between text-sm gap-4">
 
+              <button
+                className="text-xs text-blue-500 underline hover:text-blue-700"
+                onClick={contractAll}
+              >
+                Contrair Tudo
+              </button>
+              <button
+                className="text-xs text-blue-500 underline hover:text-blue-700"
+                onClick={expandAll}
+              >
+                Expandir Tudo
+              </button>
+            </div>
+          )}
+          {viewMode === 'chronological' && (
+            <div className="flex justify-between text-sm gap-4">
+
+              <button
+                className="text-xs text-blue-500 underline hover:text-blue-700"
+                onClick={showChronologicalView}
+              >
+                Crescente
+              </button>
+              <button
+                className="text-xs text-blue-500 underline hover:text-blue-700"
+                onClick={showAntiChronologicalView}
+              >
+                Decrescente
+              </button>
+            </div>
+          )}
           {/* Switch-like toggle */}
-          <div className="flex items-center space-x-1 mt-1">
+          <div className="flex items-center space-x-1">
             <FontAwesomeIcon
               icon={faStream}
               className={`cursor-pointer text-md ${viewMode === 'tree' ? 'text-blue-500' : 'text-gray-400'}`}
@@ -386,7 +421,7 @@ const [chronos, setChronos] = useState('crescente'); // Set default view mode
             />
 
             {/* Toggle Switch */}
-            <div className="relative inline-flex items-center cursor-pointer">
+            <div className="relative items-center cursor-pointer">
               <input
                 type="checkbox"
                 checked={viewMode === 'chronological'}
@@ -407,96 +442,65 @@ const [chronos, setChronos] = useState('crescente'); // Set default view mode
         </div>
 
 
-        <div className="mb-2">
-
-
-          {/* Expand All / Contract All (Visible in Tree View) */}
-          {viewMode === 'tree' && (
-            <div className="mt-4 flex justify-between text-sm">
-
-              <button
-                className="text-xs text-blue-500 underline hover:text-blue-700"
-                onClick={contractAll}
-              >
-                Contrair Tudo
-              </button>
-              <button
-                className="text-xs text-blue-500 underline hover:text-blue-700"
-                onClick={expandAll}
-              >
-                Expandir Tudo
-              </button>
-            </div>
-          )}
-          {viewMode === 'chronological' && (
-            <div className="mt-4 flex justify-between text-sm">
-
-              <button
-                className="text-xs text-blue-500 underline hover:text-blue-700"
-                onClick={showChronologicalView}
-              >
-                Crescente
-              </button>
-              <button
-                className="text-xs text-blue-500 underline hover:text-blue-700"
-                onClick={showAntiChronologicalView}
-              >
-                Decrescente
-              </button>
-            </div>
-          )}
-        </div>
+     
       </div>
 
       {/* Document List */}
-      <div className="p-4 bg-[#FBFCFD] rounded-md scroll-smooth overflow-auto grow">
-        {viewMode === 'tree' ? (
-          <ul>
-            {documents.map((doc) => (
-              <li key={doc.id} className="mb-2 whitespace-nowrap">
-                <div className="flex items-center">
-                  <button
-                    onClick={() => toggleExpand(doc.id)}
-                    className="mr-1.5"
-                  >
-                    <FontAwesomeIcon
-                      icon={
-                        expandedParents[doc.id] ? faChevronDown : faChevronRight
-                      }
-                      className="text-gray-700 h-2.5 w-2.5 mb-[3.5px]"
-                    />
-                  </button>
-                  <input
-                    type="checkbox"
-                    checked={selectedDocuments.includes(doc.id)}
-                    onChange={() => handleCheckboxChange(doc.id)}
-                    className="mr-1.5"
-                  />
-                  <Link
-                    to="/pdf-reader"
-                    state={{ fileName: doc.name }} // Passing file name in state
-                    className="text-sm text-[#3D4551] hover:underline cursor-pointer "
-                  >
-                    {doc.name}
-                  </Link>
-                </div>
-
-                {/* Child Documents (If expanded) */}
-                {expandedParents[doc.id] && doc.children && doc.children.length > 0 && renderDocuments(doc.children)}
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <div>
-            {chronos === 'crescente' ? <ChronologicalView /> : <AntiChronologicalView />}
+      <div className="px-2 py-2 bg-[#fff] scroll-smooth overflow-auto grow">
+  {viewMode === 'tree' ? (
+    <ul>
+      {documents.map((doc) => (
+        <li key={doc.id} className="whitespace-nowrap">
+          <div className="flex items-center">
+            <button
+              onClick={() => toggleExpand(doc.id)}
+              className="mr-1.5"
+            >
+              <FontAwesomeIcon
+                icon={
+                  expandedParents[doc.id] ? faChevronDown : faChevronRight
+                }
+                className="text-gray-700 h-2.5 w-2.5 mb-[3.5px]"
+              />
+            </button>
+            <input
+              type="checkbox"
+              checked={selectedDocuments.includes(doc.id)}
+              onChange={() => handleCheckboxChange(doc.id)}
+              className="mr-1.5"
+            />
+            <Link
+              to="/pdf-reader"
+              state={{ fileName: doc.name }} // Passing file name in state
+              className="text-sm text-[#3D4551] hover:underline cursor-pointer"
+            >
+              <span className="text-xs text-[#aaa] mr-1">{doc.page}</span>
+              {doc.name}&nbsp;&nbsp;&nbsp;&nbsp;
+            </Link>
           </div>
-        )}
-      </div>
+
+          {/* Child Documents (If expanded) */}
+          {expandedParents[doc.id] && doc.children && doc.children.length > 0 && (
+            <ul className="ml-4">
+              {renderDocuments(doc.children)}
+            </ul>
+          )}
+        </li>
+      ))}
+    </ul>
+  ) : (
+    <div>
+      {chronos === 'crescente' ? <ChronologicalView /> : <AntiChronologicalView />}
+    </div>
+  )}
+</div>
+
+
 
 
       {/* Footer: Selected Documents and Actions */}
       {selectedDocuments.length > 0 && (
-        <div className="mt-auto">
+        <div className="mt-auto z-50">
           <div className="flex bg-[#2672DE]">
             <span className="px-3 py-2 text-white text-xs grow m-auto font-medium">
               {selectedDocuments.length} item(ns) selecionado(s)
@@ -509,7 +513,7 @@ const [chronos, setChronos] = useState('crescente'); // Set default view mode
               Limpar
             </button>
           </div>
-          <div className="flex space-x-2 bg-[#0050D8] flex p-2 rounded-b-lg">
+          <div className="flex space-x-2 bg-[#0050D8] flex p-2">
             {/* Group 1 */}
             <div className="flex flex-col">
               <div className="flex space-x-1">
