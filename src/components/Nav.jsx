@@ -25,8 +25,8 @@ const Nav = () => {
   };
 
   return (
-    <div className=''>
-      <nav className="flex gap-6 bg-white mx-8 px-4 shadow-lg">
+    <div className='shadow-[0_3px_10px_rgb(0,0,0,0.1)]'>
+      <nav className="flex gap-6 bg-white px-8">
         {/* Group 1 */}
         <div className="flex flex-col mb-2">
           <label className="text-gray-400 text-xs my-1 font-medium">Consultas</label>
@@ -195,7 +195,7 @@ const Nav = () => {
 
 
       </nav>
-      <div className='bg-[#1351B4] w-100 mx-8 px-4 py-2 flex gap-6 text-sm'>
+      <div className='bg-[#1351B4] w-100 px-8 py-2 flex gap-6 text-sm'>
         <div className='bg-[#1A4480] py-2 flex rounded rounded-full text-white items-center px-4 gap-3'>
           <FontAwesomeIcon
             icon={faShareAlt}
