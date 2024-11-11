@@ -28,7 +28,7 @@ const Dashboard = () => {
                 <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3">
 
 
-                    <div className="bg-white p-6 shadow-[0_3px_10px_rgb(0,0,0,0.1)] flex flex-col gap-4 h-fit">
+                    {/* <div className="bg-white p-6 shadow-[0_3px_10px_rgb(0,0,0,0.1)] flex flex-col gap-4 h-fit">
                         <h2 className="text-md font-semibold text-gray-800">
                             <FontAwesomeIcon
                                 icon={faThList}
@@ -42,12 +42,10 @@ const Dashboard = () => {
                             />
                             Processo sem pendências.
                         </p>
-                       
-                        {/* Repeat Note Block as Needed */}
-                    </div>
+                    </div> */}
 
-                    <div className="bg-white p-6 shadow-[0_3px_10px_rgb(0,0,0,0.1)] flex flex-col gap-4 h-fit">
-                        <h2 className="text-md font-semibold text-gray-800">
+                    <div className="bg-white p-6 shadow-[0_3px_10px_rgb(0,0,0,0.1)] flex flex-col gap-2 h-fit">
+                        <h2 className="text-md font-semibold text-gray-800 mb-2">
                             <FontAwesomeIcon
                                 icon={faThList}
                                 className='mr-2'
