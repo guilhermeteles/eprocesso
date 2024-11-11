@@ -149,6 +149,7 @@ const Nav = () => {
       <div className='bg-[#1A4480] py-2 flex rounded rounded-full text-white items-center px-4 gap-3'>
             <FontAwesomeIcon
               icon={faLock}
+              className='text-orange-500'
             />
             <FontAwesomeIcon
               icon={faLock}
