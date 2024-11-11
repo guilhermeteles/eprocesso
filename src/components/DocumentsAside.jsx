@@ -393,6 +393,7 @@ const [chronos, setChronos] = useState('crescente'); // Set default view mode
               >
                 Expandir Tudo
               </button>
+              {/* <ToggleExpandButton onContractAll={contractAll} onExpandAll={expandAll} /> */}
             </div>
           )}
           {viewMode === 'chronological' && (

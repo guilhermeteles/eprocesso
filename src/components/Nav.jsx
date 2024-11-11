@@ -3,6 +3,8 @@ import { faLock, faFile, faUser } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import OverlayMenu from './OverlayMenu'
 import { useState } from 'react';
+import { faLink } from '@fortawesome/free-solid-svg-icons';
+import { faFolder } from '@fortawesome/free-regular-svg-icons';
 
 const Nav = () => {
   const [isOverlayOpen, setIsOverlayOpen] = useState(false);
@@ -161,11 +163,25 @@ const Nav = () => {
             className='text-orange-500'
           />
           <FontAwesomeIcon
-            icon={faLock}
+            icon={faLink}
           />
-          <FontAwesomeIcon
-            icon={faLock}
-          />
+          <div style={{ position: 'relative', display: 'inline-block' }}>
+    {/* Folder Icon */}
+    <FontAwesomeIcon icon={faFolder} size="" />
+    
+    {/* Centered 'A' */}
+    <span style={{
+      position: 'absolute',
+      top: '60%',
+      left: '50%',
+      transform: 'translate(-50%, -50%)',
+      fontSize: '.4rem',
+      fontWeight: 'bold',
+      color: 'white', // Adjust color as needed
+    }}>
+      A
+    </span>
+  </div>
 
         </div>
         <div className='flex items-center text-white font-semibold '>
