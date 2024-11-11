@@ -1,12 +1,19 @@
 import { OutlinedIconButton } from './IconButton'; // Import the IconButton component
 import { faLock, faFile, faUser } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import OverlayMenu from './OverlayMenu'
+import { useState } from 'react';
 
 const Nav = () => {
+  const [isOverlayOpen, setIsOverlayOpen] = useState(false);
 
+  const toggleOverlayMenu = () => {
+    setIsOverlayOpen((prev) => !prev);
+  };
+  
   return (
-    <>
-      <nav className="flex gap-6 bg-white mx-8 px-4">
+    <div className=''>
+      <nav className="flex gap-6 bg-white mx-8 px-4 shadow-lg">
         {/* Group 1 */}
         <div className="flex flex-col mb-2">
           <label className="text-gray-700 text-xs my-1 font-medium">Consultas</label>
@@ -76,6 +83,7 @@ const Nav = () => {
               icon="fa-solid fa-ellipsis-vertical"
               name="Messages"
               textColor='#1351B4'
+              onClick={toggleOverlayMenu}
             />
           </div>
         </div>
@@ -122,6 +130,7 @@ const Nav = () => {
               icon="fa-solid fa-ellipsis-vertical"
               name="Messages"
               textColor='#1351B4'
+              onClick={toggleOverlayMenu}
             />
           </div>
         </div>
@@ -197,7 +206,8 @@ const Nav = () => {
         </div>
 
       </div>
-    </>
+      <OverlayMenu isOpen={isOverlayOpen} onClose={toggleOverlayMenu} onAddItemToGroup3={() => {}} />
+    </div>
   );
 };
 
