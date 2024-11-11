@@ -26,6 +26,61 @@ const Nav = () => {
 
   return (
     <div className='shadow-[0_3px_10px_rgb(0,0,0,0.1)]'>
+      <div className='bg-[#1351B4] w-100 px-8 py-1 pb-2 flex gap-6 text-sm'>
+        
+        <div className='flex items-center text-white font-semibold '>
+          <FontAwesomeIcon
+            icon={faFile}
+            className="me-2"
+          />
+          10090.000003/0419-05
+        </div>
+        <div className='flex items-center text-white'>
+          <FontAwesomeIcon
+            icon={faUser}
+            className="me-2"
+          />
+
+          <span className='font-semibold mr-2'>
+            05136946504
+          </span>
+          UOLIRHEZOWL UVORXRL WV XZIEZOSL
+        </div>
+        <div className="flex items-center text-white relative">
+          <div className="relative">
+            <FontAwesomeIcon icon={faLock} className="me-2" />
+            <span className="absolute inset-0 flex items-center justify-center text-[8px] font-black text-[#1351B4] top-[7px] right-[8.5px]">
+              E
+            </span>
+          </div>
+          Básico
+        </div>
+        <div className="flex items-center text-white relative">
+          <div className="relative">
+            <FontAwesomeIcon icon={faLock} className="me-2" />
+            <span className="absolute inset-0 flex items-center justify-center text-[8px] font-black text-[#1351B4] top-[7px] right-[8.5px]">
+              I
+            </span>
+          </div>
+          Básico
+        </div>
+        <div className='bg-[#1A4480] py-2 flex rounded rounded-full text-white items-center px-4 gap-3'>
+          <FontAwesomeIcon
+            icon={faShareAlt}
+            className='text-orange-500'
+          />
+          <FontAwesomeIcon
+            icon={faLink}
+          />
+    <FontAwesomeIcon
+            icon={faTrashAlt}
+          />
+    
+          <FontAwesomeIcon
+            icon={faBoxesPacking}
+          />
+        </div>
+      </div>
       <nav className="flex gap-6 bg-white px-8">
         {/* Group 1 */}
         <div className="flex flex-col mb-2">
@@ -195,99 +250,7 @@ const Nav = () => {
 
 
       </nav>
-      <div className='bg-[#1351B4] w-100 px-8 py-2 flex gap-6 text-sm'>
-        <div className='bg-[#1A4480] py-2 flex rounded rounded-full text-white items-center px-4 gap-3'>
-          <FontAwesomeIcon
-            icon={faShareAlt}
-            className='text-orange-500'
-          />
-          <FontAwesomeIcon
-            icon={faLink}
-          />
-    <FontAwesomeIcon
-            icon={faTrashAlt}
-          />
-    
-          <FontAwesomeIcon
-            icon={faBoxesPacking}
-          />
-          {/* <FontAwesomeIcon
-            icon={faLinkSlash}
-          /> */}
-          {/* <div style={{ position: 'relative', display: 'inline-block' }}>
-  
-            <FontAwesomeIcon icon={faFolderOpen} size="" />
-
-    
-            <span style={{
-              position: 'absolute',
-              top: '66%',
-              left: '50%',
-              transform: 'translate(-50%, -50%)',
-              fontSize: '.45rem',
-              fontWeight: 'bold',
-              color: '#1A4480', // Adjust color as needed
-            }}>
-              A
-            </span>
-          </div> */}
-          {/* <div style={{ position: 'relative', display: 'inline-block' }}>
-
-            <FontAwesomeIcon icon={faFolder} size="" />
-
-   
-            <span style={{
-              position: 'absolute',
-              top: '55%',
-              left: '50%',
-              transform: 'translate(-50%, -50%)',
-              fontSize: '.45rem',
-              fontWeight: 'bold',
-              color: 'white',
-            }}>
-              A
-            </span>
-          </div> */}
-
-        </div>
-        <div className='flex items-center text-white font-semibold '>
-          <FontAwesomeIcon
-            icon={faFile}
-            className="me-2"
-          />
-          10090.000003/0419-05
-        </div>
-        <div className='flex items-center text-white'>
-          <FontAwesomeIcon
-            icon={faUser}
-            className="me-2"
-          />
-
-          <span className='font-semibold mr-2'>
-            05136946504
-          </span>
-          UOLIRHEZOWL UVORXRL WV XZIEZOSL
-        </div>
-        <div className="flex items-center text-white relative">
-          <div className="relative">
-            <FontAwesomeIcon icon={faLock} className="me-2" />
-            <span className="absolute inset-0 flex items-center justify-center text-[8px] font-black text-[#1351B4] top-[7px] right-[8.5px]">
-              E
-            </span>
-          </div>
-          Básico
-        </div>
-        <div className="flex items-center text-white relative">
-          <div className="relative">
-            <FontAwesomeIcon icon={faLock} className="me-2" />
-            <span className="absolute inset-0 flex items-center justify-center text-[8px] font-black text-[#1351B4] top-[7px] right-[8.5px]">
-              I
-            </span>
-          </div>
-          Básico
-        </div>
-
-      </div>
+      
       <OverlayMenu isOpen={isOverlayOpen} onClose={toggleOverlayMenu} onAddItemToGroup3={() => { }} />
     </div>
   );

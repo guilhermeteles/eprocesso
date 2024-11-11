@@ -44,7 +44,7 @@ const Dashboard = () => {
                         </p>
                     </div> */}
 
-                    <div className="bg-white p-6 shadow-[0_3px_10px_rgb(0,0,0,0.1)] flex flex-col gap-2 h-fit">
+                    <div className="bg-white px-6 pb-6 pt-4 shadow-[0_3px_10px_rgb(0,0,0,0.1)] flex flex-col gap-2 h-fit">
                         <h2 className="text-md font-semibold text-gray-800 mb-2">
                             <FontAwesomeIcon
                                 icon={faThList}
@@ -118,7 +118,7 @@ const Dashboard = () => {
 
 
                     {/* Second Card - 1 Column */}
-                    <div className="bg-white p-6 shadow-[0_3px_10px_rgb(0,0,0,0.1)] flex flex-col gap-4 h-fit">
+                    <div className="bg-white px-6 pb-6 pt-4 shadow-[0_3px_10px_rgb(0,0,0,0.1)] flex flex-col gap-4 h-fit">
                         <h2 className="text-md font-semibold text-gray-800">
                             <FontAwesomeIcon
                                 icon={faEdit}
