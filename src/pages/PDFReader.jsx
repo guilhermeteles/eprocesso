@@ -16,9 +16,9 @@ const App = () => {
   return (
     <div className="flex bg-gray-100">
       <Aside />
-      <div className='w-full h-svh flex flex-col align-center px-6 relative'>
+      <div className='w-full h-svh flex flex-col align-center relative'>
         <Nav />
-        <div className='bg-white mx-8 grow relative overflow-hidden flex'>
+        <div className='mx-8 bg-white grow relative overflow-hidden flex'>
           <button
             onClick={handleGoHome}
             className="top-2 right-6 z-50 absolute bg-[#E41D3D20] px-4 pt-0.5 pb-1 border border-[2px] border-[#E41D3D] text-[#E41D3D] rounded-full hover:bg-[#E41D3D33] transition duration-200"
