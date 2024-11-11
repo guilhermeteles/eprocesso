@@ -18,10 +18,10 @@ const App = () => {
       <Aside />
       <div className='w-full h-svh flex flex-col align-center relative'>
         <Nav />
-        <div className='mx-8 bg-white grow relative overflow-hidden flex'>
+        <div className='mt-8 mx-8 bg-white grow relative overflow-hidden flex'>
           <button
             onClick={handleGoHome}
-            className="top-2 right-6 z-50 absolute bg-[#E41D3D20] px-4 pt-0.5 pb-1 border border-[2px] border-[#E41D3D] text-[#E41D3D] rounded-full hover:bg-[#E41D3D33] transition duration-200"
+            className="top-3 right-6 z-50 absolute bg-[#E41D3D20] px-4 pt-0.5 pb-1 border border-[2px] border-[#E41D3D] text-[#E41D3D] rounded-full hover:bg-[#E41D3D33] transition duration-200"
           >
             Fechar <i className="ms-1 fa-solid fa-xmark"></i>
           </button>
