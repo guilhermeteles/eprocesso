@@ -51,63 +51,63 @@ const Dashboard = () => {
                                 className='mr-2'
                             />
                             Pendências do Processo</h2>
-                        <p className="text-gray-600 bg-red-50 px-3 py-2 rounded-md flex items-center gap-2">
+                        <p className="text-gray-600 bg-red-100 px-3 py-2 rounded-md flex items-center gap-2">
                             <FontAwesomeIcon
                                 icon={faDatabase}
                                 className='mr-2 mt-0.5'
                             />
                             <p>Finalizar o cadastro do processo no SIEF-Processos</p>
                         </p>
-                        <p className="text-gray-600 bg-red-50 px-3 py-2 rounded-md flex items-center gap-2">
+                        <p className="text-gray-600 bg-red-100 px-3 py-2 rounded-md flex items-center gap-2">
                             <FontAwesomeIcon
                                 icon={faFolder}
                                 className='mr-2 mt-0.5'
                             />
                             <p>Existe SJD a ser avaliada</p>
                         </p>
-                        <p className="text-gray-600 bg-red-50 px-3 py-2 rounded-md flex items-center gap-2">
+                        <p className="text-gray-600 bg-red-100 px-3 py-2 rounded-md flex items-center gap-2">
                             <FontAwesomeIcon
                                 icon={faNoteSticky}
                                 className='mr-2 mt-0.5'
                             />
                             <p>Existe documento a ser efetivado</p>
                         </p>
-                        <p className="text-gray-600 bg-red-50 px-3 py-2 rounded-md flex items-center gap-2">
+                        <p className="text-gray-600 bg-red-100 px-3 py-2 rounded-md flex items-center gap-2">
                             <FontAwesomeIcon
                                 icon={faNoteSticky}
                                 className='mr-2 mt-0.5'
                             />
                             <p>Existe providência aberta</p>
                         </p>
-                        <p className="text-gray-600 bg-red-50 px-3 py-2 rounded-md flex items-center gap-2">
+                        <p className="text-gray-600 bg-red-100 px-3 py-2 rounded-md flex items-center gap-2">
                             <FontAwesomeIcon
                                 icon={faCheck}
                                 className='mr-2 mt-0.5'
                             />
                             <p>Existe nota para o processo ativa</p>
                         </p>
-                        <p className="text-gray-600 bg-red-50 px-3 py-2 rounded-md flex items-center gap-2">
+                        <p className="text-gray-600 bg-red-100 px-3 py-2 rounded-md flex items-center gap-2">
                             <FontAwesomeIcon
                                 icon={faCheck}
                                 className='mr-2 mt-0.5'
                             />
                             <p>Existe ciência pendente</p>
                         </p>
-                        <p className="text-gray-600 bg-red-50 px-3 py-2 rounded-md flex items-center gap-2">
+                        <p className="text-gray-600 bg-red-100 px-3 py-2 rounded-md flex items-center gap-2">
                             <FontAwesomeIcon
                                 icon={faCheck}
                                 className='mr-2 mt-0.5'
                             />
                             <p>Existe manifestação pendente</p>
                         </p>
-                        <p className="text-gray-600 bg-red-50 px-3 py-2 rounded-md flex items-center gap-2">
+                        <p className="text-gray-600 bg-red-100 px-3 py-2 rounded-md flex items-center gap-2">
                             <FontAwesomeIcon
                                 icon={faHand}
                                 className='mr-2 mt-0.5'
                             />
                             <p>Existe alegação</p>
                         </p>
-                        <p className="text-gray-600 bg-red-50 px-3 py-2 rounded-md flex items-center gap-2">
+                        <p className="text-gray-600 bg-red-100 px-3 py-2 rounded-md flex items-center gap-2">
                             <FontAwesomeIcon
                                 icon={faClipboardList}
                                 className='mr-2 mt-0.5'
@@ -125,10 +125,10 @@ const Dashboard = () => {
                                 className='mr-2'
                             />
                             Notas</h2>
-                        <p className="text-gray-600 bg-yellow-50 px-3 py-2 rounded-md">
+                        <p className="text-gray-600 bg-yellow-100 px-3 py-2 rounded-md">
                             <div className="flex justify-between mb-2">
-                                <span className="text-xs font-bold">
-                                    Usuário
+                                <span className="text-xs font-semibold">
+                                    Nota de Usuário
                                 </span>
                                 <span className="text-xs">
                                     10/02/2023
@@ -137,10 +137,10 @@ const Dashboard = () => {
 
                             Receba insights personalizados com base no seu ritmo de estudo, ajudando a ajustar o planejamento conforme sua necessidade.
                         </p>
-                        <p className="text-gray-600 bg-yellow-50 px-3 py-2 rounded-md">
+                        <p className="text-gray-600 bg-amber-100 px-3 py-2 rounded-md">
                             <div className="flex justify-between mb-2">
-                                <span className="text-xs font-bold">
-                                    Equipe
+                                <span className="text-xs font-semibold">
+                                    Nota de Equipe
                                 </span>
                                 <span className="text-xs">
                                     10/02/2023
@@ -149,10 +149,10 @@ const Dashboard = () => {
 
                             Receba insights personalizados com base no seu ritmo de estudo, ajudando a ajustar o planejamento conforme sua necessidade.
                         </p>
-                        <p className="text-gray-600 bg-yellow-50 px-3 py-2 rounded-md">
+                        <p className="text-gray-600 bg-orange-100 px-3 py-2 rounded-md">
                             <div className="flex justify-between mb-2">
-                                <span className="text-xs font-bold">
-                                    Processo
+                                <span className="text-xs font-semibold">
+                                    Nota de Processo
                                 </span>
                                 <span className="text-xs">
                                     10/02/2023
