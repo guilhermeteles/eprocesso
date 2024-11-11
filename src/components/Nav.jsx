@@ -1,4 +1,4 @@
-import { OutlinedIconButton } from './IconButton'; // Import the IconButton component
+import { OutlinedIconButton, IconButton } from './IconButton'; // Import the IconButton component
 import { faLock, faFile, faUser } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import OverlayMenu from './OverlayMenu'
@@ -29,142 +29,165 @@ const Nav = () => {
       <nav className="flex gap-6 bg-white mx-8 px-4 shadow-lg">
         {/* Group 1 */}
         <div className="flex flex-col mb-2">
-          <label className="text-gray-700 text-xs my-1 font-medium">Consultas</label>
+          <label className="text-gray-400 text-xs my-1 font-medium">Consultas</label>
           <div className="flex gap-1">
-            <OutlinedIconButton
+            <IconButton
               icon="fa-solid fa-link"
               name="Home"
               textColor='#1351B4'
+              color='#C4EEEB'
             />
-            <OutlinedIconButton
+            <IconButton
               icon="fa-solid fa-file-contract"
               name="Home"
               textColor='#1351B4'
+              color='#C4EEEB'
             />
-            <OutlinedIconButton
+            <IconButton
               icon="fa-solid fa-calendar-days"
               name="Profile"
               textColor='#1351B4'
+              color='#C4EEEB'
             />
-            <OutlinedIconButton
+            <IconButton
               icon="fa-solid fa-info-circle"
               name="Settings"
               textColor='#1351B4'
+              color='#C4EEEB'
             />
-            <OutlinedIconButton
+            <IconButton
               icon="fa-solid fa-user"
               name="Notifications"
               textColor='#1351B4'
+              color='#C4EEEB'
             />
-            <OutlinedIconButton
+            <IconButton
               icon="fa-solid fa-lock"
               name="Messages"
               textColor='#1351B4'
+              color='#C4EEEB'
             />
           </div>
         </div>
         {/* Group 1 */}
         <div className="flex flex-col mb-2">
-          <label className="text-gray-700 text-xs my-1 font-medium">Processo</label>
+          <label className="text-gray-400 text-xs my-1 font-medium">Processo</label>
           <div className="flex gap-1">
-            <OutlinedIconButton
+            <IconButton
               icon="fa-solid fa-arrow-right"
               name="Home"
               textColor='#1351B4'
+              color='#D4E5FF'
             />
-            <OutlinedIconButton
+            <IconButton
               icon="fa-solid fa-arrow-rotate-right"
               name="Profile"
               textColor='#1351B4'
+              color='#D4E5FF'
             />
-            <OutlinedIconButton
+            <IconButton
               icon="fa-solid fa-arrow-up"
               name="Settings"
               textColor='#1351B4'
+              color='#D4E5FF'
             />
-            <OutlinedIconButton
+            <IconButton
               icon="fa-solid fa-user-group"
               name="Notifications"
               textColor='#1351B4'
+              color='#D4E5FF'
             />
-            <OutlinedIconButton
+            <IconButton
               icon="fa-solid fa-circle-info"
               name="Notifications"
               textColor='#1351B4'
+              color='#D4E5FF'
             />
-            <OutlinedIconButton
+            <IconButton
               icon="fa-solid fa-calendar-days"
               name="Messages"
               textColor='#1351B4'
+              color='#D4E5FF'
             />
-            <OutlinedIconButton
+            <IconButton
               icon="fa-solid fa-ellipsis-vertical"
               name="Messages"
               textColor='#1351B4'
+              color='#D4E5FF'
               onClick={toggleOverlayMenu}
             />
           </div>
         </div>
         {/* Group 1 */}
         <div className="flex flex-col mb-2">
-          <label className="text-gray-700 text-xs my-1 font-medium">Documentos</label>
+          <label className="text-gray-400 text-xs my-1 font-medium">Documentos</label>
           <div className="flex gap-1">
-            <OutlinedIconButton
+            <IconButton
               icon="fa-solid fa-bookmark"
               name="Home"
               textColor='#1351B4'
+              color='#EBE3F9'
             />
-            <OutlinedIconButton
+            <IconButton
               icon="fa-solid fa-file-arrow-up"
               name="Home"
               textColor='#1351B4'
+              color='#EBE3F9'
             />
-            <OutlinedIconButton
+            <IconButton
               icon="fa-solid fa-file-medical"
               name="Profile"
               textColor='#1351B4'
+              color='#EBE3F9'
             />
-            <OutlinedIconButton
+            <IconButton
               icon="fa-solid fa-file-signature"
               name="Settings"
               textColor='#1351B4'
+              color='#EBE3F9'
             />
-            <OutlinedIconButton
+            <IconButton
               icon="fa-solid fa-trash-can"
               name="Messages"
               textColor='#1351B4'
+              color='#EBE3F9'
             />
-            <OutlinedIconButton
+            <IconButton
               icon="fa-solid fa-circle-info"
               name="Notifications"
               textColor='#1351B4'
+              color='#EBE3F9'
             />
-            <OutlinedIconButton
+            <IconButton
               icon="fa-solid fa-download"
               name="Notifications"
               textColor='#1351B4'
+              color='#EBE3F9'
             />
-            <OutlinedIconButton
+            <IconButton
               icon="fa-solid fa-ellipsis-vertical"
               name="Messages"
               textColor='#1351B4'
+              color='#EBE3F9'
               onClick={toggleOverlayMenu}
             />
           </div>
         </div>
         {/* Group 1 */}
         <div className="flex flex-col mb-2">
-          <label className="text-gray-700 text-xs my-1 font-medium">Notas</label>
+          <label className="text-gray-400 text-xs my-1 font-medium">Notas</label>
           <div className="flex gap-1">
-            <OutlinedIconButton
+            <IconButton
               icon="fa-solid fa-notes-medical"
               name="Home"
               textColor='#1351B4'
+              color='#FFDDEA'
             />
-            <OutlinedIconButton
+            <IconButton
               icon="fa-solid fa-clipboard-list"
               name="Profile"
               textColor='#1351B4'
+              color='#FFDDEA'
             />
 
           </div>

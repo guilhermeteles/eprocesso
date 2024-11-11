@@ -17,7 +17,7 @@ export const IconButton = ({ icon, name, color, onClick, letter, textColor = '#F
   return (
     <button
       onClick={onClick}
-      className="w-8 h-8 rounded rounded-full focus:outline-none flex justify-center items-center"
+      className="w-8 h-8 rounded rounded-md focus:outline-none flex justify-center items-center"
       style={{ backgroundColor: color }} // Base color
       title={name}
       onMouseEnter={(e) => {
@@ -58,7 +58,7 @@ export const OutlinedIconButton = ({ icon, name, onClick, textColor = '#FFFFFF' 
   return (
     <button
       onClick={onClick}
-      className="w-8 h-8 rounded rounded-full text-white border focus:outline-none flex items-center justify-center"
+      className="w-8 h-8 rounded rounded-md text-white border focus:outline-none flex items-center justify-center"
       style={{
         backgroundColor: 'white', // White background
         borderColor: borderColor, // Border color
