@@ -7,7 +7,7 @@ const App = () => {
   return (
     <div className="min-h-screen flex bg-[#F7F9FA] overflow-hidden h-svh">
       <Aside/>
-      <div className='w-full flex flex-col align-center'>
+      <div className='w-full flex flex-col align-center container'>
         <Nav />
         
           <Dashboard/>

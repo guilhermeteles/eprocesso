@@ -24,7 +24,7 @@ const Dashboard = () => {
 
     return (
         <div className='overflow-y-auto'>
-            <div className="container mx-auto px-8 py-8">
+            <div className=" mx-auto px-8 py-8">
                 <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3">
 
 
