@@ -373,22 +373,22 @@ const [chronos, setChronos] = useState('crescente'); // Set default view mode
   };
 
   return (
-    <aside className="bg-[#fff] flex flex-col h-full">
-      <div className='p-4 border-b border-[#EDEFF0]'>
+    <aside className="bg-[#1351B4] flex flex-col h-full">
+      <div className='p-[11px] '>
         {/* Header: Toggle and Title */}
-        <div className="flex justify-between">
+        <div className="flex justify-between text-white">
           {/* <h2 className="text-md font-medium text-[#3D4551]">Documentos</h2> */}
           {viewMode === 'tree' && (
             <div className=" flex justify-between text-sm gap-4">
 
               <button
-                className="text-xs text-blue-500 underline hover:text-blue-700"
+                className="text-xs underline hover:text-blue-700"
                 onClick={contractAll}
               >
                 Contrair Tudo
               </button>
               <button
-                className="text-xs text-blue-500 underline hover:text-blue-700"
+                className="text-xs underline hover:text-blue-700"
                 onClick={expandAll}
               >
                 Expandir Tudo
@@ -400,13 +400,13 @@ const [chronos, setChronos] = useState('crescente'); // Set default view mode
             <div className="flex justify-between text-sm gap-4">
 
               <button
-                className="text-xs text-blue-500 underline hover:text-blue-700"
+                className="text-xs underline hover:text-blue-700"
                 onClick={showChronologicalView}
               >
                 Crescente
               </button>
               <button
-                className="text-xs text-blue-500 underline hover:text-blue-700"
+                className="text-xs underline hover:text-blue-700"
                 onClick={showAntiChronologicalView}
               >
                 Decrescente
