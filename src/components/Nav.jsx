@@ -1,85 +1,121 @@
-import { OutlinedIconButton, IconButton } from './IconButton'; // Import the IconButton component
-import { faLock, faFile, faUser } from '@fortawesome/free-solid-svg-icons';
+import { IconButton } from './IconButton';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import OverlayMenu from './OverlayMenu'
+import OverlayMenu from './OverlayMenu';
 import { useState } from 'react';
-import { faLink } from '@fortawesome/free-solid-svg-icons';
-import { faFolder } from '@fortawesome/free-regular-svg-icons';
-import { faFolderOpen } from '@fortawesome/free-regular-svg-icons';
-import { faLinkSlash } from '@fortawesome/free-solid-svg-icons';
-import { faShareAlt } from '@fortawesome/free-solid-svg-icons';
-import { faShare } from '@fortawesome/free-solid-svg-icons';
-import { faUserAltSlash } from '@fortawesome/free-solid-svg-icons';
-import { faArchive } from '@fortawesome/free-solid-svg-icons';
-import { faBoxArchive } from '@fortawesome/free-solid-svg-icons/faBoxArchive';
-import { faBoxOpen } from '@fortawesome/free-solid-svg-icons';
-import { faFileZipper } from '@fortawesome/free-regular-svg-icons';
-import { faBoxesPacking } from '@fortawesome/free-solid-svg-icons';
-import { faTrashAlt } from '@fortawesome/free-regular-svg-icons';
+import { faFile, faUser, faLock, faShareAlt, faLink, faTrashAlt, faBoxesPacking, faCheck, faStar as faStarSolid } from '@fortawesome/free-solid-svg-icons';
+import { faStar as faStarRegular } from '@fortawesome/free-regular-svg-icons';
 
 const Nav = () => {
   const [isOverlayOpen, setIsOverlayOpen] = useState(false);
+  const [copied, setCopied] = useState(false);
+  const [clickPosition, setClickPosition] = useState({ x: 0, y: 0 });
+  const [clickPosition2, setClickPosition2] = useState({ x: 0, y: 0 });
 
   const toggleOverlayMenu = () => {
     setIsOverlayOpen((prev) => !prev);
   };
 
-  return (
-    <div className='shadow-[0_3px_10px_rgb(0,0,0,0.1)]'>
-      <div className='bg-[#1351B4] w-100 px-8 py-1 pb-2 flex gap-6 text-sm'>
-        
-        <div className='flex items-center text-white font-semibold '>
-          <FontAwesomeIcon
-            icon={faFile}
-            className="me-2"
-          />
-          10090.000003/0419-05
-        </div>
-        <div className='flex items-center text-white'>
-          <FontAwesomeIcon
-            icon={faUser}
-            className="me-2"
-          />
+  const handleCopy = (text, event) => {
+    navigator.clipboard.writeText(text)
+      .then(() => {
+        // Set the position of the copied message relative to the click coordinates
+        setClickPosition({ x: event.clientX, y: event.clientY });
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000); // Hide after 2 seconds
+      });
+  };
+  const [isFilled, setIsFilled] = useState(false);
+  const [showMessage, setShowMessage] = useState(false);
 
-          <span className='font-semibold mr-2'>
-            05136946504
-          </span>
-          UOLIRHEZOWL UVORXRL WV XZIEZOSL
+  const toggleStar = () => {
+    setIsFilled((prev) => !prev);
+    setShowMessage(true);
+    setClickPosition2({ x: event.clientX, y: event.clientY });
+    setTimeout(() => setShowMessage(false), 2000); // Hide message after 2 seconds
+  };
+
+  return (
+    <div className='shadow-[0_3px_10px_rgb(0,0,0,0.1)] relative'>
+      <div className='bg-[#1351B4] w-100 px-8 py-1 pb-2 flex gap-6 text-sm'>
+        {/* Action Buttons */}
+        <div className='relative'>
+          {/* Star Icon */}
+          <div
+            className='bg-[#1A4480] p-2 flex rounded-full text-white items-center cursor-pointer'
+            onClick={toggleStar}
+          >
+            <FontAwesomeIcon
+              icon={isFilled ? faStarSolid : faStarRegular}
+              className={isFilled ? 'text-yellow-400' : 'text-white'}
+            />
+          </div>
+
+          {/* Favorited Message */}
+          {showMessage && (
+            <div
+              className="text-nowrap z-50 absolute top-[3px] -left-20 transform -translate-x-1/2 bg-[#1A4480] text-white rounded-full px-4 py-2 text-xs flex items-center align-start gap-1"
+              // style={{ whiteSpace: 'nowrap' }}
+              style={{
+              top: clickPosition2.y + 0, // Adjust the vertical position above the click
+              left: clickPosition2.x - 250, // Adjust the horizontal position slightly to the right
+            }}
+            >
+              <FontAwesomeIcon icon={faStarSolid} />
+              {isFilled ? 'Processo favorito' : 'Processo não favorito'}
+            </div>
+      )}
         </div>
-        <div className="flex items-center text-white relative">
+
+        {/* First Item */}
+        <div className='flex items-center text-white font-semibold relative'>
+          <FontAwesomeIcon icon={faFile} className="me-2" />
+          <span onClick={(e) => handleCopy('10090.000003/0419-05', e)} className="cursor-pointer hover:underline">10090.000003/0419-05</span>
+        </div>
+
+        {/* Second Item */}
+        <div className='flex items-center text-white relative'>
+          <FontAwesomeIcon icon={faUser} className="me-2" />
+          <span onClick={(e) => handleCopy('05136946504', e)} className="cursor-pointer font-semibold mr-2 hover:underline">05136946504</span>
+          <span onClick={(e) => handleCopy('UOLIRHEZOWL UVORXRL WV XZIEZOSL', e)} className="cursor-pointer hover:underline">UOLIRHEZOWL UVORXRL WV XZIEZOSL</span>
+        </div>
+
+        {/* Third and Fourth Items */}
+        <div className="flex items-center text-white relative cursor-pointer hover:underline" onClick={(e) => handleCopy('Básico', e)}>
           <div className="relative">
             <FontAwesomeIcon icon={faLock} className="me-2" />
-            <span className="absolute inset-0 flex items-center justify-center text-[8px] font-black text-[#1351B4] top-[7px] right-[8.5px]">
-              E
-            </span>
+            <span className="absolute inset-0 flex items-center justify-center text-[8px] font-black text-[#1351B4] top-[7px] right-[8.5px]">E</span>
           </div>
           Básico
         </div>
-        <div className="flex items-center text-white relative">
+        <div className="flex items-center text-white relative cursor-pointer hover:underline" onClick={(e) => handleCopy('Básico', e)}>
           <div className="relative">
             <FontAwesomeIcon icon={faLock} className="me-2" />
-            <span className="absolute inset-0 flex items-center justify-center text-[8px] font-black text-[#1351B4] top-[7px] right-[8.5px]">
-              I
-            </span>
+            <span className="absolute inset-0 flex items-center justify-center text-[8px] font-black text-[#1351B4] top-[7px] right-[8.5px]">I</span>
           </div>
           Básico
         </div>
+
+        {/* Action Buttons */}
         <div className='bg-[#1A4480] py-2 flex rounded rounded-full text-white items-center px-4 gap-3'>
-          <FontAwesomeIcon
-            icon={faShareAlt}
-            className='text-orange-500'
-          />
-          <FontAwesomeIcon
-            icon={faLink}
-          />
-    <FontAwesomeIcon
-            icon={faTrashAlt}
-          />
-    
-          <FontAwesomeIcon
-            icon={faBoxesPacking}
-          />
+          <FontAwesomeIcon icon={faShareAlt} className='text-orange-500' />
+          <FontAwesomeIcon icon={faLink} />
+          <FontAwesomeIcon icon={faTrashAlt} />
+          <FontAwesomeIcon icon={faBoxesPacking} />
         </div>
+
+        {/* Copied Message */}
+        {copied && (
+          <div
+            className="absolute bg-green-600 text-white rounded-full px-3 py-1 flex items-center gap-1"
+            style={{
+              top: clickPosition.y + 0, // Adjust the vertical position above the click
+              left: clickPosition.x - 290, // Adjust the horizontal position slightly to the right
+            }}
+          >
+            <FontAwesomeIcon icon={faCheck} />
+            Copiado
+          </div>
+        )}
       </div>
       <nav className="flex gap-6 bg-white px-8">
         {/* Group 1 */}
@@ -250,7 +286,7 @@ const Nav = () => {
 
 
       </nav>
-      
+
       <OverlayMenu isOpen={isOverlayOpen} onClose={toggleOverlayMenu} onAddItemToGroup3={() => { }} />
     </div>
   );

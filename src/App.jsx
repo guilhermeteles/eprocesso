@@ -3,8 +3,10 @@ import Dashboard from './pages/Dashboard';
 import PDFReader from './pages/PDFReader';
 import NotFound from './pages/NotFound.jsx'; // Create this component for handling 404s
 
+
 function App() {
   return (
+    
     <Router>
       <Routes>
         <Route path="/" element={<Dashboard />} />
@@ -12,6 +14,7 @@ function App() {
         <Route path="*" element={<NotFound />} /> {/* Handle undefined routes */}
       </Routes>
     </Router>
+
   );
 }
 
