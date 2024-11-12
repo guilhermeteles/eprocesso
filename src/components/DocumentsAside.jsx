@@ -382,13 +382,13 @@ const [chronos, setChronos] = useState('crescente'); // Set default view mode
             <div className=" flex justify-between text-sm gap-4">
 
               <button
-                className="text-xs underline hover:text-blue-700"
+                className="text-xs underline hover:text-gray-100"
                 onClick={contractAll}
               >
                 Contrair Tudo
               </button>
               <button
-                className="text-xs underline hover:text-blue-700"
+                className="text-xs underline hover:text-gray-100"
                 onClick={expandAll}
               >
                 Expandir Tudo
@@ -400,13 +400,13 @@ const [chronos, setChronos] = useState('crescente'); // Set default view mode
             <div className="flex justify-between text-sm gap-4">
 
               <button
-                className="text-xs underline hover:text-blue-700"
+                className="text-xs underline hover:text-gray-100"
                 onClick={showChronologicalView}
               >
                 Crescente
               </button>
               <button
-                className="text-xs underline hover:text-blue-700"
+                className="text-xs underline hover:text-gray-100"
                 onClick={showAntiChronologicalView}
               >
                 Decrescente
@@ -417,7 +417,7 @@ const [chronos, setChronos] = useState('crescente'); // Set default view mode
           <div className="flex items-center space-x-1">
             <FontAwesomeIcon
               icon={faStream}
-              className={`cursor-pointer text-md ${viewMode === 'tree' ? 'text-blue-500' : 'text-gray-400'}`}
+              className={`cursor-pointer text-md ${viewMode === 'tree' ? 'text-white' : 'opacity-35'}`}
               onClick={toggleViewMode}
             />
 
@@ -435,7 +435,7 @@ const [chronos, setChronos] = useState('crescente'); // Set default view mode
 
             <FontAwesomeIcon
               icon={faCalendar}
-              className={`cursor-pointer text-md ${viewMode === 'chronological' ? 'text-blue-500' : 'text-gray-400'}`}
+              className={`pb-0.5 cursor-pointer text-md ${viewMode === 'chronological' ? 'text-white' : 'opacity-35'}`}
               onClick={toggleViewMode}
             />
           </div>
