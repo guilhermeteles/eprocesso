@@ -44,7 +44,7 @@ const Aside = () => {
       
 
       <div 
-        className="absolute right-[0px] bottom-0 cursor-ew-resize bg-gradient-to-r from-transparent to-white flex items-center justify-center h-[calc(100svh-53px)] w-8" 
+        className="absolute top-1/2 right-[20px] cursor-ew-resize flex items-center justify-center w-2" 
         onMouseDown={startResizing}
       >
         <FontAwesomeIcon icon={faGripLinesVertical} className="text-[#D9D9D9] ml-4" />
