@@ -6,8 +6,6 @@ import { faCalendar } from '@fortawesome/free-regular-svg-icons';
 import { faStream } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUp19 } from '@fortawesome/free-solid-svg-icons';
-import { faSortDown } from '@fortawesome/free-solid-svg-icons';
-import { faSortUp } from '@fortawesome/free-solid-svg-icons/faSortUp';
 import { faArrowDown19 } from '@fortawesome/free-solid-svg-icons';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { faBarsStaggered } from '@fortawesome/free-solid-svg-icons';
@@ -391,7 +389,7 @@ export const DocumentsAside = () => {
             <div className=" flex justify-between text-sm gap-4 bg-[#1A4480] p-2 rounded-md">
 
               <button
-                className="text-xs underline hover:text-gray-100"
+                className="text-xs underline hover:text-gray-100 border-r-1 border-white"
                 onClick={contractAll}
               >
                 <FontAwesomeIcon

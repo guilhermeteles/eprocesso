@@ -12,9 +12,6 @@ export default defineConfig({
       plugins: [tailwindcss()],
     },
   },
-  optimizeDeps: {
-    include: ['pdfjs-dist'],
-  },
   server: {
     headers: {
       'Cross-Origin-Opener-Policy': 'same-origin',

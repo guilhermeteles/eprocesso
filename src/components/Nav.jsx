@@ -2,7 +2,7 @@ import { IconButton } from './IconButton';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import OverlayMenu from './OverlayMenu';
 import { useState } from 'react';
-import { faFile, faUser, faLock, faShareAlt, faLink, faTrashAlt, faBoxesPacking, faCheck, faStar as faStarSolid } from '@fortawesome/free-solid-svg-icons';
+import { faFile, faUser, faLock, faShareAlt, faLink, faTrashAlt, faBoxesPacking, faCheck, faStar as faStarSolid, faUserLock, faUnlock } from '@fortawesome/free-solid-svg-icons';
 import { faStar as faStarRegular } from '@fortawesome/free-regular-svg-icons';
 
 const Nav = () => {
@@ -83,15 +83,15 @@ const Nav = () => {
         {/* Third and Fourth Items */}
         <div className="flex items-center text-white relative cursor-pointer hover:underline" onClick={(e) => handleCopy('Básico', e)}>
           <div className="relative">
-            <FontAwesomeIcon icon={faLock} className="me-2" />
-            <span className="absolute inset-0 flex items-center justify-center text-[8px] font-black text-[#1351B4] top-[7px] right-[8.5px]">E</span>
+            <FontAwesomeIcon icon={faLock} className="me-4" />
+            <span className="absolute text-white top-2.5 right-1.5 bg-[#1A4480] px-1 rounded-full leading-none py-0.5 text-xs font-bold">E</span>
           </div>
           Básico
         </div>
         <div className="flex items-center text-white relative cursor-pointer hover:underline" onClick={(e) => handleCopy('Básico', e)}>
           <div className="relative">
-            <FontAwesomeIcon icon={faLock} className="me-2" />
-            <span className="absolute inset-0 flex items-center justify-center text-[8px] font-black text-[#1351B4] top-[7px] right-[8.5px]">I</span>
+            <FontAwesomeIcon icon={faLock} className="me-4" />
+            <span className="absolute text-white top-2.5 right-1.5 bg-[#1A4480] px-1.5 rounded-full leading-none py-0.5 text-xs font-bold">I</span>
           </div>
           Básico
         </div>

@@ -1,48 +1,16 @@
-import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar as faStarSolid } from '@fortawesome/free-solid-svg-icons';
-import { faThList, faEdit, faCheck,faFolder,faNoteSticky, faHand } from '@fortawesome/free-solid-svg-icons';
-import { faStar as faStarRegular } from '@fortawesome/free-regular-svg-icons';
+import { faEdit, faCheck,faFolder,faNoteSticky, faHand, faThLarge, faList } from '@fortawesome/free-solid-svg-icons';
 import { faDatabase } from '@fortawesome/free-solid-svg-icons';
-import { faClipboardCheck } from '@fortawesome/free-solid-svg-icons';
-import { faClipboard } from '@fortawesome/free-solid-svg-icons/faClipboard';
 import { faClipboardList } from '@fortawesome/free-solid-svg-icons';
+import { faThList } from '@fortawesome/free-solid-svg-icons/faThList';
 
 const Dashboard = () => {
-    const [isFavorited, setIsFavorited] = useState(false);
-    const [copiedText, setCopiedText] = useState(null);
-
-    const toggleFavorite = () => {
-        setIsFavorited(!isFavorited);
-    };
-
-    const handleCopy = (text) => {
-        navigator.clipboard.writeText(text);
-        setCopiedText(text);
-        setTimeout(() => setCopiedText(null), 2000); // Reset copied state after 2 seconds
-    };
 
     return (
         <div className='overflow-y-auto'>
             <div className=" mx-auto px-8 py-8">
                 <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3">
 
-
-                    {/* <div className="bg-white p-6 shadow-[0_3px_10px_rgb(0,0,0,0.1)] flex flex-col gap-4 h-fit">
-                        <h2 className="text-md font-semibold text-gray-800">
-                            <FontAwesomeIcon
-                                icon={faThList}
-                                className='mr-2'
-                            />
-                            Pendências do Processo</h2>
-                        <p className="text-green-700 bg-green-100 px-3 py-4 rounded-md flex items-center justify-center">
-                        <FontAwesomeIcon
-                                icon={faCheck}
-                                className='mr-2 mt-0.5'
-                            />
-                            Processo sem pendências.
-                        </p>
-                    </div> */}
 
                     <div className="bg-white px-6 pb-6 pt-4 shadow-[0_3px_10px_rgb(0,0,0,0.1)] flex flex-col gap-2 h-fit">
                         <h2 className="text-md font-semibold text-gray-800 mb-2">
