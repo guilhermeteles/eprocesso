@@ -2,6 +2,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit, faCheck, faFolder, faNoteSticky, faHand, faThList, faFileCircleExclamation } from '@fortawesome/free-solid-svg-icons';
 import { faDatabase, faClipboardList } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
+import { faFolderOpen } from '@fortawesome/free-regular-svg-icons';
+import { faPaste } from '@fortawesome/free-regular-svg-icons';
+import { faClipboard } from '@fortawesome/free-regular-svg-icons';
 
 const Dashboard = () => {
     const [filter, setFilter] = useState('all');
@@ -66,63 +69,65 @@ const Dashboard = () => {
                             <FontAwesomeIcon icon={faThList} className='mr-2' />
                             Pendências do Processo
                         </h2>
-                        <p className="text-gray-600 bg-red-100 px-3 py-2 rounded-md flex items-center gap-2">
+                        <p className="text-gray-700 bg-[#FDE0DB] px-3 py-2 rounded-md flex items-center gap-2">
                             <FontAwesomeIcon
                                 icon={faDatabase}
                                 className='mr-2 mt-0.5'
                             />
                             <p>Finalizar o cadastro do processo no SIEF-Processos</p>
                         </p>
-                        <p className="text-gray-600 bg-red-100 px-3 py-2 rounded-md flex items-center gap-2">
+                        <p className="text-gray-700 bg-[#FDE0DB] px-3 py-2 rounded-md flex items-center gap-2">
                             <FontAwesomeIcon
                                 icon={faFolder}
                                 className='mr-2 mt-0.5'
                             />
                             <p>Existe SJD a ser avaliada</p>
                         </p>
-                        <p className="text-gray-600 bg-red-100 px-3 py-2 rounded-md flex items-center gap-2">
+                        <p className="text-gray-700 bg-[#FDE0DB] px-3 py-2 rounded-md flex items-center gap-2">
                             <FontAwesomeIcon
                                 icon={faFileCircleExclamation}
                                 className='mr-2 mt-0.5'
                             />
                             <p>Existe documento a ser efetivado</p>
                         </p>
-                        <p className="text-gray-600 bg-red-100 px-3 py-2 rounded-md flex items-center gap-2">
+                        <p className="text-gray-700 bg-[#FDE0DB] px-3 py-2 rounded-md flex items-center gap-2">
                             <FontAwesomeIcon
-                                icon={faNoteSticky}
+                                icon={faFolderOpen}
                                 className='mr-2 mt-0.5'
                             />
                             <p>Existe providência aberta</p>
                         </p>
-                        <p className="text-gray-600 bg-red-100 px-3 py-2 rounded-md flex items-center gap-2">
+                        <p className="text-gray-700 bg-[#FDE0DB] px-3 py-2 rounded-md flex items-center gap-2">
                             <FontAwesomeIcon
                                 icon={faNoteSticky}
                                 className='mr-2 mt-0.5'
                             />
                             <p>Existe nota para o processo ativa</p>
                         </p>
-                        <p className="text-gray-600 bg-red-100 px-3 py-2 rounded-md flex items-center gap-2">
-                            <FontAwesomeIcon
-                                icon={faCheck}
-                                className='mr-2 mt-0.5'
-                            />
+                        <p className="text-gray-700 bg-[#FDE0DB] px-3 py-2 rounded-md flex items-center gap-2">
+                        <div className="relative">
+                                <span className="absolute top-[6px] left-[3.5px] text-[10px] font-bold">C</span>
+                                <FontAwesomeIcon icon={faClipboard} className="mr-2 mt-0.5 text-lg" />
+                            </div>
                             <p>Existe ciência pendente</p>
                         </p>
-                        <p className="text-gray-600 bg-red-100 px-3 py-2 rounded-md flex items-center gap-2">
-                            <FontAwesomeIcon
-                                icon={faCheck}
-                                className='mr-2 mt-0.5'
-                            />
+
+                        <p className="text-gray-700 bg-[#FDE0DB] px-3 py-2 rounded-md flex items-center gap-2">
+                            <div className="relative">
+                                <span className="absolute top-[6.5px] left-[2.4px] text-[10px] font-bold">M</span>
+                                <FontAwesomeIcon icon={faClipboard} className="mr-2 mt-0.5 text-lg" />
+                            </div>
                             <p>Existe manifestação pendente</p>
                         </p>
-                        <p className="text-gray-600 bg-red-100 px-3 py-2 rounded-md flex items-center gap-2">
+
+                        <p className="text-gray-700 bg-[#FDE0DB] px-3 py-2 rounded-md flex items-center gap-2">
                             <FontAwesomeIcon
                                 icon={faHand}
                                 className='mr-2 mt-0.5'
                             />
                             <p>Existe alegação</p>
                         </p>
-                        <p className="text-gray-600 bg-red-100 px-3 py-2 rounded-md flex items-center gap-2">
+                        <p className="text-gray-700 bg-[#FDE0DB] px-3 py-2 rounded-md flex items-center gap-2">
                             <FontAwesomeIcon
                                 icon={faClipboardList}
                                 className='mr-2 mt-0.5'
