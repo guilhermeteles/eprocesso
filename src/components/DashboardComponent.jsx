@@ -1,11 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEdit, faCheck, faFolder, faNoteSticky, faHand, faThLarge, faList } from '@fortawesome/free-solid-svg-icons';
-import { faDatabase } from '@fortawesome/free-solid-svg-icons';
-import { faClipboardList } from '@fortawesome/free-solid-svg-icons';
-import { faThList } from '@fortawesome/free-solid-svg-icons/faThList';
+import { faEdit, faCheck, faFolder, faNoteSticky, faHand, faThList, faFileCircleExclamation } from '@fortawesome/free-solid-svg-icons';
+import { faDatabase, faClipboardList } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
-import { faCircleExclamation } from '@fortawesome/free-solid-svg-icons';
-import { faFileCircleExclamation } from '@fortawesome/free-solid-svg-icons';
 
 const Dashboard = () => {
     const [filter, setFilter] = useState('all');
@@ -20,47 +16,56 @@ const Dashboard = () => {
             name: 'João Silva',
             date: '10/02/2023',
             content: 'Análise completa do progresso do processo de estudo. Identificou-se a necessidade de revisão dos materiais antes de avançar para o próximo módulo.',
-            bgColor: 'bg-yellow-100'
+            bgColor: 'bg-[#EAF4DD]'
         },
         {
             type: 'team',
             name: 'Maria Fernandes',
             date: '12/02/2023',
             content: 'Equipe de suporte registrou o ajuste do cronograma com base nos feedbacks mais recentes. Novas sugestões de conteúdo foram adicionadas à lista.',
-            bgColor: 'bg-amber-100'
+            bgColor: 'bg-[#FEF0C8]'
         },
         {
             type: 'user',
             name: 'Carlos Oliveira',
             date: '14/02/2023',
             content: 'Comentário do usuário sobre o material: "A revisão está sendo útil, mas seria interessante incluir mais exemplos práticos para fixação."',
-            bgColor: 'bg-orange-100'
+            bgColor: 'bg-[#F8EFF1]'
         },
         {
             type: 'user',
             name: 'Ana Costa',
             date: '15/02/2023',
             content: 'Feedback do usuário: "O cronograma tem funcionado bem, mas preciso de mais tempo para os temas avançados."',
-            bgColor: 'bg-orange-100'
+            bgColor: 'bg-[#F8EFF1]',
         },
     ];
-    
 
     const filteredNotes = filter === 'all' ? notes : notes.filter(note => note.type === filter);
 
+    const badgeLabels = {
+        process: 'P',
+        team: 'E',
+        user: 'U'
+    };
+
+    const badgeColors = {
+        process: 'border-2 bg-white border-[#B8D293] text-gray-800',
+        team: 'border-2 bg-white border-[#FFBE2E] text-gray-800',
+        user: 'border-2 bg-white border-[#ECBEC6] text-gray-800'
+    };
+
     return (
         <div className='overflow-y-auto'>
-            <div className=" mx-auto px-8 py-8">
+            <div className="mx-auto px-8 py-8">
                 <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3">
 
-
+                    {/* Pendências do Processo */}
                     <div className="bg-white px-6 pb-6 pt-4 shadow-[0_3px_10px_rgb(0,0,0,0.1)] flex flex-col gap-2 h-fit">
                         <h2 className="text-md font-semibold text-gray-800 mb-2">
-                            <FontAwesomeIcon
-                                icon={faThList}
-                                className='mr-2'
-                            />
-                            Pendências do Processo</h2>
+                            <FontAwesomeIcon icon={faThList} className='mr-2' />
+                            Pendências do Processo
+                        </h2>
                         <p className="text-gray-600 bg-red-100 px-3 py-2 rounded-md flex items-center gap-2">
                             <FontAwesomeIcon
                                 icon={faDatabase}
@@ -126,9 +131,8 @@ const Dashboard = () => {
                         </p>
                     </div>
 
-
-                    {/* Second Card - 1 Column */}
-                    <div className="bg-white px-6 pb-6 pt-4 shadow-[0_3px_10px_rgb(0,0,0,0.1)] flex flex-col gap-4 h-fit ">
+                    {/* Notas */}
+                    <div className="bg-white px-6 pb-6 pt-4 shadow-[0_3px_10px_rgb(0,0,0,0.1)] flex flex-col gap-4 h-fit">
                         <div className="flex justify-between items-center">
                             <h2 className="text-md font-semibold text-gray-800 flex items-center ">
                                 <FontAwesomeIcon icon={faEdit} className="mr-2" />
@@ -145,22 +149,24 @@ const Dashboard = () => {
                                 <option value="user">Notas de Usuário</option>
                             </select>
                         </div>
-                        <div className=' overflow-auto flex flex-col gap-4'>
+                        <div className='overflow-auto flex flex-col gap-4'>
                             {filteredNotes.map((note, index) => (
-                                <p key={index} className={`text-gray-600 ${note.bgColor} px-3 py-2 rounded-md`}>
-                                    <div className="flex justify-between mb-2">
-                                        <span className="text-xs font-semibold">
+                                <div key={index} className={`text-gray-600 ${note.bgColor} px-3 py-2 rounded-md`}>
+                                    <div className="flex justify-between items-center mb-2">
+                                        <span className="text-xs font-semibold flex items-center gap-2">
+                                            <span className={`px-2 py-1 rounded-full text-xs font-semibold ${badgeColors[note.type]}`}>
+                                                {badgeLabels[note.type]}
+                                            </span>
                                             {note.name}
                                         </span>
                                         <span className="text-xs">
                                             {note.date}
                                         </span>
                                     </div>
-                                    {note.content}
-                                </p>
+                                    <p>{note.content}</p>
+                                </div>
                             ))}
                         </div>
-
                     </div>
 
                 </div>
