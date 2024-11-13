@@ -36,12 +36,13 @@ const Nav = () => {
 
   return (
     <div className='shadow-[0_3px_10px_rgb(0,0,0,0.1)] relative'>
-      <div className='bg-[#1351B4] w-100 px-8 py-1 pb-2 flex gap-6 text-sm'>
+      <div className='bg-[#1351B4] w-100 px-8 py-1 pb-2 flex gap-6 text-sm items-center'>
+        <div className='flex gap-2'>
         {/* Action Buttons */}
         <div className='relative'>
           {/* Star Icon */}
           <div
-            className='bg-[#1A4480] p-2 flex rounded-full text-white items-center cursor-pointer'
+            className='bg-[#1A4480] border border-[#1A4480] p-1.5 flex rounded-full text-white items-center cursor-pointer w-fit'
             onClick={toggleStar}
           >
             <FontAwesomeIcon
@@ -71,7 +72,7 @@ const Nav = () => {
           <FontAwesomeIcon icon={faFile} className="me-2" />
           <span onClick={(e) => handleCopy('10090.000003/0419-05', e)} className="cursor-pointer hover:underline">10090.000003/0419-05</span>
         </div>
-
+        </div>
         {/* Second Item */}
         <div className='flex items-center text-white relative'>
           <FontAwesomeIcon icon={faUser} className="me-2" />
