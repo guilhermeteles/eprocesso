@@ -44,10 +44,10 @@ const Aside = () => {
       
 
       <div 
-        className="absolute top-1/2 right-[20px] cursor-ew-resize flex items-center justify-center w-2" 
+        className="absolute top-1/2 right-[0] cursor-ew-resize flex items-center justify-center w-2 bg-white p-2 rounded-l-md" 
         onMouseDown={startResizing}
       >
-        <FontAwesomeIcon icon={faGripLinesVertical} className="text-[#D9D9D9] ml-4" />
+        <FontAwesomeIcon icon={faGripLinesVertical} className="text-[#D9D9D9]" />
       </div>
 
       

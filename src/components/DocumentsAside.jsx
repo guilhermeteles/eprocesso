@@ -5,6 +5,12 @@ import { Link } from 'react-router-dom';
 import { faCalendar } from '@fortawesome/free-regular-svg-icons';
 import { faStream } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowUp19 } from '@fortawesome/free-solid-svg-icons';
+import { faSortDown } from '@fortawesome/free-solid-svg-icons';
+import { faSortUp } from '@fortawesome/free-solid-svg-icons/faSortUp';
+import { faArrowDown19 } from '@fortawesome/free-solid-svg-icons';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { faBarsStaggered } from '@fortawesome/free-solid-svg-icons';
 
 export const DocumentsAside = () => {
   const [viewMode, setViewMode] = useState('tree'); // 'tree' or 'chronological'
@@ -388,13 +394,17 @@ export const DocumentsAside = () => {
                 className="text-xs underline hover:text-gray-100"
                 onClick={contractAll}
               >
-                Contrair Tudo
+                <FontAwesomeIcon
+                  icon={faBars}
+                />
               </button>
               <button
                 className="text-xs underline hover:text-gray-100"
                 onClick={expandAll}
               >
-                Expandir Tudo
+                <FontAwesomeIcon
+                  icon={faBarsStaggered}
+                />
               </button>
               {/* <ToggleExpandButton onContractAll={contractAll} onExpandAll={expandAll} /> */}
             </div>
@@ -403,16 +413,22 @@ export const DocumentsAside = () => {
             <div className="flex justify-between text-sm gap-4">
 
               <button
-                className="text-xs underline hover:text-gray-100"
+                className="text-md underline hover:text-gray-100"
                 onClick={showChronologicalView}
               >
-                Crescente
+               
+                <FontAwesomeIcon
+                  icon={faArrowUp19}
+                />
               </button>
               <button
-                className="text-xs underline hover:text-gray-100"
+                className="text-md underline hover:text-gray-100"
                 onClick={showAntiChronologicalView}
               >
-                Decrescente
+            
+                <FontAwesomeIcon
+                  icon={faArrowDown19}
+                />
               </button>
             </div>
           )}
