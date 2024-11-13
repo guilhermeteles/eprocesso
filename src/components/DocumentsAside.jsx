@@ -13,32 +13,32 @@ export const DocumentsAside = () => {
 
   const documents = [
     {
-      id: 1,
+      id: 1, situacao: 'MINUTA', tamanho: '1,739 MB', pendjuntada: '0 Assinatura(s) Realizada(s) 2 Assinatura(s) pendente(s).',
       name: 'Petição Inicial de Ação Civil',
       page: '81-85',
       children: [
         {
-          id: 2,
+          id: 2, situacao: 'MINUTA', tamanho: '1,739 MB', pendjuntada: '0 Assinatura(s) Realizada(s) 2 Assinatura(s) pendente(s).',
           name: 'Citação',
           page: '46-50',
           children: [
             {
-              id: 3,
+              id: 3, situacao: 'MINUTA', tamanho: '1,739 MB', pendjuntada: '0 Assinatura(s) Realizada(s) 2 Assinatura(s) pendente(s).',
               name: 'Resposta à Citação',
               page: '101-102',
               children: [
                 {
-                  id: 4,
+                  id: 4, situacao: 'MINUTA', tamanho: '1,739 MB', pendjuntada: '0 Assinatura(s) Realizada(s) 2 Assinatura(s) pendente(s).',
                   name: 'Contestação',
                   page: '110-114',
                   children: [
                     {
-                      id: 5,
+                      id: 5, situacao: 'MINUTA', tamanho: '1,739 MB', pendjuntada: '0 Assinatura(s) Realizada(s) 2 Assinatura(s) pendente(s).',
                       name: 'Réplicas à Contestação',
                       page: '36-40',
                       children: [
-                        { id: 6, name: 'Juntada de Documentos', page: '1-5' },
-                        { id: 7, name: 'Pedido de Tutela Provisória', page: '57-61' },
+                        { id: 6, situacao: 'MINUTA', tamanho: '1,739 MB', pendjuntada: '0 Assinatura(s) Realizada(s) 2 Assinatura(s) pendente(s).', name: 'Juntada de Documentos', page: '1-5' },
+                        { id: 7, situacao: 'MINUTA', tamanho: '1,739 MB', pendjuntada: '0 Assinatura(s) Realizada(s) 2 Assinatura(s) pendente(s).', name: 'Pedido de Tutela Provisória', page: '57-61' },
                       ],
                     },
                   ],
@@ -50,27 +50,27 @@ export const DocumentsAside = () => {
       ],
     },
     {
-      id: 8,
+      id: 8, situacao: 'MINUTA', tamanho: '1,739 MB', pendjuntada: '0 Assinatura(s) Realizada(s) 2 Assinatura(s) pendente(s).',
       name: 'Ação de Indenização',
       page: '16-20',
       children: [
         {
-          id: 9,
+          id: 9, situacao: 'MINUTA', tamanho: '1,739 MB', pendjuntada: '0 Assinatura(s) Realizada(s) 2 Assinatura(s) pendente(s).',
           name: 'Laudo Pericial',
           page: '103-104',
           children: [
             {
-              id: 10,
+              id: 10, situacao: 'MINUTA', tamanho: '1,739 MB', pendjuntada: '0 Assinatura(s) Realizada(s) 2 Assinatura(s) pendente(s).',
               name: 'Manifestação sobre o Laudo',
               page: '67-71',
               children: [
                 {
-                  id: 11,
+                  id: 11, situacao: 'MINUTA', tamanho: '1,739 MB', pendjuntada: '0 Assinatura(s) Realizada(s) 2 Assinatura(s) pendente(s).',
                   name: 'Pedido de Produção de Provas',
                   page: '72-76',
                   children: [
-                    { id: 12, name: 'Provas Documentais', page: '115-119' },
-                    { id: 13, name: 'Provas Testemunhais', page: '77-78' },
+                    { id: 12, situacao: 'MINUTA', tamanho: '1,739 MB', pendjuntada: '0 Assinatura(s) Realizada(s) 2 Assinatura(s) pendente(s).', name: 'Provas Documentais', page: '115-119' },
+                    { id: 13, situacao: 'MINUTA', tamanho: '1,739 MB', pendjuntada: '0 Assinatura(s) Realizada(s) 2 Assinatura(s) pendente(s).', name: 'Provas Testemunhais', page: '77-78' },
                   ],
                 },
               ],
@@ -80,27 +80,27 @@ export const DocumentsAside = () => {
       ],
     },
     {
-      id: 14,
+      id: 14, situacao: 'MINUTA', tamanho: '1,739 MB', pendjuntada: '0 Assinatura(s) Realizada(s) 2 Assinatura(s) pendente(s).',
       name: 'Ação de Alimentos',
       page: '6-10',
       children: [
         {
-          id: 15,
+          id: 15, situacao: 'MINUTA', tamanho: '1,739 MB', pendjuntada: '0 Assinatura(s) Realizada(s) 2 Assinatura(s) pendente(s).',
           name: 'Pedido de Alimentos',
           page: '11-15',
           children: [
             {
-              id: 16,
+              id: 16, situacao: 'MINUTA', tamanho: '1,739 MB', pendjuntada: '0 Assinatura(s) Realizada(s) 2 Assinatura(s) pendente(s).',
               name: 'Decisão Judicial',
               page: '54-56',
               children: [
                 {
-                  id: 17,
+                  id: 17, situacao: 'MINUTA', tamanho: '1,739 MB', pendjuntada: '0 Assinatura(s) Realizada(s) 2 Assinatura(s) pendente(s).',
                   name: 'Recurso de Apelação',
                   page: '21-25',
                   children: [
-                    { id: 18, name: 'Contrarrazões', page: '41-45' },
-                    { id: 19, name: 'Juntada de Novos Documentos', page: '28-30' },
+                    { id: 18, situacao: 'MINUTA', tamanho: '1,739 MB', pendjuntada: '0 Assinatura(s) Realizada(s) 2 Assinatura(s) pendente(s).', name: 'Contrarrazões', page: '41-45' },
+                    { id: 19, situacao: 'MINUTA', tamanho: '1,739 MB', pendjuntada: '0 Assinatura(s) Realizada(s) 2 Assinatura(s) pendente(s).', name: 'Juntada de Novos Documentos', page: '28-30' },
                   ],
                 },
               ],
@@ -110,27 +110,27 @@ export const DocumentsAside = () => {
       ],
     },
     {
-      id: 20,
+      id: 20, situacao: 'MINUTA', tamanho: '1,739 MB', pendjuntada: '0 Assinatura(s) Realizada(s) 2 Assinatura(s) pendente(s).',
       name: 'Embargos de Declaração',
       page: '96-100',
       children: [
         {
-          id: 21,
+          id: 21, situacao: 'MINUTA', tamanho: '1,739 MB', pendjuntada: '0 Assinatura(s) Realizada(s) 2 Assinatura(s) pendente(s).',
           name: 'Decisão dos Embargos',
           page: '31-35',
           children: [
             {
-              id: 22,
+              id: 22, situacao: 'MINUTA', tamanho: '1,739 MB', pendjuntada: '0 Assinatura(s) Realizada(s) 2 Assinatura(s) pendente(s).',
               name: 'Recurso Especial',
               page: '50-53',
               children: [
                 {
-                  id: 23,
+                  id: 23, situacao: 'MINUTA', tamanho: '1,739 MB', pendjuntada: '0 Assinatura(s) Realizada(s) 2 Assinatura(s) pendente(s).',
                   name: 'Petição de Admissibilidade',
                   page: '125-126',
                   children: [
-                    { id: 24, name: 'Parecer do Ministério Público', page: '62-66' },
-                    { id: 25, name: 'Juntada de Novos Fatos', page: '120-124' },
+                    { id: 24, situacao: 'MINUTA', tamanho: '1,739 MB', pendjuntada: '0 Assinatura(s) Realizada(s) 2 Assinatura(s) pendente(s).', name: 'Parecer do Ministério Público', page: '62-66' },
+                    { id: 25, situacao: 'MINUTA', tamanho: '1,739 MB', pendjuntada: '0 Assinatura(s) Realizada(s) 2 Assinatura(s) pendente(s).', name: 'Juntada de Novos Fatos', page: '120-124' },
                   ],
                 },
               ],
@@ -140,27 +140,27 @@ export const DocumentsAside = () => {
       ],
     },
     {
-      id: 26,
+      id: 26, situacao: 'MINUTA', tamanho: '1,739 MB', pendjuntada: '0 Assinatura(s) Realizada(s) 2 Assinatura(s) pendente(s).',
       name: 'Ação de Usucapião',
       page: '3-5',
       children: [
         {
-          id: 27,
+          id: 27, situacao: 'MINUTA', tamanho: '1,739 MB', pendjuntada: '0 Assinatura(s) Realizada(s) 2 Assinatura(s) pendente(s).',
           name: 'Certidão de Registro de Imóveis',
           page: '86-90',
           children: [
             {
-              id: 28,
+              id: 28, situacao: 'MINUTA', tamanho: '1,739 MB', pendjuntada: '0 Assinatura(s) Realizada(s) 2 Assinatura(s) pendente(s).',
               name: 'Manifestação do Réu',
               page: '47-50',
               children: [
                 {
-                  id: 29,
+                  id: 29, situacao: 'MINUTA', tamanho: '1,739 MB', pendjuntada: '0 Assinatura(s) Realizada(s) 2 Assinatura(s) pendente(s).',
                   name: 'Relatório de Vistoria',
                   page: '105-109',
                   children: [
-                    { id: 30, name: 'Pedido de Desocupação', page: '95-99' },
-                    { id: 31, name: 'Protesto de Irregularidade', page: '35-40' },
+                    { id: 30, situacao: 'MINUTA', tamanho: '1,739 MB', pendjuntada: '0 Assinatura(s) Realizada(s) 2 Assinatura(s) pendente(s).', name: 'Pedido de Desocupação', page: '95-99' },
+                    { id: 31, situacao: 'MINUTA', tamanho: '1,739 MB', pendjuntada: '0 Assinatura(s) Realizada(s) 2 Assinatura(s) pendente(s).', name: 'Protesto de Irregularidade', page: '35-40' },
                   ],
                 },
               ],
@@ -170,8 +170,8 @@ export const DocumentsAside = () => {
       ],
     },
   ];
-  
-  
+
+
 
 
   // Toggle between tree and chronological views
@@ -197,23 +197,23 @@ export const DocumentsAside = () => {
   };
 
   // Expand all parent documents and their children recursively
-const expandAll = () => {
-  const allExpanded = {};
+  const expandAll = () => {
+    const allExpanded = {};
 
-  // Recursive function to expand a document and its children
-  const expandDocument = (doc) => {
-    allExpanded[doc.id] = true; // Mark the current document as expanded
-    // If the document has children, expand each of them recursively
-    if (doc.children && doc.children.length > 0) {
-      doc.children.forEach((child) => expandDocument(child));
-    }
+    // Recursive function to expand a document and its children
+    const expandDocument = (doc) => {
+      allExpanded[doc.id] = true; // Mark the current document as expanded
+      // If the document has children, expand each of them recursively
+      if (doc.children && doc.children.length > 0) {
+        doc.children.forEach((child) => expandDocument(child));
+      }
+    };
+
+    // Loop through all top-level documents
+    documents.forEach((doc) => expandDocument(doc)); // Expand all documents
+
+    setExpandedParents(allExpanded); // Set the expanded state
   };
-
-  // Loop through all top-level documents
-  documents.forEach((doc) => expandDocument(doc)); // Expand all documents
-
-  setExpandedParents(allExpanded); // Set the expanded state
-};
 
   // Contract all parent documents
   const contractAll = () => {
@@ -224,7 +224,7 @@ const expandAll = () => {
   const clearSelection = () => {
     setSelectedDocuments([]);
   };
-  
+
   // Recursive function to render documents
   const renderDocuments = (docList) => {
     return docList.map((doc) => (
@@ -256,7 +256,7 @@ const expandAll = () => {
             {doc.name}&nbsp;&nbsp;&nbsp;&nbsp;
           </Link>
         </div>
-  
+
         {/* Recursively render children if expanded */}
         {expandedParents[doc.id] && doc.children && doc.children.length > 0 && (
           <ul className="ml-4">
@@ -266,7 +266,7 @@ const expandAll = () => {
       </li>
     ));
   };
-  
+
 
 
   // Recursive function to render documents with an option for reverse order
@@ -277,7 +277,7 @@ const expandAll = () => {
       const startPageB = parseInt(b.page.split('-')[0], 10);
       return reverse ? startPageB - startPageA : startPageA - startPageB;
     });
-  
+
     const listItems = sortedDocList.map((doc) => (
       <li key={doc.id} className="flex items-center whitespace-nowrap">
         <input
@@ -297,45 +297,45 @@ const expandAll = () => {
         </Link>
       </li>
     ));
-  
+
     // If the current document has children, call the function recursively
     // sortedDocList.forEach((doc) => {
     //   if (doc.children && doc.children.length > 0) {
     //     listItems.push(...renderChronologicalDocuments(doc.children, reverse).props.children);
     //   }
     // });
-  
+
     return <ul className="mt-2">{listItems}</ul>;
   };
-  
 
 
-// Function to get all documents in a one-dimensional array and sort by date
-const AllDocumentsArray = (documents) => {
-  const flattenDocuments = (docs) => {
-    let result = []; // Initialize the result array
 
-    docs.forEach((doc) => {
-      result.push(doc); // Add the current document
-      if (doc.children && doc.children.length > 0) {
-        // Recursively flatten the children
-        result = result.concat(flattenDocuments(doc.children));
-      }
+  // Function to get all documents in a one-dimensional array and sort by date
+  const AllDocumentsArray = (documents) => {
+    const flattenDocuments = (docs) => {
+      let result = []; // Initialize the result array
+
+      docs.forEach((doc) => {
+        result.push(doc); // Add the current document
+        if (doc.children && doc.children.length > 0) {
+          // Recursively flatten the children
+          result = result.concat(flattenDocuments(doc.children));
+        }
+      });
+
+      return result; // Return the flattened result
+    };
+
+    // Flatten the documents
+    const flattenedDocs = flattenDocuments(documents);
+
+    // Sort the flattened documents by date (assumes doc.date is a Date object or a string that can be parsed into a date)
+    const sortedDocs = flattenedDocs.sort((a, b) => {
+      return new Date(a.date) - new Date(b.date); // Change to b.date - a.date for descending order
     });
 
-    return result; // Return the flattened result
+    return sortedDocs; // Return the sorted flattened documents
   };
-
-  // Flatten the documents
-  const flattenedDocs = flattenDocuments(documents);
-
-  // Sort the flattened documents by date (assumes doc.date is a Date object or a string that can be parsed into a date)
-  const sortedDocs = flattenedDocs.sort((a, b) => {
-    return new Date(a.date) - new Date(b.date); // Change to b.date - a.date for descending order
-  });
-
-  return sortedDocs; // Return the sorted flattened documents
-};
 
   // Component rendering the chronological view
   const ChronologicalView = () => {
@@ -360,7 +360,7 @@ const AllDocumentsArray = (documents) => {
   };
 
 
-const [chronos, setChronos] = useState('crescente'); // Set default view mode
+  const [chronos, setChronos] = useState('crescente'); // Set default view mode
 
   // Function to change view to chronological
   const showChronologicalView = () => {
@@ -372,6 +372,9 @@ const [chronos, setChronos] = useState('crescente'); // Set default view mode
     setChronos('decrescente');
   };
 
+  const getDocumentDetails = (id) => {
+    return documents.find((doc) => doc.id === id);
+  };
   return (
     <aside className="bg-[#1351B4] flex flex-col h-full">
       <div className='p-[11px] '>
@@ -443,58 +446,58 @@ const [chronos, setChronos] = useState('crescente'); // Set default view mode
         </div>
 
 
-     
+
       </div>
 
       {/* Document List */}
       <div className="px-2 py-2 bg-[#fff] scroll-smooth overflow-auto grow">
-  {viewMode === 'tree' ? (
-    <ul>
-      {documents.map((doc) => (
-        <li key={doc.id} className="whitespace-nowrap">
-          <div className="flex items-center">
-            <button
-              onClick={() => toggleExpand(doc.id)}
-              className="mr-1.5"
-            >
-              <FontAwesomeIcon
-                icon={
-                  expandedParents[doc.id] ? faChevronDown : faChevronRight
-                }
-                className="text-gray-700 h-2.5 w-2.5 mb-[3.5px]"
-              />
-            </button>
-            <input
-              type="checkbox"
-              checked={selectedDocuments.includes(doc.id)}
-              onChange={() => handleCheckboxChange(doc.id)}
-              className="mr-1.5"
-            />
-            <Link
-              to="/pdf-reader"
-              state={{ fileName: doc.name }} // Passing file name in state
-              className="text-sm text-[#3D4551] hover:underline cursor-pointer"
-            >
-              <span className="text-xs text-[#aaa] mr-1">{doc.page}</span>
-              {doc.name}&nbsp;&nbsp;&nbsp;&nbsp;
-            </Link>
-          </div>
+        {viewMode === 'tree' ? (
+          <ul>
+            {documents.map((doc) => (
+              <li key={doc.id} className="whitespace-nowrap">
+                <div className="flex items-center">
+                  <button
+                    onClick={() => toggleExpand(doc.id)}
+                    className="mr-1.5"
+                  >
+                    <FontAwesomeIcon
+                      icon={
+                        expandedParents[doc.id] ? faChevronDown : faChevronRight
+                      }
+                      className="text-gray-700 h-2.5 w-2.5 mb-[3.5px]"
+                    />
+                  </button>
+                  <input
+                    type="checkbox"
+                    checked={selectedDocuments.includes(doc.id)}
+                    onChange={() => handleCheckboxChange(doc.id)}
+                    className="mr-1.5"
+                  />
+                  <Link
+                    to="/pdf-reader"
+                    state={{ fileName: doc.name }} // Passing file name in state
+                    className="text-sm text-[#3D4551] hover:underline cursor-pointer"
+                  >
+                    <span className="text-xs text-[#aaa] mr-1">{doc.page}</span>
+                    {doc.name}
+                  </Link>&nbsp;&nbsp;&nbsp;&nbsp;
+                </div>
 
-          {/* Child Documents (If expanded) */}
-          {expandedParents[doc.id] && doc.children && doc.children.length > 0 && (
-            <ul className="ml-4">
-              {renderDocuments(doc.children)}
-            </ul>
-          )}
-        </li>
-      ))}
-    </ul>
-  ) : (
-    <div>
-      {chronos === 'crescente' ? <ChronologicalView /> : <AntiChronologicalView />}
-    </div>
-  )}
-</div>
+                {/* Child Documents (If expanded) */}
+                {expandedParents[doc.id] && doc.children && doc.children.length > 0 && (
+                  <ul className="ml-4">
+                    {renderDocuments(doc.children)}
+                  </ul>
+                )}
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <div>
+            {chronos === 'crescente' ? <ChronologicalView /> : <AntiChronologicalView />}
+          </div>
+        )}
+      </div>
 
 
 
@@ -502,10 +505,65 @@ const [chronos, setChronos] = useState('crescente'); // Set default view mode
       {/* Footer: Selected Documents and Actions */}
       {selectedDocuments.length > 0 && (
         <div className="mt-auto z-50">
-          <div className="flex bg-[#2672DE]">
-            <span className="px-3 py-2 text-white text-xs grow m-auto font-medium">
-              {selectedDocuments.length} item(ns) selecionado(s)
 
+          {/* Green strip for single document selection */}
+          {selectedDocuments.length === 1 && (
+            <div className="bg-slate-200 p-4 text-white font-medium">
+              {(() => {
+                const documentDetails = getDocumentDetails(selectedDocuments[0]);
+                return documentDetails ? (
+                  <>
+                    <div className='flex flex-col gap-2 text-slate-700'>
+                      <div className='flex justify-between gap-2'>
+                        <div className='flex flex-col bg-slate-100 py-2 px-4 rounded rounded-md grow'>
+                          <span className='font-bold text-xs'>
+                            Folhas
+                          </span>
+                          <span className='text-sm text-nowrap'>
+                            {documentDetails.page}
+                          </span>
+                        </div>
+                        <div className='flex flex-col bg-slate-100 py-2 px-4 rounded rounded-md grow'>
+                          <span className='font-bold text-xs'>
+                            Situação
+                          </span>
+                          <span className='text-sm text-nowrap'>
+                            {documentDetails.situacao}
+                          </span>
+                        </div>
+                        <div className='flex flex-col bg-slate-100 py-2 px-4 rounded rounded-md grow'>
+                          <span className='font-bold text-xs'>
+                            Tamanho
+                          </span>
+                          <span className='text-sm text-nowrap'>
+                            {documentDetails.tamanho}
+                          </span>
+                        </div>
+                      </div>
+
+                      <div className='flex flex-col bg-slate-100 py-2 px-4 rounded rounded-md'>
+                        <span className='font-bold text-xs'>
+                          Pendência de Juntada
+                        </span>
+                        {documentDetails.pendjuntada.split("Realizada(s)").map((text, index) => (
+                          <span key={index} className="block text-sm">
+                            {index === 0 ? `${text}realizada(s).` : text.trim()}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                  </>
+                ) : (
+                  <span className="px-3 py-2">Document details not found.</span>
+                );
+              })()}
+            </div>
+          )}
+
+          <div className="flex bg-[#2672DE] px-2 text-white font-medium text-sm items-center justify-between">
+            <span className="px-3 py-2 font-semibold">
+              {selectedDocuments.length} item(ns) selecionado(s)
             </span>
             <button
               onClick={clearSelection}
@@ -514,41 +572,56 @@ const [chronos, setChronos] = useState('crescente'); // Set default view mode
               Limpar
             </button>
           </div>
-          <div className="flex space-x-2 bg-[#0050D8] flex p-2">
-            {/* Group 1 */}
-            <div className="flex flex-col">
-              <div className="flex space-x-1">
-                <IconButton
-                  icon="fa-solid fa-file-contract"
-                  name="Home"
-                  color="#1A4480"
-                />
-                <IconButton
-                  icon="fa-solid fa-calendar-days"
-                  name="Profile"
-                  color="#1A4480"
-                />
-                <IconButton
-                  icon="fa-solid fa-info-circle"
-                  name="Settings"
-                  color="#1A4480"
-                />
-                <IconButton
-                  icon="fa-solid fa-user"
-                  name="Notifications"
-                  color="#1A4480"
-                />
-                <IconButton
-                  icon="fa-solid fa-lock"
-                  name="Messages"
-                  color="#1A4480"
-                />
-              </div>
-            </div>
+
+          <div className="flex space-x-2 bg-[#0050D8] flex p-4">
+            <IconButton
+              icon="fa-solid fa-bookmark"
+              name="Home"
+              textColor='#1A4480'
+              color='#EBE3F9'
+            />
+            <IconButton
+              icon="fa-solid fa-file-arrow-up"
+              name="Home"
+              textColor='#1A4480'
+              color='#EBE3F9'
+            />
+            <IconButton
+              icon="fa-solid fa-file-medical"
+              name="Profile"
+              textColor='#1A4480'
+              color='#EBE3F9'
+            />
+            <IconButton
+              icon="fa-solid fa-file-signature"
+              name="Settings"
+              textColor='#1A4480'
+              color='#EBE3F9'
+            />
+            <IconButton
+              icon="fa-solid fa-trash-can"
+              name="Messages"
+              textColor='#1A4480'
+              color='#EBE3F9'
+            />
+            <IconButton
+              icon="fa-solid fa-circle-info"
+              name="Notifications"
+              textColor='#1A4480'
+              color='#EBE3F9'
+            />
+            <IconButton
+              icon="fa-solid fa-download"
+              name="Notifications"
+              textColor='#1A4480'
+              color='#EBE3F9'
+            />
+
 
           </div>
         </div>
       )}
+
     </aside>
   );
 };
