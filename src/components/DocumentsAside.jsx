@@ -383,12 +383,12 @@ export const DocumentsAside = () => {
   };
   return (
     <aside className="bg-[#1351B4] flex flex-col h-full">
-      <div className='p-[11px] '>
+      <div className='p-[5px] '>
         {/* Header: Toggle and Title */}
         <div className="flex justify-between text-white">
           {/* <h2 className="text-md font-medium text-[#3D4551]">Documentos</h2> */}
           {viewMode === 'tree' && (
-            <div className=" flex justify-between text-sm gap-4">
+            <div className=" flex justify-between text-sm gap-4 bg-[#1A4480] p-2 rounded-md">
 
               <button
                 className="text-xs underline hover:text-gray-100"
@@ -410,10 +410,10 @@ export const DocumentsAside = () => {
             </div>
           )}
           {viewMode === 'chronological' && (
-            <div className="flex justify-between text-sm gap-4">
+            <div className="flex justify-between text-sm gap-2 bg-[#1A4480] p-1.5 rounded-md">
 
               <button
-                className="text-md underline hover:text-gray-100"
+                className="text-md underline hover:text-gray-100 ml-0.5"
                 onClick={showChronologicalView}
               >
                
@@ -421,8 +421,9 @@ export const DocumentsAside = () => {
                   icon={faArrowUp19}
                 />
               </button>
+              
               <button
-                className="text-md underline hover:text-gray-100"
+                className="text-md underline hover:text-gray-100 mr-0.5"
                 onClick={showAntiChronologicalView}
               >
             
