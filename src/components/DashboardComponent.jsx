@@ -154,7 +154,7 @@ const Dashboard = () => {
                                 <option value="user">Notas de Usuário</option>
                             </select>
                         </div>
-                        <div className='overflow-auto flex flex-col gap-4'>
+                        <div className='overflow-auto flex flex-col gap-4 max-h-[500px]'>
                             {filteredNotes.map((note, index) => (
                                 <div key={index} className={`text-gray-600 ${note.bgColor} px-3 py-2 rounded-md`}>
                                     <div className="flex justify-between items-center mb-2">

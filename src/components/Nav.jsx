@@ -4,6 +4,7 @@ import OverlayMenu from './OverlayMenu';
 import { useState } from 'react';
 import { faFile, faUser, faLock, faShareAlt, faLink, faTrashAlt, faBoxesPacking, faCheck, faStar as faStarSolid, faUserLock, faUnlock } from '@fortawesome/free-solid-svg-icons';
 import { faStar as faStarRegular } from '@fortawesome/free-regular-svg-icons';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 const Nav = () => {
   const [isOverlayOpen, setIsOverlayOpen] = useState(false);
@@ -33,45 +34,79 @@ const Nav = () => {
     setClickPosition2({ x: event.clientX, y: event.clientY });
     setTimeout(() => setShowMessage(false), 2000); // Hide message after 2 seconds
   };
+  const [showFixedTooltip, setShowFixedTooltip] = useState(false);
+  const [isHovering, setIsHovering] = useState(false);
+  const [position, setPosition] = useState({ x: 100, y: 100 });
+  const [isDragging, setIsDragging] = useState(false);
+
+  const handleTooltipToggle = (e) => {
+      if (!isDragging) { // Toggle only if not dragging
+          setShowFixedTooltip((prev) => !prev);
+          setIsHovering(false); // Disable hover tooltip when fixed tooltip is toggled
+      }
+  };
+
+  const closeTooltip = () => {
+      setShowFixedTooltip(false);
+  };
+
+  const handleMouseDown = (e) => {
+      e.stopPropagation(); // Prevent triggering toggle
+      setIsDragging(true);
+      setPosition({ offsetX: e.clientX - position.x, offsetY: e.clientY - position.y });
+  };
+
+  const handleMouseMove = (e) => {
+      if (isDragging) {
+          setPosition((prev) => ({
+              x: e.clientX - prev.offsetX,
+              y: e.clientY - prev.offsetY,
+          }));
+      }
+  };
+
+  const handleMouseUp = () => {
+      setIsDragging(false);
+  };
 
   return (
     <div className='shadow-[0_3px_10px_rgb(0,0,0,0.1)] relative'>
       <div className='bg-[#1351B4] w-100 px-8 py-1 pb-2 flex gap-6 text-sm items-center'>
         <div className='flex gap-2'>
-        {/* Action Buttons */}
-        <div className='relative'>
-          {/* Star Icon */}
-          <div
-            className='bg-[#1A4480] border border-[#1A4480] p-1.5 flex rounded-full text-white items-center cursor-pointer w-fit'
-            onClick={toggleStar}
-          >
-            <FontAwesomeIcon
-              icon={isFilled ? faStarSolid : faStarRegular}
-              className={isFilled ? 'text-yellow-400' : 'text-white'}
-            />
+          {/* Action Buttons */}
+          <div className='relative'>
+            {/* Star Icon */}
+            <div
+              className='bg-[#1A4480] border border-[#1A4480] p-1.5 flex rounded-full text-white items-center cursor-pointer w-fit'
+              onClick={toggleStar}
+            >
+              <FontAwesomeIcon
+                icon={isFilled ? faStarSolid : faStarRegular}
+                className={isFilled ? 'text-yellow-400' : 'text-white'}
+              />
+            </div>
+
+            {/* Favorited Message */}
+            {showMessage && (
+              <div
+                className="text-nowrap z-50 absolute top-[3px] -left-20 transform -translate-x-1/2 bg-[#1A4480] text-white rounded-full px-4 py-2 text-xs flex items-center align-start gap-1"
+                // style={{ whiteSpace: 'nowrap' }}
+                style={{
+                  top: clickPosition2.y + 0, // Adjust the vertical position above the click
+                  left: clickPosition2.x - 250, // Adjust the horizontal position slightly to the right
+                }}
+              >
+                <FontAwesomeIcon icon={faStarSolid} />
+                {isFilled ? 'Processo favorito' : 'Processo não favorito'}
+              </div>
+            )}
           </div>
 
-          {/* Favorited Message */}
-          {showMessage && (
-            <div
-              className="text-nowrap z-50 absolute top-[3px] -left-20 transform -translate-x-1/2 bg-[#1A4480] text-white rounded-full px-4 py-2 text-xs flex items-center align-start gap-1"
-              // style={{ whiteSpace: 'nowrap' }}
-              style={{
-              top: clickPosition2.y + 0, // Adjust the vertical position above the click
-              left: clickPosition2.x - 250, // Adjust the horizontal position slightly to the right
-            }}
-            >
-              <FontAwesomeIcon icon={faStarSolid} />
-              {isFilled ? 'Processo favorito' : 'Processo não favorito'}
-            </div>
-      )}
-        </div>
-
-        {/* First Item */}
-        <div className='flex items-center text-white font-semibold relative'>
-          <FontAwesomeIcon icon={faFile} className="me-2" />
-          <span onClick={(e) => handleCopy('10090.000003/0419-05', e)} className="cursor-pointer hover:underline">10090.000003/0419-05</span>
-        </div>
+          {/* First Item */}
+          <div className='flex items-center text-white font-semibold relative'>
+            <FontAwesomeIcon icon={faFile} className="me-2" />
+            <span onClick={(e) => handleCopy('10090.000003/0419-05', e)} className="cursor-pointer hover:underline">10090.000003/0419-05</span>
+          </div>
         </div>
         {/* Second Item */}
         <div className='flex items-center text-white relative'>
@@ -81,20 +116,50 @@ const Nav = () => {
         </div>
 
         {/* Third and Fourth Items */}
-        <div className="flex items-center text-white relative cursor-pointer hover:underline" onClick={(e) => handleCopy('Básico', e)}>
-          <div className="relative">
-            <FontAwesomeIcon icon={faLock} className="me-4" />
-            <span className="absolute text-white top-2.5 right-1.5 bg-[#1A4480] px-1 rounded-full leading-none py-0.5 text-xs font-bold">E</span>
-          </div>
-          Básico
+        <div
+            className="flex items-center text-white relative cursor-pointer hover:underline"
+            onClick={handleTooltipToggle}
+            onMouseEnter={() => !showFixedTooltip && setIsHovering(true)}
+            onMouseLeave={() => setIsHovering(false)}
+        >
+            <div className="relative">
+                <FontAwesomeIcon icon={faLock} className="me-2" />
+            </div>
+            Processo Sigiloso
+
+            {/* Hover Tooltip (only if fixed tooltip is not shown) */}
+            {isHovering && !showFixedTooltip && (
+                <div className="absolute left-0 top-full mt-2 bg-gray-800 text-white text-xs p-2 rounded shadow-lg w-64">
+                    Nível do Sigilo Interno: Básico<br />
+                    Nível do Sigilo Externo: Básico<br />
+                    Motivo do Sigilo: Controle Interno<br />
+                    Norma Regulamentadora: Lei nº 10.180/2011 (Art. 26, §3º), Lei nº 12.527/2011 (Art. 22)
+                </div>
+            )}
+
+            {/* Fixed Draggable Tooltip with Close Button */}
+            {showFixedTooltip && (
+                <div
+                    className="absolute bg-gray-800 text-white text-xs p-3 rounded shadow-lg w-64"
+                    style={{ top: `${position.y}px`, left: `${position.x}px`, cursor: isDragging ? 'grabbing' : 'grab' }}
+                    onMouseDown={handleMouseDown}
+                    onMouseMove={handleMouseMove}
+                    onMouseUp={handleMouseUp}
+                >
+                    <div className="flex justify-between items-center mb-2">
+                        <span className="font-bold">Informações de Sigilo</span>
+                        <button onClick={closeTooltip} className="text-white">
+                            <FontAwesomeIcon icon={faTimes} />
+                        </button>
+                    </div>
+                    <p>Nível do Sigilo Interno: Básico</p>
+                    <p>Nível do Sigilo Externo: Básico</p>
+                    <p>Motivo do Sigilo: Controle Interno</p>
+                    <p>Norma Regulamentadora: Lei nº 10.180/2011 (Art. 26, §3º), Lei nº 12.527/2011 (Art. 22)</p>
+                </div>
+            )}
         </div>
-        <div className="flex items-center text-white relative cursor-pointer hover:underline" onClick={(e) => handleCopy('Básico', e)}>
-          <div className="relative">
-            <FontAwesomeIcon icon={faLock} className="me-4" />
-            <span className="absolute text-white top-2.5 right-1.5 bg-[#1A4480] px-1.5 rounded-full leading-none py-0.5 text-xs font-bold">I</span>
-          </div>
-          Básico
-        </div>
+
 
         {/* Action Buttons */}
         <div className='bg-[#1A4480] py-2 flex rounded rounded-full text-white items-center px-4 gap-3'>
