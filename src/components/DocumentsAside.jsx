@@ -384,60 +384,8 @@ export const DocumentsAside = () => {
       <div className='p-[5px] '>
         {/* Header: Toggle and Title */}
         <div className="flex justify-between text-white">
-
-          {/* <h2 className="text-md font-medium text-[#3D4551]">Documentos</h2> */}
-          {viewMode === 'tree' && (
-            <div className=" flex justify-between text-sm gap-4 bg-[#1A4480] p-1.5 rounded-md">
-
-              <button
-                className="text-xs underline hover:text-gray-100 border-r-1 border-white"
-                onClick={contractAll}
-              >
-                <FontAwesomeIcon
-                  icon={faBars}
-                  className='ml-1'
-                />
-              </button>
-              <button
-                className="text-xs underline hover:text-gray-100"
-                onClick={expandAll}
-              >
-                <FontAwesomeIcon
-                  icon={faBarsStaggered}
-                />
-              </button>
-              <div className='flex gap-1'>
-
-              <input className='px-2 w-14 rounded text-gray-700' placeholder='Pg. #'></input><button className='rounded bg-[#1351B4] px-2'>Ir</button>
-              </div>
-            </div>
-          )}
-          {viewMode === 'chronological' && (
-            <div className="flex justify-between text-sm gap-2 bg-[#1A4480] p-1.5 rounded-md">
-
-              <button
-                className="text-md underline hover:text-gray-100 ml-0.5"
-                onClick={showChronologicalView}
-              >
-               
-                <FontAwesomeIcon
-                  icon={faArrowUp19}
-                />
-              </button>
-              
-              <button
-                className="text-md underline hover:text-gray-100 mr-0.5"
-                onClick={showAntiChronologicalView}
-              >
-            
-                <FontAwesomeIcon
-                  icon={faArrowDown19}
-                />
-              </button>
-            </div>
-          )}
           {/* Switch-like toggle */}
-          <div className="flex items-center space-x-1">
+          <div className="flex items-center space-x-1 ml-2">
             <FontAwesomeIcon
               icon={faStream}
               className={`cursor-pointer text-md ${viewMode === 'tree' ? 'text-white' : 'opacity-35'}`}
@@ -462,6 +410,63 @@ export const DocumentsAside = () => {
               onClick={toggleViewMode}
             />
           </div>
+          {/* <h2 className="text-md font-medium text-[#3D4551]">Documentos</h2> */}
+          {viewMode === 'tree' && (
+            <div className=" flex justify-between text-sm gap-4 bg-[#1A4480] p-1.5 rounded-md">
+
+              <button
+                className="text-xs underline hover:text-gray-100 border-r-1 border-white"
+                onClick={contractAll}
+              >
+                <FontAwesomeIcon
+                  icon={faBars}
+                  className='w-3'
+                />
+              </button>
+              <button
+                className="text-xs underline hover:text-gray-100"
+                onClick={expandAll}
+              >
+                <FontAwesomeIcon
+                  icon={faBarsStaggered}
+                  className='w-3'
+                />
+              </button>
+              <div className='flex gap-1'>
+
+              <input className='px-2 w-14 rounded text-gray-700' placeholder='Pg. #'></input><button className='rounded bg-[#1351B4] px-2'>Ir</button>
+              </div>
+            </div>
+          )}
+          {viewMode === 'chronological' && (
+            <div className="flex justify-between text-sm gap-2 bg-[#1A4480] p-1.5 rounded-md">
+
+              <button
+                className="text-md underline hover:text-gray-100 w-5"
+                onClick={showChronologicalView}
+              >
+               
+                <FontAwesomeIcon
+                  icon={faArrowUp19}
+                />
+              </button>
+              
+              <button
+                className="text-md underline hover:text-gray-100 w-5"
+                onClick={showAntiChronologicalView}
+              >
+            
+                <FontAwesomeIcon
+                  icon={faArrowDown19}
+                />
+              </button>
+              <div className='flex gap-1'>
+
+              <input className='px-2 w-14 rounded text-gray-700' placeholder='Pg. #'></input><button className='rounded bg-[#1351B4] px-2'>Ir</button>
+              </div>
+            </div>
+          )}
+          
 
         </div>
 
