@@ -600,37 +600,37 @@ export const DocumentsAside = () => {
               icon="fa-solid fa-file-arrow-up"
               name="Home"
               textColor='#1A4480'
-              color='#EBE3F9'
+              color='#E0E0FF'
             />
             <IconButton
               icon="fa-solid fa-file-medical"
               name="Profile"
               textColor='#1A4480'
-              color='#EBE3F9'
+              color='#E0E0FF'
             />
             <IconButton
               icon="fa-solid fa-file-signature"
               name="Settings"
               textColor='#1A4480'
-              color='#EBE3F9'
+              color='#E0E0FF'
             />
             <IconButton
               icon="fa-solid fa-trash-can"
               name="Messages"
               textColor='#1A4480'
-              color='#EBE3F9'
+              color='#E0E0FF'
             />
             <IconButton
               icon="fa-solid fa-circle-info"
               name="Notifications"
               textColor='#1A4480'
-              color='#EBE3F9'
+              color='#E0E0FF'
             />
             <IconButton
               icon="fa-solid fa-download"
               name="Notifications"
               textColor='#1A4480'
-              color='#EBE3F9'
+              color='#E0E0FF'
             />
 
 
