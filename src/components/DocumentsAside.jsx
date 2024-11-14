@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { faChevronDown, faChevronRight } from '@fortawesome/free-solid-svg-icons'; // Icons for tree expand/collapse
 import { IconButton } from './IconButton'; // Import the IconButton component
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { faCalendar } from '@fortawesome/free-regular-svg-icons';
 import { faStream } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -14,6 +14,8 @@ export const DocumentsAside = () => {
   const [viewMode, setViewMode] = useState('tree'); // 'tree' or 'chronological'
   const [selectedDocuments, setSelectedDocuments] = useState([]); // To store selected documents
   const [expandedParents, setExpandedParents] = useState({}); // Track which parents are expanded
+  const [pageNumber, setPageNumber] = useState(''); // State for the page number input
+  const navigate = useNavigate();
 
   const documents = [
     {
@@ -199,6 +201,53 @@ export const DocumentsAside = () => {
       [parentId]: !prevExpanded[parentId],
     }));
   };
+
+  // Handle page number input change
+  const handlePageInputChange = (e) => {
+    setPageNumber(e.target.value);
+  };
+
+  // Search for the document containing the page and select it
+  const handleSearchPage = () => {
+    if (!pageNumber) return; // If no input, do nothing
+  
+    const searchPage = Number(pageNumber);
+  
+    const findDocument = (docs) => {
+      for (const doc of docs) {
+        const [start, end] = doc.page.split('-').map(Number);
+        if (searchPage >= start && searchPage <= end) {
+          return doc; // Return the matching document
+        }
+        if (doc.children && doc.children.length > 0) {
+          const childResult = findDocument(doc.children);
+          if (childResult) {
+            return childResult; // Return the matching child document
+          }
+        }
+      }
+      return null;
+    };
+  
+    const foundDoc = findDocument(documents);
+  
+    if (foundDoc) {
+      // Navigate to the document's PDF viewer
+      navigate('/pdf-reader', { state: { fileName: foundDoc.name, docId: foundDoc.id } });
+  
+      // Select the checkbox of the found document after navigation
+      setTimeout(() => {
+        setSelectedDocuments((prevSelected) =>
+          prevSelected.includes(foundDoc.id)
+            ? prevSelected
+            : [...prevSelected, foundDoc.id]
+        );
+      }, 100); // Delay to ensure navigation happens first
+    } else {
+      alert('Page not found in any document');
+    }
+  };
+  
 
   // Expand all parent documents and their children recursively
   const expandAll = () => {
@@ -420,7 +469,7 @@ export const DocumentsAside = () => {
               >
                 <FontAwesomeIcon
                   icon={faBars}
-                  className='w-3'
+                  className='w-3 -mr-1 ml-1'
                 />
               </button>
               <button
@@ -429,12 +478,14 @@ export const DocumentsAside = () => {
               >
                 <FontAwesomeIcon
                   icon={faBarsStaggered}
-                  className='w-3'
+                  className='w-3 -mr-1 ml-1'
                 />
               </button>
               <div className='flex gap-1'>
 
-              <input className='px-2 w-14 rounded text-gray-700' placeholder='Pg. #'></input><button className='rounded bg-[#1351B4] px-2'>Ir</button>
+              <input className='px-2 w-16 rounded text-gray-700' placeholder='Pg. #'type="number"
+                  value={pageNumber}
+                  onChange={handlePageInputChange}></input><button className='rounded bg-[#1351B4] px-2' onClick={handleSearchPage}>Ir</button>
               </div>
             </div>
           )}
