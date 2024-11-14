@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { IconButton } from './IconButton';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import OverlayMenu from './OverlayMenu';
@@ -15,6 +15,8 @@ const Nav = () => {
   const [isOverlayOpen, setIsOverlayOpen] = useState(false);
   const [showFixedTooltip, setShowFixedTooltip] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
+  const processoSigilosoRef = useRef(null); // Ref for the "Processo Sigiloso" button
+  const [tooltipInitialPosition, setTooltipInitialPosition] = useState({ x: 0, y: 0 });
 
   const handleCopy = (text, event) => {
     navigator.clipboard.writeText(text)
@@ -38,6 +40,13 @@ const Nav = () => {
 
   // Tooltip Toggle with Position Reset
   const handleTooltipToggle = () => {
+    if (!showFixedTooltip && processoSigilosoRef.current) {
+      const rect = processoSigilosoRef.current.getBoundingClientRect();
+      setTooltipInitialPosition({
+        x: rect.left + window.scrollX, // Adjust for horizontal scroll
+        y: rect.bottom + window.scrollY, // Position below the button
+      });
+    }
     setShowFixedTooltip((prev) => !prev);
     setIsHovering(false); // Hide hover tooltip if switching to fixed tooltip
   };
@@ -91,6 +100,7 @@ const Nav = () => {
           onClick={handleTooltipToggle}
           onMouseEnter={() => !showFixedTooltip && setIsHovering(true)}
           onMouseLeave={() => setIsHovering(false)}
+          ref={processoSigilosoRef} // Attach ref here
         >
           <div className="relative">
             <FontAwesomeIcon icon={faLock} className="me-2" />
@@ -99,30 +109,31 @@ const Nav = () => {
 
           {/* Hover Tooltip */}
           {isHovering && !showFixedTooltip && (
-            <div className="absolute -left-2 top-full mt-3 bg-gray-800 text-white p-2 rounded-md shadow-lg flex flex-col gap-2 w-[350px]">
+            <div className="absolute -left-2 top-full mt-3 bg-gray-800 text-white p-2 rounded-b-md shadow-lg flex flex-col gap-2 w-[350px]">
               <div className="flex justify-between items-center mb-2">
-                <span className="font-bold">Informações de Sigilo</span>
+                <span className="font-bold text-[16px] leading-[22px]">Informações de Sigilo</span>
 
               </div>
-              <div className='flex gap-2'>
-                <div className='flex flex-col gap-0.5 bg-gray-600 rounded-sm p-2 grow'>
-                  <p className='font-bold text-xs whitespace-nowrap'>Nível do Sigilo Interno</p>
-                  <p className='text-md'>Básico</p>
-                </div>
-                <div className='flex flex-col gap-0.5 bg-gray-600 rounded-sm p-2 grow'>
-                  <p className='font-bold text-xs whitespace-nowrap'>Nível do Sigilo Externo</p>
-                  <p className='text-md'>Básico</p>
-                </div>
-              </div>
-              
-              <div className='flex flex-col gap-0.5 bg-gray-600 rounded-sm p-2'>
-                <p className='font-bold text-xs whitespace-nowrap'>Motivo do Sigilo</p>
-                <p className='text-md'>Controle Interno</p>
-              </div>
-              <div className='flex flex-col gap-0.5 bg-gray-600 rounded-sm p-2'>
-                <p className='font-bold text-xs whitespace-nowrap'>Norma Regulamentadora</p>
-                <p className='text-md'>Lei nº 10.180/2011 (Art. 26, §3º), Lei nº 12.527/2011 (Art. 22).</p>
-              </div>
+              <div className="flex gap-2">
+        <div className="flex flex-col gap-0.5 bg-gray-600 rounded-sm p-2 grow">
+          <p className="font-bold text-[12px]">Nível do Sigilo Interno</p>
+          <p className="text-[16px] leading-[22px]">Básico</p>
+        </div>
+        <div className="flex flex-col gap-0.5 bg-gray-600 rounded-sm p-2 grow">
+          <p className="font-bold text-[12px]">Nível do Sigilo Externo</p>
+          <p className="text-[16px] leading-[22px]">Básico</p>
+        </div>
+      </div>
+
+      <div className="flex flex-col gap-0.5 bg-gray-600 rounded-sm p-2">
+        <p className="font-bold text-[12px]">Motivo do Sigilo</p>
+        <p className="text-[16px] leading-[22px]">Controle Interno</p>
+      </div>
+
+      <div className="flex flex-col gap-0.5 bg-gray-600 rounded-sm p-2">
+        <p className="font-bold text-[12px]">Norma Regulamentadora</p>
+        <p className="text-[16px] leading-[22px]">Lei nº 10.180/2011 (Art. 26, §3º), Lei nº 12.527/2011 (Art. 22).</p>
+      </div>
             </div>
           )}
         </div>
@@ -131,6 +142,7 @@ const Nav = () => {
           <SigilosoTooltip 
             showFixedTooltip={showFixedTooltip}
             onClose={() => setShowFixedTooltip(false)}
+            initialPosition={tooltipInitialPosition} // Pass initial position
           />
         
 
