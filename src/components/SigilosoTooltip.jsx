@@ -46,7 +46,7 @@ const SigilosoTooltip = ({ showFixedTooltip, onClose, initialPosition }) => {
 
         // Get tooltip dimensions
         const tooltipWidth = 350; // As defined in className
-        const tooltipHeight = 200; // Adjust based on content
+        const tooltipHeight = 296; // Adjust based on content
 
         // Prevent tooltip from moving off the left/right edges
         newX = Math.max(0, Math.min(newX, viewportWidth - tooltipWidth));
