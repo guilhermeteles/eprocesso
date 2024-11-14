@@ -384,6 +384,7 @@ export const DocumentsAside = () => {
       <div className='p-[5px] '>
         {/* Header: Toggle and Title */}
         <div className="flex justify-between text-white">
+
           {/* <h2 className="text-md font-medium text-[#3D4551]">Documentos</h2> */}
           {viewMode === 'tree' && (
             <div className=" flex justify-between text-sm gap-4 bg-[#1A4480] p-2 rounded-md">
