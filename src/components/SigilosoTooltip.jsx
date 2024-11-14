@@ -145,9 +145,29 @@ const SigilosoTooltip = ({ showFixedTooltip, onClose, initialPosition }) => {
         <p className="text-[16px] leading-[22px]">Controle Interno</p>
       </div>
 
-      <div className="flex flex-col gap-0.5 bg-gray-600 rounded-sm p-2" onClick={(e) => handleCopy('Lei nº 10.180/2011 (Art. 26, §3º), Lei nº 12.527/2011 (Art. 22).', e)}>
+      <div className="flex flex-col gap-0.5 bg-gray-600 rounded-sm p-2">
         <p className="font-bold text-[12px]">Norma Regulamentadora</p>
-        <p className="text-[16px] leading-[22px]">Lei nº 10.180/2011 (Art. 26, §3º), Lei nº 12.527/2011 (Art. 22).</p>
+        <p className="text-[16px] leading-[22px]">
+  <a
+    href="https://www.planalto.gov.br/ccivil_03/leis/leis_2001/l10180.htm"
+    target="_blank"
+    rel="noopener noreferrer"
+    className=" underline"
+  >
+    Lei nº 10.180/2011 (Art. 26, §3º)
+  </a>
+  ,&nbsp;
+  <a
+    href="https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12527.htm"
+    target="_blank"
+    rel="noopener noreferrer"
+    className=" underline"
+  >
+    Lei nº 12.527/2011 (Art. 22)
+  </a>
+  .
+</p>
+
       </div>
       {/* Copied Message */}
       {copied && (
