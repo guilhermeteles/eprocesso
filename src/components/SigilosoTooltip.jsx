@@ -107,7 +107,7 @@ const SigilosoTooltip = ({ showFixedTooltip, onClose, initialPosition }) => {
 
   return ReactDOM.createPortal(
     <div
-      className="absolute -left-2 top-full mt-3 bg-gray-800 text-white p-2 rounded-md shadow-lg flex flex-col gap-2 w-[350px]"
+      className="absolute -left-2 top-full mt-3 bg-gray-800 text-white p-4 rounded-md shadow-lg flex flex-col gap-2 w-[350px]"
       style={{
         top: `${position.y}px`,
         left: `${position.x}px`,

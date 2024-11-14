@@ -524,14 +524,14 @@ export const DocumentsAside = () => {
 
           {/* Green strip for single document selection */}
           {selectedDocuments.length === 1 && (
-            <div className="bg-slate-200 p-4 text-white font-medium">
+            <div className="bg-gray-800 p-4 text-white font-medium">
               {(() => {
                 const documentDetails = getDocumentDetails(selectedDocuments[0]);
                 return documentDetails ? (
                   <>
-                    <div className='flex flex-col gap-2 text-slate-700'>
+                    <div className='flex flex-col gap-2 text-white'>
                       <div className='flex justify-between gap-2'>
-                        <div className='flex flex-col bg-slate-100 py-2 px-4 rounded rounded-md grow'>
+                        <div className='flex flex-col bg-gray-600 py-2 px-4 rounded rounded-md grow'>
                           <span className='font-bold text-xs'>
                             Folhas
                           </span>
@@ -539,7 +539,7 @@ export const DocumentsAside = () => {
                             {documentDetails.page}
                           </span>
                         </div>
-                        <div className='flex flex-col bg-slate-100 py-2 px-4 rounded rounded-md grow'>
+                        <div className='flex flex-col bg-gray-600 py-2 px-4 rounded rounded-md grow'>
                           <span className='font-bold text-xs'>
                             Situação
                           </span>
@@ -547,7 +547,7 @@ export const DocumentsAside = () => {
                             {documentDetails.situacao}
                           </span>
                         </div>
-                        <div className='flex flex-col bg-slate-100 py-2 px-4 rounded rounded-md grow'>
+                        <div className='flex flex-col bg-gray-600 py-2 px-4 rounded rounded-md grow'>
                           <span className='font-bold text-xs'>
                             Tamanho
                           </span>
@@ -557,7 +557,7 @@ export const DocumentsAside = () => {
                         </div>
                       </div>
 
-                      <div className='flex flex-col bg-slate-100 py-2 px-4 rounded rounded-md'>
+                      <div className='flex flex-col bg-gray-600 py-2 px-4 rounded rounded-md'>
                         <span className='font-bold text-xs'>
                           Pendência de Juntada
                         </span>

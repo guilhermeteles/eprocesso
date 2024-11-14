@@ -109,7 +109,7 @@ const Nav = () => {
 
           {/* Hover Tooltip */}
           {isHovering && !showFixedTooltip && (
-            <div className="absolute -left-2 top-full mt-3 bg-gray-800 text-white p-2 rounded-b-md shadow-lg flex flex-col gap-2 w-[350px]">
+            <div className="absolute -left-2 top-full mt-3 bg-gray-800 text-white p-4 rounded-b-md shadow-lg flex flex-col gap-2 w-[350px]">
               <div className="flex justify-between items-center mb-2">
                 <span className="font-bold text-[16px] leading-[22px]">Informações de Sigilo</span>
 
