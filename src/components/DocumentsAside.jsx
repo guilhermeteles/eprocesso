@@ -387,7 +387,7 @@ export const DocumentsAside = () => {
 
           {/* <h2 className="text-md font-medium text-[#3D4551]">Documentos</h2> */}
           {viewMode === 'tree' && (
-            <div className=" flex justify-between text-sm gap-4 bg-[#1A4480] p-2 rounded-md">
+            <div className=" flex justify-between text-sm gap-4 bg-[#1A4480] p-1.5 rounded-md">
 
               <button
                 className="text-xs underline hover:text-gray-100 border-r-1 border-white"
@@ -395,6 +395,7 @@ export const DocumentsAside = () => {
               >
                 <FontAwesomeIcon
                   icon={faBars}
+                  className='ml-1'
                 />
               </button>
               <button
@@ -405,7 +406,10 @@ export const DocumentsAside = () => {
                   icon={faBarsStaggered}
                 />
               </button>
-              {/* <ToggleExpandButton onContractAll={contractAll} onExpandAll={expandAll} /> */}
+              <div className='flex gap-1'>
+
+              <input className='px-2 w-14 rounded text-gray-700' placeholder='Pg. #'></input><button className='rounded bg-[#1351B4] px-2'>Ir</button>
+              </div>
             </div>
           )}
           {viewMode === 'chronological' && (

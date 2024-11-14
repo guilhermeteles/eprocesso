@@ -171,11 +171,11 @@ const Dashboard = () => {
                                     </span>
 
                                     {/* Note Name with Truncation */}
-                                    <span className="flex-1 truncate min-w-0 w-40" title={note.name}>
+                                    <span className="flex-1 truncate min-w-0 w-32" title={note.name}>
                                         {note.name}
                                     </span>
                                 </span>
-                                <span className="text-xs">
+                                <span className="text-xs whitespace-nowrap">
                                     {formatDate(note.date)}
                                 </span>
                             </div>
