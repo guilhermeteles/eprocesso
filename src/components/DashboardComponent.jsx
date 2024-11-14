@@ -15,7 +15,7 @@ const notes = [
     { id: 3, group: "team", date: "2024-11-10", content: "Scheduled a team meeting to discuss case priorities for the week and assigned roles.", name: 'Carlos Lima' },
     { id: 4, group: "team", date: "2024-11-13", content: "Meeting conducted successfully. Next steps were delegated, and deadlines were set for each case file.", name: 'Ana Sousa' },
     { id: 5, group: "user", date: "2024-11-09", content: "User requested additional information about the process timeline and necessary documents.", name: 'Julio Cesar' },
-    { id: 6, group: "user", date: "2024-11-14", content: "User submitted missing documentation. Case review has been updated accordingly.", name: 'Julio Cesar' },
+    { id: 6, group: "user", date: "2024-11-14", content: "User submitted missing documentation. Case review has been updated accordingly.", name: 'Pedro de Alcântara Francisco Antônio João Carlos Xavier de Paula Miguel Rafael Joaquim José Gonzaga Pascoal Cipriano Serafim de Bragança e Bourbon' },
     { id: 7, group: "process", date: "2024-11-15", content: "Finalized the report for the case summary. Forwarded it to the user for review.", name: 'Maria Fernandes' },
     { id: 8, group: "process", date: "2024-11-16", content: "Case closed with all actions documented. Archived case files for record-keeping.", name: 'Carlos Lima' },
 ];
@@ -159,17 +159,22 @@ const Dashboard = () => {
                         <option value="user">Notas para Usuário</option>
                     </select>
                 </div>
-                <div className='max-h-[calc(100vh-255px)] h-fit flex flex-col gap-4 overflow-auto'>
+                <div className='max-h-[calc(100vh-255px)] h-fit flex flex-col gap-4 overflow-auto w-full'>
                 {filteredNotes.map((note, index) => (
                     <div key={index} className={`text-gray-600 ${bgColors[note.group]} px-3 py-2 rounded-md`}>
                         <div className="flex justify-between items-center mb-2">
-                            <span className="text-xs font-semibold flex items-center gap-2">
-                                <span className={`px-2 py-1 rounded-full text-xs font-semibold ${badgeColors[note.group]}`}>
-                                    {badgeLabels[note.group]}
+                                <span className="text-xs font-semibold flex items-center gap-2">
+                                    {/* Badge */}
+                                    <span className={`px-2 py-1 rounded-full text-xs font-semibold ${badgeColors[note.group]}`}>
+                                        {badgeLabels[note.group]}
+                                    </span>
+                                    
+                                    {/* Note Name with Truncation */}
+                                    <span className="flex-1 truncate max-w-[170px]" title={note.name}>
+                                             {note.name}
+                                        </span>
                                 </span>
-                                {note.name}
-                            </span>
-                            <span className="text-xs">
+                            <span className="text-xs w-15">
                                 {note.date}
                             </span>
                         </div>
