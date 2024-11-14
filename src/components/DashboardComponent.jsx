@@ -1,10 +1,10 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEdit, faCheck, faFolder, faNoteSticky, faHand, faThList, faFileCircleExclamation } from '@fortawesome/free-solid-svg-icons';
+import { faEdit, faFolder, faNoteSticky, faHand, faThList, faFileCircleExclamation } from '@fortawesome/free-solid-svg-icons';
 import { faDatabase, faClipboardList } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 import { faFolderOpen } from '@fortawesome/free-regular-svg-icons';
-import { faPaste } from '@fortawesome/free-regular-svg-icons';
 import { faClipboard } from '@fortawesome/free-regular-svg-icons';
+import { faList } from '@fortawesome/free-solid-svg-icons';
 
 const Dashboard = () => {
     const [filter, setFilter] = useState('all');
@@ -59,121 +59,110 @@ const Dashboard = () => {
     };
 
     return (
-        <div className='overflow-y-auto'>
-            <div className="mx-auto px-8 py-8">
-                <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3">
-
-                    {/* Pendências do Processo */}
-                    <div className="bg-white px-6 pb-6 pt-4 shadow-[0_3px_10px_rgb(0,0,0,0.1)] flex flex-col gap-2 h-fit">
-                        <h2 className="text-md font-semibold text-gray-800 mb-2">
-                            <FontAwesomeIcon icon={faThList} className='mr-2' />
-                            Pendências do Processo
-                        </h2>
-                        <p className="text-gray-700 bg-[#FDE0DB] px-3 py-2 rounded-md flex items-center gap-2">
-                            <FontAwesomeIcon
-                                icon={faDatabase}
-                                className='mr-2 mt-0.5'
-                            />
-                            <p>Finalizar o cadastro do processo no SIEF-Processos</p>
-                        </p>
-                        <p className="text-gray-700 bg-[#FDE0DB] px-3 py-2 rounded-md flex items-center gap-2">
-                            <FontAwesomeIcon
-                                icon={faFolder}
-                                className='mr-2 mt-0.5'
-                            />
-                            <p>Existe SJD a ser avaliada</p>
-                        </p>
-                        <p className="text-gray-700 bg-[#FDE0DB] px-3 py-2 rounded-md flex items-center gap-2">
-                            <FontAwesomeIcon
-                                icon={faFileCircleExclamation}
-                                className='mr-2 mt-0.5'
-                            />
-                            <p>Existe documento a ser efetivado</p>
-                        </p>
-                        <p className="text-gray-700 bg-[#FDE0DB] px-3 py-2 rounded-md flex items-center gap-2">
-                            <FontAwesomeIcon
-                                icon={faFolderOpen}
-                                className='mr-2 mt-0.5'
-                            />
-                            <p>Existe providência aberta</p>
-                        </p>
-                        <p className="text-gray-700 bg-[#FDE0DB] px-3 py-2 rounded-md flex items-center gap-2">
-                            <FontAwesomeIcon
-                                icon={faNoteSticky}
-                                className='mr-2 mt-0.5'
-                            />
-                            <p>Existe nota para o processo ativa</p>
-                        </p>
-                        <p className="text-gray-700 bg-[#FDE0DB] px-3 py-2 rounded-md flex items-center gap-2">
+        <div className='grid grid-cols-3 h-full w-full p-8 gap-4'>
+            <div className='bg-white px-6 pb-6 pt-4 shadow-[0_3px_10px_rgb(0,0,0,0.1)] flex flex-col gap-2 h-fit'>
+                <h2 className="text-md font-semibold text-gray-800 mb-3 mt-1">
+                    <FontAwesomeIcon icon={faList} className='mr-2' />
+                    Pendências do Processo
+                </h2>
+                <div className='max-h-[calc(100vh-255px)] h-fit flex flex-col gap-2 overflow-auto'>    
+                    <p className="text-gray-700 bg-[#FDE0DB] px-3 py-2 rounded-md flex items-center gap-2">
+                        <FontAwesomeIcon icon={faDatabase} className='mr-2 mt-0.5' />
+                        <p>Finalizar o cadastro do processo no SIEF-Processos</p>
+                    </p>
+                    <p className="text-gray-700 bg-[#FDE0DB] px-3 py-2 rounded-md flex items-center gap-2">
+                        <FontAwesomeIcon
+                            icon={faFolder}
+                            className='mr-2 mt-0.5'
+                        />
+                        <p>Existe SJD a ser avaliada</p>
+                    </p>
+                    <p className="text-gray-700 bg-[#FDE0DB] px-3 py-2 rounded-md flex items-center gap-2">
+                        <FontAwesomeIcon
+                            icon={faFileCircleExclamation}
+                            className='mr-2 mt-0.5'
+                        />
+                        <p>Existe documento a ser efetivado</p>
+                    </p>
+                    <p className="text-gray-700 bg-[#FDE0DB] px-3 py-2 rounded-md flex items-center gap-2">
+                        <FontAwesomeIcon
+                            icon={faFolderOpen}
+                            className='mr-2 mt-0.5'
+                        />
+                        <p>Existe providência aberta</p>
+                    </p>
+                    <p className="text-gray-700 bg-[#FDE0DB] px-3 py-2 rounded-md flex items-center gap-2">
+                        <FontAwesomeIcon
+                            icon={faNoteSticky}
+                            className='mr-2 mt-0.5'
+                        />
+                        <p>Existe nota para o processo ativa</p>
+                    </p>
+                    <p className="text-gray-700 bg-[#FDE0DB] px-3 py-2 rounded-md flex items-center gap-2">
                         <div className="relative">
-                                <span className="absolute top-[6px] left-[3.5px] text-[10px] font-bold">C</span>
-                                <FontAwesomeIcon icon={faClipboard} className="mr-2 mt-0.5 text-lg" />
-                            </div>
-                            <p>Existe ciência pendente</p>
-                        </p>
-
-                        <p className="text-gray-700 bg-[#FDE0DB] px-3 py-2 rounded-md flex items-center gap-2">
-                            <div className="relative">
-                                <span className="absolute top-[6.5px] left-[2.4px] text-[10px] font-bold">M</span>
-                                <FontAwesomeIcon icon={faClipboard} className="mr-2 mt-0.5 text-lg" />
-                            </div>
-                            <p>Existe manifestação pendente</p>
-                        </p>
-
-                        <p className="text-gray-700 bg-[#FDE0DB] px-3 py-2 rounded-md flex items-center gap-2">
-                            <FontAwesomeIcon
-                                icon={faHand}
-                                className='mr-2 mt-0.5'
-                            />
-                            <p>Existe alegação</p>
-                        </p>
-                        <p className="text-gray-700 bg-[#FDE0DB] px-3 py-2 rounded-md flex items-center gap-2">
-                            <FontAwesomeIcon
-                                icon={faClipboardList}
-                                className='mr-2 mt-0.5'
-                            />
-                            <p>Processo está em atividade de análise de quesitos e a ficha de quesitos ainda não foi respondida</p>
-                        </p>
-                    </div>
-
-                    {/* Notas */}
-                    <div className="bg-white px-6 pb-6 pt-4 shadow-[0_3px_10px_rgb(0,0,0,0.1)] flex flex-col gap-4 h-fit">
-                        <div className="flex justify-between items-center">
-                            <h2 className="text-md font-semibold text-gray-800 flex items-center ">
-                                <FontAwesomeIcon icon={faEdit} className="mr-2" />
-                                Notas
-                            </h2>
-                            <select
-                                value={filter}
-                                onChange={handleFilterChange}
-                                className="text-sm border border-gray-300 rounded-md px-2 py-1 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                            >
-                                <option value="all">Todas as notas</option>
-                                <option value="process">Notas de Processo</option>
-                                <option value="team">Notas de Equipe</option>
-                                <option value="user">Notas de Usuário</option>
-                            </select>
+                            <span className="absolute top-[6px] left-[3.5px] text-[10px] font-bold">C</span>
+                            <FontAwesomeIcon icon={faClipboard} className="mr-2 mt-0.5 text-lg" />
                         </div>
-                        <div className='overflow-auto flex flex-col gap-4 max-h-[500px]'>
-                            {filteredNotes.map((note, index) => (
-                                <div key={index} className={`text-gray-600 ${note.bgColor} px-3 py-2 rounded-md`}>
-                                    <div className="flex justify-between items-center mb-2">
-                                        <span className="text-xs font-semibold flex items-center gap-2">
-                                            <span className={`px-2 py-1 rounded-full text-xs font-semibold ${badgeColors[note.type]}`}>
-                                                {badgeLabels[note.type]}
-                                            </span>
-                                            {note.name}
-                                        </span>
-                                        <span className="text-xs">
-                                            {note.date}
-                                        </span>
-                                    </div>
-                                    <p>{note.content}</p>
-                                </div>
-                            ))}
+                        <p>Existe ciência pendente</p>
+                    </p>
+                    <p className="text-gray-700 bg-[#FDE0DB] px-3 py-2 rounded-md flex items-center gap-2">
+                        <div className="relative">
+                            <span className="absolute top-[6.5px] left-[2.4px] text-[10px] font-bold">M</span>
+                            <FontAwesomeIcon icon={faClipboard} className="mr-2 mt-0.5 text-lg" />
                         </div>
-                    </div>
-
+                        <p>Existe manifestação pendente</p>
+                    </p>
+                    <p className="text-gray-700 bg-[#FDE0DB] px-3 py-2 rounded-md flex items-center gap-2">
+                        <FontAwesomeIcon
+                            icon={faHand}
+                            className='mr-2 mt-0.5'
+                        />
+                        <p>Existe alegação</p>
+                    </p>
+                    <p className="text-gray-700 bg-[#FDE0DB] px-3 py-2 rounded-md flex items-center gap-2">
+                        <FontAwesomeIcon
+                            icon={faClipboardList}
+                            className='mr-2 mt-0.5'
+                        />
+                        <p>Processo está em atividade de análise de quesitos e a ficha de quesitos ainda não foi respondida</p>
+                    </p>
+         
+                </div>
+            </div>
+            <div className='bg-white px-6 pb-6 pt-4 shadow-[0_3px_10px_rgb(0,0,0,0.1)] flex flex-col gap-2 h-fit'>
+            <div className="flex justify-between items-center mb-2">
+                    <h2 className="text-md font-semibold text-gray-800 flex items-center ">
+                        <FontAwesomeIcon icon={faEdit} className="mr-2" />
+                        Notas
+                    </h2>
+                    <select
+                        value={filter}
+                        onChange={handleFilterChange}
+                        className="text-sm border border-gray-300 rounded-md px-2 py-1 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    >
+                        <option value="all">Todas as notas</option>
+                        <option value="process">Notas de Processo</option>
+                        <option value="team">Notas de Equipe</option>
+                        <option value="user">Notas de Usuário</option>
+                    </select>
+                </div>
+                <div className='max-h-[calc(100vh-255px)] h-fit flex flex-col gap-4 overflow-auto'>
+                {filteredNotes.map((note, index) => (
+                        <div key={index} className={`text-gray-600 ${note.bgColor} px-3 py-2 rounded-md`}>
+                            <div className="flex justify-between items-center mb-2">
+                                <span className="text-xs font-semibold flex items-center gap-2">
+                                    <span className={`px-2 py-1 rounded-full text-xs font-semibold ${badgeColors[note.type]}`}>
+                                        {badgeLabels[note.type]}
+                                    </span>
+                                    {note.name}
+                                </span>
+                                <span className="text-xs">
+                                    {note.date}
+                                </span>
+                            </div>
+                            <p>{note.content}</p>
+                        </div>
+                    ))}
                 </div>
             </div>
         </div>
