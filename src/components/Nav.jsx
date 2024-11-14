@@ -219,43 +219,43 @@ const Nav = () => {
               icon="fa-solid fa-arrow-right"
               name="Home"
               textColor='#1A4480'
-              color='#D4E5FF'
+              color='#CFE8FF'
             />
             <IconButton
               icon="fa-solid fa-arrow-rotate-right"
               name="Profile"
               textColor='#1A4480'
-              color='#D4E5FF'
+              color='#CFE8FF'
             />
             <IconButton
               icon="fa-solid fa-arrow-up"
               name="Settings"
               textColor='#1A4480'
-              color='#D4E5FF'
+              color='#CFE8FF'
             />
             <IconButton
               icon="fa-solid fa-user-group"
               name="Notifications"
               textColor='#1A4480'
-              color='#D4E5FF'
+              color='#CFE8FF'
             />
             <IconButton
               icon="fa-solid fa-circle-info"
               name="Notifications"
               textColor='#1A4480'
-              color='#D4E5FF'
+              color='#CFE8FF'
             />
             <IconButton
               icon="fa-solid fa-calendar-days"
               name="Messages"
               textColor='#1A4480'
-              color='#D4E5FF'
+              color='#CFE8FF'
             />
             <IconButton
               icon="fa-solid fa-ellipsis-vertical"
               name="Messages"
               textColor='#1A4480'
-              color='#D4E5FF'
+              color='#CFE8FF'
               onClick={toggleOverlayMenu}
             />
           </div>
@@ -268,49 +268,49 @@ const Nav = () => {
               icon="fa-solid fa-bookmark"
               name="Home"
               textColor='#1A4480'
-              color='#EBE3F9'
+              color='#E0E0FF'
             />
             <IconButton
               icon="fa-solid fa-file-arrow-up"
               name="Home"
               textColor='#1A4480'
-              color='#EBE3F9'
+              color='#E0E0FF'
             />
             <IconButton
               icon="fa-solid fa-file-medical"
               name="Profile"
               textColor='#1A4480'
-              color='#EBE3F9'
+              color='#E0E0FF'
             />
             <IconButton
               icon="fa-solid fa-file-signature"
               name="Settings"
               textColor='#1A4480'
-              color='#EBE3F9'
+              color='#E0E0FF'
             />
             <IconButton
               icon="fa-solid fa-trash-can"
               name="Messages"
               textColor='#1A4480'
-              color='#EBE3F9'
+              color='#E0E0FF'
             />
             <IconButton
               icon="fa-solid fa-circle-info"
               name="Notifications"
               textColor='#1A4480'
-              color='#EBE3F9'
+              color='#E0E0FF'
             />
             <IconButton
               icon="fa-solid fa-download"
               name="Notifications"
               textColor='#1A4480'
-              color='#EBE3F9'
+              color='#E0E0FF'
             />
             <IconButton
               icon="fa-solid fa-ellipsis-vertical"
               name="Messages"
               textColor='#1A4480'
-              color='#EBE3F9'
+              color='#E0E0FF'
               onClick={toggleOverlayMenu}
             />
           </div>
@@ -323,13 +323,13 @@ const Nav = () => {
               icon="fa-solid fa-notes-medical"
               name="Home"
               textColor='#1A4480'
-              color='#ffedd5'
+              color='#FFDDEA'
             />
             <IconButton
               icon="fa-solid fa-clipboard-list"
               name="Profile"
               textColor='#1A4480'
-              color='#ffedd5'
+              color='#FFDDEA'
             />
 
           </div>
