@@ -1,61 +1,73 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEdit, faFolder, faNoteSticky, faHand, faThList, faFileCircleExclamation } from '@fortawesome/free-solid-svg-icons';
+import { faEdit, faFolder, faNoteSticky, faHand, faFileCircleExclamation } from '@fortawesome/free-solid-svg-icons';
 import { faDatabase, faClipboardList } from '@fortawesome/free-solid-svg-icons';
-import { useState } from 'react';
 import { faFolderOpen } from '@fortawesome/free-regular-svg-icons';
 import { faClipboard } from '@fortawesome/free-regular-svg-icons';
 import { faList } from '@fortawesome/free-solid-svg-icons';
+import { useState } from "react";
+import { faFileContract } from '@fortawesome/free-solid-svg-icons';
+import { faUsers } from '@fortawesome/free-solid-svg-icons';
+import { faUserAlt } from '@fortawesome/free-solid-svg-icons';
+
+const notes = [
+    { id: 1, group: "process", date: "2024-11-11", content: "Reviewed initial case documentation and identified missing forms. Follow-up needed with user.", name: 'Julio Cesar' },
+    { id: 2, group: "process", date: "2024-11-12", content: "Updated case status to 'In Progress' after reviewing submitted documents. Awaiting team approval for next steps.", name: 'Maria Fernandes' },
+    { id: 3, group: "team", date: "2024-11-10", content: "Scheduled a team meeting to discuss case priorities for the week and assigned roles.", name: 'Carlos Lima' },
+    { id: 4, group: "team", date: "2024-11-13", content: "Meeting conducted successfully. Next steps were delegated, and deadlines were set for each case file.", name: 'Ana Sousa' },
+    { id: 5, group: "user", date: "2024-11-09", content: "User requested additional information about the process timeline and necessary documents.", name: 'Julio Cesar' },
+    { id: 6, group: "user", date: "2024-11-14", content: "User submitted missing documentation. Case review has been updated accordingly.", name: 'Julio Cesar' },
+    { id: 7, group: "process", date: "2024-11-15", content: "Finalized the report for the case summary. Forwarded it to the user for review.", name: 'Maria Fernandes' },
+    { id: 8, group: "process", date: "2024-11-16", content: "Case closed with all actions documented. Archived case files for record-keeping.", name: 'Carlos Lima' },
+];
+
 
 const Dashboard = () => {
-    const [filter, setFilter] = useState('all');
-
-    const handleFilterChange = (e) => {
-        setFilter(e.target.value);
+    const [filter, setFilter] = useState("last-of-each-group");
+    const [filteredNotes, setFilteredNotes] = useState(getLastOfEachGroup(notes)); // Initialize with last of each group
+    
+    function getLastOfEachGroup(notes) {
+        const latestNotes = {};
+        notes.forEach(note => {
+            const { group, date } = note;
+            if (!latestNotes[group] || new Date(date) > new Date(latestNotes[group].date)) {
+                latestNotes[group] = note;
+            }
+        });
+        return Object.values(latestNotes);
+    }
+    
+    function handleFilterChange(event) {
+        const selectedFilter = event.target.value;
+        setFilter(selectedFilter);
+    
+        let filteredNotes;
+        if (selectedFilter === "last-of-each-group") {
+            filteredNotes = getLastOfEachGroup(notes);
+        } else if (selectedFilter === "all") {
+            filteredNotes = notes;
+        } else {
+            filteredNotes = notes.filter(note => note.group === selectedFilter);
+        }
+    
+        setFilteredNotes(filteredNotes);
+    }
+    
+    const bgColors = {
+        process: 'bg-[#EFF4DD]',
+        team: 'bg-[#FEF0C8]',
+        user: 'bg-[#F8EFF1]'
     };
 
-    const notes = [
-        {
-            type: 'process',
-            name: 'João Silva',
-            date: '10/02/2023',
-            content: 'Análise completa do progresso do processo de estudo. Identificou-se a necessidade de revisão dos materiais antes de avançar para o próximo módulo.',
-            bgColor: 'bg-[#EAF4DD]'
-        },
-        {
-            type: 'team',
-            name: 'Maria Fernandes',
-            date: '12/02/2023',
-            content: 'Equipe de suporte registrou o ajuste do cronograma com base nos feedbacks mais recentes. Novas sugestões de conteúdo foram adicionadas à lista.',
-            bgColor: 'bg-[#FEF0C8]'
-        },
-        {
-            type: 'user',
-            name: 'Carlos Oliveira',
-            date: '14/02/2023',
-            content: 'Comentário do usuário sobre o material: "A revisão está sendo útil, mas seria interessante incluir mais exemplos práticos para fixação."',
-            bgColor: 'bg-[#F8EFF1]'
-        },
-        {
-            type: 'user',
-            name: 'Ana Costa',
-            date: '15/02/2023',
-            content: 'Feedback do usuário: "O cronograma tem funcionado bem, mas preciso de mais tempo para os temas avançados."',
-            bgColor: 'bg-[#F8EFF1]',
-        },
-    ];
-
-    const filteredNotes = filter === 'all' ? notes : notes.filter(note => note.type === filter);
-
     const badgeLabels = {
-        process: 'P',
-        team: 'E',
-        user: 'U'
+        process: <FontAwesomeIcon icon={faFileContract} className='ml-[1px]'/>,
+        team: <FontAwesomeIcon icon={faUsers} className='-ml-[2.7px]'/>,
+        user: <FontAwesomeIcon icon={faUserAlt} className='-ml-[1px]'/>
     };
 
     const badgeColors = {
-        process: 'border-2 bg-white border-[#B8D293] text-gray-800',
-        team: 'border-2 bg-white border-[#FFBE2E] text-gray-800',
-        user: 'border-2 bg-white border-[#ECBEC6] text-gray-800'
+        process: 'bg-white border border-[#B8D293] text-gray-800 w-7 h-7 flex items-center',
+        team: 'bg-white border border-[#FFBE2E] text-gray-800 w-7 h-7 flex items-center',
+        user: 'bg-white border border-[#ECBEC6] text-gray-800 w-7 h-7 flex items-center'
     };
 
     return (
@@ -140,29 +152,30 @@ const Dashboard = () => {
                         onChange={handleFilterChange}
                         className="text-sm border border-gray-300 rounded-md px-2 py-1 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     >
+                        <option value="last-of-each-group">Notas mais recentes</option>
                         <option value="all">Todas as notas</option>
-                        <option value="process">Notas de Processo</option>
-                        <option value="team">Notas de Equipe</option>
-                        <option value="user">Notas de Usuário</option>
+                        <option value="process">Notas para Processo</option>
+                        <option value="team">Notas para Equipe</option>
+                        <option value="user">Notas para Usuário</option>
                     </select>
                 </div>
                 <div className='max-h-[calc(100vh-255px)] h-fit flex flex-col gap-4 overflow-auto'>
                 {filteredNotes.map((note, index) => (
-                        <div key={index} className={`text-gray-600 ${note.bgColor} px-3 py-2 rounded-md`}>
-                            <div className="flex justify-between items-center mb-2">
-                                <span className="text-xs font-semibold flex items-center gap-2">
-                                    <span className={`px-2 py-1 rounded-full text-xs font-semibold ${badgeColors[note.type]}`}>
-                                        {badgeLabels[note.type]}
-                                    </span>
-                                    {note.name}
+                    <div key={index} className={`text-gray-600 ${bgColors[note.group]} px-3 py-2 rounded-md`}>
+                        <div className="flex justify-between items-center mb-2">
+                            <span className="text-xs font-semibold flex items-center gap-2">
+                                <span className={`px-2 py-1 rounded-full text-xs font-semibold ${badgeColors[note.group]}`}>
+                                    {badgeLabels[note.group]}
                                 </span>
-                                <span className="text-xs">
-                                    {note.date}
-                                </span>
-                            </div>
-                            <p>{note.content}</p>
+                                {note.name}
+                            </span>
+                            <span className="text-xs">
+                                {note.date}
+                            </span>
                         </div>
-                    ))}
+                        <p>{note.content}</p>
+                    </div>
+                ))}
                 </div>
             </div>
         </div>
@@ -170,3 +183,7 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+
+
+
+
