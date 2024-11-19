@@ -84,7 +84,7 @@ const IconBadge = ({ icon, text, color }) => {
       style={{ backgroundColor: color }}
     >
       <span style={{ color: darkenHexColor(color, 0.2) }}>{icon}</span>
-      <span className="text-gray-700 text-xs">{text}</span>
+      <span className="text-gray-[#374151] text-xs">{text}</span>
     </div>
   );
 };

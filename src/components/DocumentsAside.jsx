@@ -291,7 +291,7 @@ export const DocumentsAside = () => {
               icon={
                 expandedParents[doc.id] ? faChevronDown : faChevronRight
               }
-              className="text-gray-700 h-2.5 w-2.5 mb-[3.5px]"
+              className="text-gray-[#374151] h-2.5 w-2.5 mb-[3.5px]"
             />
           </button>
           <input
@@ -464,7 +464,7 @@ export const DocumentsAside = () => {
             <div className=" flex justify-between text-sm gap-4 bg-[#1A4480] p-1.5 rounded-md">
 
               <button
-                className="text-xs underline hover:text-gray-100 border-r-1 border-white"
+                className="text-xs underline hover:text-gray-[#F3F4F6] border-r-1 border-white"
                 onClick={contractAll}
               >
                 <FontAwesomeIcon
@@ -473,7 +473,7 @@ export const DocumentsAside = () => {
                 />
               </button>
               <button
-                className="text-xs underline hover:text-gray-100"
+                className="text-xs underline hover:text-gray-[#F3F4F6]"
                 onClick={expandAll}
               >
                 <FontAwesomeIcon
@@ -483,7 +483,7 @@ export const DocumentsAside = () => {
               </button>
               <div className='flex gap-1'>
 
-              <input className='px-2 w-16 rounded text-gray-700' placeholder='Pg. #'type="number"
+              <input className='px-2 w-16 rounded text-gray-[#374151]' placeholder='Pg. #'type="number"
                   value={pageNumber}
                   onChange={handlePageInputChange}></input><button className='rounded bg-[#1351B4] px-2' onClick={handleSearchPage}>Ir</button>
               </div>
@@ -493,7 +493,7 @@ export const DocumentsAside = () => {
             <div className="flex justify-between text-sm gap-2 bg-[#1A4480] p-1.5 rounded-md">
 
               <button
-                className="text-md underline hover:text-gray-100 w-5"
+                className="text-md underline hover:text-gray-[#F3F4F6] w-5"
                 onClick={showChronologicalView}
               >
                
@@ -503,7 +503,7 @@ export const DocumentsAside = () => {
               </button>
               
               <button
-                className="text-md underline hover:text-gray-100 w-5"
+                className="text-md underline hover:text-gray-[#F3F4F6] w-5"
                 onClick={showAntiChronologicalView}
               >
             
@@ -513,7 +513,7 @@ export const DocumentsAside = () => {
               </button>
               <div className='flex gap-1'>
 
-              <input className='px-2 w-14 rounded text-gray-700' placeholder='Pg. #'></input><button className='rounded bg-[#1351B4] px-2'>Ir</button>
+              <input className='px-2 w-14 rounded text-gray-[#374151]' placeholder='Pg. #'></input><button className='rounded bg-[#1351B4] px-2'>Ir</button>
               </div>
             </div>
           )}
@@ -540,7 +540,7 @@ export const DocumentsAside = () => {
                       icon={
                         expandedParents[doc.id] ? faChevronDown : faChevronRight
                       }
-                      className="text-gray-700 h-2.5 w-2.5 mb-[3.5px]"
+                      className="text-gray-[#374151] h-2.5 w-2.5 mb-[3.5px]"
                     />
                   </button>
                   <input
@@ -591,7 +591,7 @@ export const DocumentsAside = () => {
                   <>
                     <div className='flex flex-col gap-2 text-white'>
                       <div className='flex justify-between gap-2'>
-                        <div className='flex flex-col bg-gray-600 py-2 px-4 rounded rounded-md grow'>
+                        <div className='flex flex-col bg-gray-600 py-2 px-4 rounded grow'>
                           <span className='font-bold text-xs'>
                             Folhas
                           </span>
@@ -599,7 +599,7 @@ export const DocumentsAside = () => {
                             {documentDetails.page}
                           </span>
                         </div>
-                        <div className='flex flex-col bg-gray-600 py-2 px-4 rounded rounded-md grow'>
+                        <div className='flex flex-col bg-gray-600 py-2 px-4 rounded grow'>
                           <span className='font-bold text-xs'>
                             Situação
                           </span>
@@ -607,7 +607,7 @@ export const DocumentsAside = () => {
                             {documentDetails.situacao}
                           </span>
                         </div>
-                        <div className='flex flex-col bg-gray-600 py-2 px-4 rounded rounded-md grow'>
+                        <div className='flex flex-col bg-gray-600 py-2 px-4 rounded grow'>
                           <span className='font-bold text-xs'>
                             Tamanho
                           </span>
@@ -617,7 +617,7 @@ export const DocumentsAside = () => {
                         </div>
                       </div>
 
-                      <div className='flex flex-col bg-gray-600 py-2 px-4 rounded rounded-md'>
+                      <div className='flex flex-col bg-gray-600 py-2 px-4 rounded'>
                         <span className='font-bold text-xs'>
                           Pendência de Juntada
                         </span>

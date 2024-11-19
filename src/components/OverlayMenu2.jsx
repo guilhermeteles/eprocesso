@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // Sample data structure for groups and items
 const groupsData = [
   {
-    title: "Tramitação do Processo",
+    title: "Tramitação do Processo 2",
     color: "#FFE2D1",
     items: [
       { id: 1, title: "Alterar Localização Física", letter: "L" },
@@ -16,6 +16,64 @@ const groupsData = [
       { id: 5, title: "Definir Próxima Tarefa", letter: "N" },
       { id: 6, title: "Tornar Físico", letter: "F" },
       { id: 7, title: "Tornar Digital", letter: "D" },
+    ],
+  },
+  {
+    title: "Juntada de Documento",
+    color: "#FEE685",
+    items: [
+      { id: 8, title: "Consultar Solicitação de Juntada", letter: "C" },
+      { id: 9, title: "Copiar Documento de outro Processo", letter: "D" },
+    ],
+  },
+  {
+    title: "Providência",
+    color: "#DFEACD",
+    items: [
+      { id: 10, title: "Consultar", letter: "C" },
+      { id: 11, title: "Incluir", letter: "I" },
+    ],
+  },
+  {
+    title: "Ciência",
+    color: "#C7EFE2",
+    items: [
+      { id: 12, title: "Consultar Comunicados e Intimações Emitidos", letter: "C" },
+      { id: 13, title: "Emitir Comunicado ou Intimação para Ciência", letter: "E" },
+    ],
+  },
+  {
+    title: "Gestão em Horas",
+    color: "#C3EBFA",
+    items: [
+      { id: 14, title: "Classificar ACT e Tema do Processo", letter: "C" },
+      { id: 15, title: "Consultar Fichas de Quesitos", letter: "F" },
+      { id: 16, title: "Consultar Histórico de Horas Estimadas", letter: "H" },
+      { id: 17, title: "Responder Ficha de Quesitos", letter: "R" },
+    ],
+  },
+  {
+    title: "Julgamento",
+    color: "#E0E0FF",
+    items: [
+      { id: 18, title: "Consultar Histórico de Questionamentos", letter: "C" },
+      { id: 19, title: "Incluir / Alterar / Cancelar Questionamento", letter: "I" },
+      { id: 20, title: "Incluir / Alterar / Excluir Ementa", letter: "E" },
+      { id: 21, title: "Indicar para Pauta", letter: "P" },
+      { id: 22, title: "Informar Resultado Monocrático", letter: "M" },
+      { id: 23, title: "Informar Resultado de Exame de Admissibilidade", letter: "E" },
+      { id: 24, title: "Retificar Resultado Monocrático", letter: "R" },
+    ],
+  },
+  {
+    title: "Legado",
+    color: "#EDEFF0",
+    items: [
+      { id: 25, title: "Apurar Grau do Processo", letter: "A" },
+      { id: 26, title: "Visualizar Apuração de Grau", letter: "V" },
+      { id: 27, title: "Consultar Questionamentos", letter: "C" },
+      { id: 28, title: "Indicar Processo para Pauta", letter: "I" },
+      { id: 29, title: "Julgar Admissibilidade", letter: "J" },
     ],
   },
 ];
@@ -48,7 +106,7 @@ ToggleButton.propTypes = {
   letter: PropTypes.string.isRequired,
 };
 
-const OverlayMenu = ({ isOpen, onClose, onAddItemToGroup3 }) => {
+const OverlayMenu2 = ({ isOpen, onClose, onAddItemToGroup3 }) => {
   const [toggles, setToggles] = useState(
     groupsData.reduce((acc, group) => {
       group.items.forEach((item) => {
@@ -106,7 +164,7 @@ const OverlayMenu = ({ isOpen, onClose, onAddItemToGroup3 }) => {
       >
         <div className='flex  pl-7 pr-5 pt-6 justify-between items-center'>
         <h2 className="text-lg rounded-md w-full font-semibold text-[#3D4551]">
-                Menu Processos
+                Favoritar ou Visitar Links 2
               </h2>
               <button onClick={onClose} className="hover:text-[#3D4551] text-gray-[#D1D5DB] font-bold w-8 h-8">
                 <i className="fas fa-xmark"></i>
@@ -171,10 +229,10 @@ const OverlayMenu = ({ isOpen, onClose, onAddItemToGroup3 }) => {
   );
 };
 
-OverlayMenu.propTypes = {
+OverlayMenu2.propTypes = {
   isOpen: PropTypes.bool.isRequired,
   onClose: PropTypes.func.isRequired,
   onAddItemToGroup3: PropTypes.func.isRequired,
 };
 
-export default OverlayMenu;
+export default OverlayMenu2;

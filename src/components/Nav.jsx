@@ -2,6 +2,7 @@ import { useState, useRef } from 'react';
 import { IconButton } from './IconButton';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import OverlayMenu from './OverlayMenu';
+import OverlayMenu2 from './OverlayMenu2';
 import SigilosoTooltip from './SigilosoTooltip';
 import { faFile, faUser, faLock, faShareAlt, faLink, faTrashAlt, faBoxesPacking, faCheck, faStar as faStarSolid } from '@fortawesome/free-solid-svg-icons';
 import { faStar as faStarRegular } from '@fortawesome/free-regular-svg-icons';
@@ -13,6 +14,7 @@ const Nav = () => {
   const [isFilled, setIsFilled] = useState(false);
   const [showMessage, setShowMessage] = useState(false);
   const [isOverlayOpen, setIsOverlayOpen] = useState(false);
+  const [isOverlayOpen2, setIsOverlayOpen2] = useState(false); // State for second overlay
   const [showFixedTooltip, setShowFixedTooltip] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
   const processoSigilosoRef = useRef(null); // Ref for the "Processo Sigiloso" button
@@ -36,6 +38,10 @@ const Nav = () => {
 
   const toggleOverlayMenu = () => {
     setIsOverlayOpen((prev) => !prev);
+  };
+
+  const toggleOverlayMenu2 = () => { // Toggle for second overlay
+    setIsOverlayOpen2((prev) => !prev);
   };
 
   // Tooltip Toggle with Position Reset
@@ -96,7 +102,7 @@ const Nav = () => {
 
         {/* "Processo Sigiloso" Section with Tooltip */}
         <div
-          className="flex items-center text-white relative cursor-pointer hover:underline relative"
+          className="flex items-center text-white relative cursor-pointer hover:underline"
           onClick={handleTooltipToggle}
           onMouseEnter={() => !showFixedTooltip && setIsHovering(true)}
           onMouseLeave={() => setIsHovering(false)}
@@ -171,41 +177,41 @@ const Nav = () => {
       <nav className="flex gap-6 bg-white px-8">
         {/* Group 1 */}
         <div className="flex flex-col mb-2">
-          <label className="text-gray-400 text-xs my-1 font-medium">Consultas</label>
+          <label className="text-gray-[#9CA3AF] text-xs my-1 font-medium">Consultas</label>
           <div className="flex gap-1">
             <IconButton
               icon="fa-solid fa-link"
-              name="Home"
-              textColor='#1A4480'
-              color='#C4EEEB'
-            />
-            <IconButton
-              icon="fa-solid fa-file-contract"
-              name="Home"
-              textColor='#1A4480'
-              color='#C4EEEB'
-            />
-            <IconButton
-              icon="fa-solid fa-calendar-days"
-              name="Profile"
+              name="Juntada e Vínculos"
               textColor='#1A4480'
               color='#C4EEEB'
             />
             <IconButton
               icon="fa-solid fa-info-circle"
-              name="Settings"
+              name="Palavra-chave"
+              textColor='#1A4480'
+              color='#C4EEEB'
+            />
+            <IconButton
+              icon="fa-solid fa-calendar"
+              name="Histórico"
               textColor='#1A4480'
               color='#C4EEEB'
             />
             <IconButton
               icon="fa-solid fa-user"
-              name="Notifications"
+              name="Interessados do processo"
               textColor='#1A4480'
               color='#C4EEEB'
             />
             <IconButton
               icon="fa-solid fa-lock"
-              name="Messages"
+              name="Sigilo"
+              textColor='#1A4480'
+              color='#C4EEEB'
+            />
+            <IconButton
+              icon="fa-solid fa-file"
+              name="Procurações"
               textColor='#1A4480'
               color='#C4EEEB'
             />
@@ -213,11 +219,17 @@ const Nav = () => {
         </div>
         {/* Group 1 */}
         <div className="flex flex-col mb-2">
-          <label className="text-gray-400 text-xs my-1 font-medium">Processo</label>
+          <label className="text-gray-[#9CA3AF] text-xs my-1 font-medium">Processo</label>
           <div className="flex gap-1">
             <IconButton
               icon="fa-solid fa-arrow-right"
-              name="Home"
+              name="Movimentar"
+              textColor='#1A4480'
+              color='#CFE8FF'
+            />
+            <IconButton
+              icon="fa-solid fa-arrow-up"
+              name="Liberar"
               textColor='#1A4480'
               color='#CFE8FF'
             />
@@ -227,33 +239,29 @@ const Nav = () => {
               textColor='#1A4480'
               color='#CFE8FF'
             />
-            <IconButton
-              icon="fa-solid fa-arrow-up"
-              name="Settings"
-              textColor='#1A4480'
-              color='#CFE8FF'
-            />
+            
             <IconButton
               icon="fa-solid fa-user-group"
-              name="Notifications"
+              name="Distribuir"
+              textColor='#1A4480'
+              color='#CFE8FF'
+            />
+            
+            <IconButton
+              icon="fa-solid fa-compress-arrows-alt"
+              name="Autodistribuir"
               textColor='#1A4480'
               color='#CFE8FF'
             />
             <IconButton
-              icon="fa-solid fa-circle-info"
-              name="Notifications"
-              textColor='#1A4480'
-              color='#CFE8FF'
-            />
-            <IconButton
-              icon="fa-solid fa-calendar-days"
-              name="Messages"
+              icon="fa-solid fa-download"
+              name="Download"
               textColor='#1A4480'
               color='#CFE8FF'
             />
             <IconButton
               icon="fa-solid fa-ellipsis-vertical"
-              name="Messages"
+              name="Menu Processos"
               textColor='#1A4480'
               color='#CFE8FF'
               onClick={toggleOverlayMenu}
@@ -262,72 +270,66 @@ const Nav = () => {
         </div>
         {/* Group 1 */}
         <div className="flex flex-col mb-2">
-          <label className="text-gray-400 text-xs my-1 font-medium">Documentos</label>
+          <label className="text-gray-[#9CA3AF] text-xs my-1 font-medium">Documentos</label>
           <div className="flex gap-1">
             <IconButton
-              icon="fa-solid fa-bookmark"
-              name="Home"
-              textColor='#1A4480'
-              color='#E0E0FF'
-            />
-            <IconButton
               icon="fa-solid fa-file-arrow-up"
-              name="Home"
+              name="Juntar"
               textColor='#1A4480'
               color='#E0E0FF'
             />
             <IconButton
-              icon="fa-solid fa-file-medical"
-              name="Profile"
+              icon="fa-solid fa-clipboard-check"
+              name="Efetivar"
               textColor='#1A4480'
               color='#E0E0FF'
             />
             <IconButton
               icon="fa-solid fa-file-signature"
-              name="Settings"
+              name="Assinar"
               textColor='#1A4480'
               color='#E0E0FF'
             />
             <IconButton
               icon="fa-solid fa-trash-can"
-              name="Messages"
+              name="Excluir"
               textColor='#1A4480'
               color='#E0E0FF'
             />
             <IconButton
               icon="fa-solid fa-circle-info"
-              name="Notifications"
+              name="Palavra-chave"
               textColor='#1A4480'
               color='#E0E0FF'
             />
             <IconButton
               icon="fa-solid fa-download"
-              name="Notifications"
+              name="Download"
               textColor='#1A4480'
               color='#E0E0FF'
             />
             <IconButton
               icon="fa-solid fa-ellipsis-vertical"
-              name="Messages"
+              name="Menu Documentos"
               textColor='#1A4480'
               color='#E0E0FF'
-              onClick={toggleOverlayMenu}
+              onClick={toggleOverlayMenu2}
             />
           </div>
         </div>
         {/* Group 1 */}
         <div className="flex flex-col mb-2">
-          <label className="text-gray-400 text-xs my-1 font-medium">Notas</label>
+          <label className="text-gray-[#9CA3AF] text-xs my-1 font-medium">Notas</label>
           <div className="flex gap-1">
             <IconButton
               icon="fa-solid fa-notes-medical"
-              name="Home"
+              name="Adicionar Nota"
               textColor='#1A4480'
               color='#FFDDEA'
             />
             <IconButton
               icon="fa-solid fa-clipboard-list"
-              name="Profile"
+              name="Listar notas"
               textColor='#1A4480'
               color='#FFDDEA'
             />
@@ -339,6 +341,8 @@ const Nav = () => {
       </nav>
 
       <OverlayMenu isOpen={isOverlayOpen} onClose={toggleOverlayMenu} onAddItemToGroup3={() => { }} />
+      {/* Second OverlayMenu */}
+      <OverlayMenu2 isOpen={isOverlayOpen2} onClose={toggleOverlayMenu2} onAddItemToGroup3={() => { }} />
     </div>
   );
 };

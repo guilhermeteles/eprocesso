@@ -122,7 +122,7 @@ const SigilosoTooltip = ({ showFixedTooltip, onClose, initialPosition }) => {
             e.stopPropagation();
             onClose(); // Close only when `X` button is clicked
           }}
-          className="text-white hover:text-gray-300 transition-colors"
+          className="text-white hover:text-gray-[#D1D5DB] transition-colors"
           aria-label="Close Tooltip"
         >
           <FontAwesomeIcon icon={faTimes} />

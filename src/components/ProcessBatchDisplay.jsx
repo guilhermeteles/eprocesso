@@ -42,7 +42,7 @@ const ProcessBatchDisplay = ({ batchId, processes, onClose }) => {
             {filteredProcesses.map(process => (
               <li key={process.id}  className="py-4 flex justify-between ">
                 <a href="#" className="hover:underline hover:underline-offset-2 ">{process.title}</a>
-                <span className={`px-2 py-1 rounded-sm text-xs text-gray-500 ${getStatusColor(process.status)}`}>{process.status}</span>
+                <span className={`px-2 py-1 rounded-sm text-xs text-gray-[#6B7280] ${getStatusColor(process.status)}`}>{process.status}</span>
               </li>
             ))}
           </ul>
