@@ -34,8 +34,8 @@ const Aside = () => {
   return (
     <aside 
       ref={asideRef} 
-      style={{ width }} 
-      className="z-10 bg-white shadow-lg flex flex-col h-screen relative overflow-auto" 
+      style={{width}} 
+      className='z-10 bg-white shadow-lg flex flex-col h-screen overflow-y-auto relative'
     >
       
 

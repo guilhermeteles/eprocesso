@@ -58,8 +58,8 @@ const Nav = () => {
   };
 
   return (
-    <div className='shadow-[0_3px_10px_rgb(0,0,0,0.1)] relative'>
-      <div className='bg-[#1351B4] w-100 px-8 py-1 pb-2 flex gap-6 text-sm items-center'>
+    <div className='shadow-[0_3px_10px_rgb(0,0,0,0.1)] relative w-full whitespace-nowrap'>
+      <div className='bg-[#1351B4] w-100 px-8 py-1 pb-2 flex gap-6 text-sm items-center overflow-x-auto'>
         <div className='flex gap-2'>
           {/* Star Toggle */}
           <div className='relative'>
@@ -121,36 +121,36 @@ const Nav = () => {
 
               </div>
               <div className="flex gap-2">
-        <div className="flex flex-col gap-0.5 bg-gray-600 rounded-sm p-2 grow">
-          <p className="font-bold text-[12px]">Nível do Sigilo Interno</p>
-          <p className="text-[16px] leading-[22px]">Básico</p>
-        </div>
-        <div className="flex flex-col gap-0.5 bg-gray-600 rounded-sm p-2 grow">
-          <p className="font-bold text-[12px]">Nível do Sigilo Externo</p>
-          <p className="text-[16px] leading-[22px]">Básico</p>
-        </div>
-      </div>
+                <div className="flex flex-col gap-0.5 bg-gray-600 rounded-sm p-2 grow">
+                  <p className="font-bold text-[12px]">Nível do Sigilo Interno</p>
+                  <p className="text-[16px] leading-[22px]">Básico</p>
+                </div>
+                <div className="flex flex-col gap-0.5 bg-gray-600 rounded-sm p-2 grow">
+                  <p className="font-bold text-[12px]">Nível do Sigilo Externo</p>
+                  <p className="text-[16px] leading-[22px]">Básico</p>
+                </div>
+              </div>
 
-      <div className="flex flex-col gap-0.5 bg-gray-600 rounded-sm p-2">
-        <p className="font-bold text-[12px]">Motivo do Sigilo</p>
-        <p className="text-[16px] leading-[22px]">Controle Interno</p>
-      </div>
+              <div className="flex flex-col gap-0.5 bg-gray-600 rounded-sm p-2">
+                <p className="font-bold text-[12px]">Motivo do Sigilo</p>
+                <p className="text-[16px] leading-[22px]">Controle Interno</p>
+              </div>
 
-      <div className="flex flex-col gap-0.5 bg-gray-600 rounded-sm p-2">
-        <p className="font-bold text-[12px]">Norma Regulamentadora</p>
-        <p className="text-[16px] leading-[22px]">Lei nº 10.180/2011 (Art. 26, §3º), Lei nº 12.527/2011 (Art. 22).</p>
-      </div>
+              <div className="flex flex-col gap-0.5 bg-gray-600 rounded-sm p-2">
+                <p className="font-bold text-[12px]">Norma Regulamentadora</p>
+                <p className="text-[16px] leading-[22px]">Lei nº 10.180/2011 (Art. 26, §3º), Lei nº 12.527/2011 (Art. 22).</p>
+              </div>
             </div>
           )}
         </div>
-  
-          {/* Draggable Fixed Tooltip */}
-          <SigilosoTooltip 
-            showFixedTooltip={showFixedTooltip}
-            onClose={() => setShowFixedTooltip(false)}
-            initialPosition={tooltipInitialPosition} // Pass initial position
-          />
-        
+
+        {/* Draggable Fixed Tooltip */}
+        <SigilosoTooltip
+          showFixedTooltip={showFixedTooltip}
+          onClose={() => setShowFixedTooltip(false)}
+          initialPosition={tooltipInitialPosition} // Pass initial position
+        />
+
 
         {/* Other Action Buttons */}
         <div className='bg-[#1A4480] py-2 flex rounded-full text-white items-center px-4 gap-3'>
@@ -174,7 +174,7 @@ const Nav = () => {
           </div>
         )}
       </div>
-      <nav className="flex gap-6 bg-white px-8">
+      <nav className="flex bg-white gap-x-6 px-8 w-full overflow-auto">
         {/* Group 1 */}
         <div className="flex flex-col mb-2">
           <label className="text-gray-[#9CA3AF] text-xs my-1 font-medium">Consultas</label>
@@ -239,14 +239,14 @@ const Nav = () => {
               textColor='#1A4480'
               color='#CFE8FF'
             />
-            
+
             <IconButton
               icon="fa-solid fa-user-group"
               name="Distribuir"
               textColor='#1A4480'
               color='#CFE8FF'
             />
-            
+
             <IconButton
               icon="fa-solid fa-compress-arrows-alt"
               name="Autodistribuir"
