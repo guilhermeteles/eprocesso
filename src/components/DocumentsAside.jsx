@@ -461,6 +461,7 @@ export const DocumentsAside = () => {
           </div>
           {/* <h2 className="text-md font-medium text-[#3D4551]">Documentos</h2> */}
           {viewMode === 'tree' && (
+            <div className='flex gap-1'>
             <div className=" flex justify-between text-sm gap-4 bg-[#1A4480] p-1.5 rounded-md">
 
               <button
@@ -478,18 +479,21 @@ export const DocumentsAside = () => {
               >
                 <FontAwesomeIcon
                   icon={faBarsStaggered}
-                  className='w-3 -mr-1 ml-1'
+                  className='w-3 ml-1 mr-1'
                 />
               </button>
-              <div className='flex gap-1'>
+              
+            </div>
+            <div className='flex gap-1 text-sm gap-2 bg-[#1A4480] p-1.5 rounded-md'>
 
-              <input className='px-2 w-16 rounded text-gray-[#374151]' placeholder='Pg. #'type="number"
-                  value={pageNumber}
-                  onChange={handlePageInputChange}></input><button className='rounded bg-[#1351B4] px-2' onClick={handleSearchPage}>Ir</button>
-              </div>
+            <input className='px-2 w-16 rounded text-gray-[#374151]' placeholder='Pg. #'type="number"
+                value={pageNumber}
+                onChange={handlePageInputChange}></input><button className='rounded bg-[#1351B4] px-2' onClick={handleSearchPage}>Ir</button>
+            </div>
             </div>
           )}
           {viewMode === 'chronological' && (
+            <div className='flex gap-1'>
             <div className="flex justify-between text-sm gap-2 bg-[#1A4480] p-1.5 rounded-md">
 
               <button
@@ -511,10 +515,13 @@ export const DocumentsAside = () => {
                   icon={faArrowDown19}
                 />
               </button>
-              <div className='flex gap-1'>
-
-                <input className='px-2 w-14 rounded text-gray-[#374151]' placeholder='Pg. #'></input><button className='rounded bg-[#1351B4] px-2'>Ir</button>
-              </div>
+              
+            </div>
+            <div className='flex gap-1 text-sm gap-2 bg-[#1A4480] p-1.5 rounded-md'>
+            <input className='px-2 w-16 rounded text-gray-[#374151]' placeholder='Pg. #'type="number"
+                value={pageNumber}
+                onChange={handlePageInputChange}></input><button className='rounded bg-[#1351B4] px-2' onClick={handleSearchPage}>Ir</button>
+            </div>
             </div>
           )}
           
