@@ -210,9 +210,9 @@ export const DocumentsAside = () => {
   // Search for the document containing the page and select it
   const handleSearchPage = () => {
     if (!pageNumber) return; // If no input, do nothing
-  
+
     const searchPage = Number(pageNumber);
-  
+
     const findDocument = (docs) => {
       for (const doc of docs) {
         const [start, end] = doc.page.split('-').map(Number);
@@ -228,13 +228,13 @@ export const DocumentsAside = () => {
       }
       return null;
     };
-  
+
     const foundDoc = findDocument(documents);
-  
+
     if (foundDoc) {
       // Navigate to the document's PDF viewer
       navigate('/pdf-reader', { state: { fileName: foundDoc.name, docId: foundDoc.id } });
-  
+
       // Select the checkbox of the found document after navigation
       setTimeout(() => {
         setSelectedDocuments((prevSelected) =>
@@ -247,7 +247,7 @@ export const DocumentsAside = () => {
       alert('Page not found in any document');
     }
   };
-  
+
 
   // Expand all parent documents and their children recursively
   const expandAll = () => {
@@ -462,69 +462,69 @@ export const DocumentsAside = () => {
           {/* <h2 className="text-md font-medium text-[#3D4551]">Documentos</h2> */}
           {viewMode === 'tree' && (
             <div className='flex gap-1'>
-            <div className=" flex justify-between text-sm gap-4 bg-[#1A4480] p-1.5 rounded-md">
+              <div className=" flex justify-between text-sm gap-4 bg-[#1A4480] p-1.5 rounded-md">
 
-              <button
-                className="text-xs underline hover:text-gray-[#F3F4F6] border-r-1 border-white"
-                onClick={contractAll}
-              >
-                <FontAwesomeIcon
-                  icon={faBars}
-                  className='w-3 -mr-1 ml-1'
-                />
-              </button>
-              <button
-                className="text-xs underline hover:text-gray-[#F3F4F6]"
-                onClick={expandAll}
-              >
-                <FontAwesomeIcon
-                  icon={faBarsStaggered}
-                  className='w-3 ml-1 mr-1'
-                />
-              </button>
-              
-            </div>
-            <div className='flex gap-1 text-sm gap-2 bg-[#1A4480] p-1.5 rounded-md'>
+                <button
+                  className="text-xs underline hover:text-gray-[#F3F4F6] border-r-1 border-white"
+                  onClick={contractAll}
+                >
+                  <FontAwesomeIcon
+                    icon={faBars}
+                    className='w-3 -mr-1 ml-1'
+                  />
+                </button>
+                <button
+                  className="text-xs underline hover:text-gray-[#F3F4F6]"
+                  onClick={expandAll}
+                >
+                  <FontAwesomeIcon
+                    icon={faBarsStaggered}
+                    className='w-3 ml-1 mr-1'
+                  />
+                </button>
 
-            <input className='px-2 w-16 rounded text-gray-[#374151]' placeholder='Pg. #'type="number"
-                value={pageNumber}
-                onChange={handlePageInputChange}></input><button className='rounded bg-[#1351B4] px-2' onClick={handleSearchPage}>Ir</button>
-            </div>
+              </div>
+              <div className='flex gap-1 text-sm bg-[#1A4480] p-1.5 rounded-md'>
+
+                <input className='px-2 w-16 rounded text-gray-[#374151]' placeholder='Pg. #' type="number"
+                  value={pageNumber}
+                  onChange={handlePageInputChange}></input><button className='rounded bg-[#1351B4] px-2' onClick={handleSearchPage}>Ir</button>
+              </div>
             </div>
           )}
           {viewMode === 'chronological' && (
             <div className='flex gap-1'>
-            <div className="flex justify-between text-sm gap-2 bg-[#1A4480] p-1.5 rounded-md">
+              <div className="flex justify-between text-sm gap-2 bg-[#1A4480] p-1.5 rounded-md">
 
-              <button
-                className="text-md underline hover:text-gray-[#F3F4F6] w-5"
-                onClick={showChronologicalView}
-              >
-               
-                <FontAwesomeIcon
-                  icon={faArrowUp19}
-                />
-              </button>
-              
-              <button
-                className="text-md underline hover:text-gray-[#F3F4F6] w-5"
-                onClick={showAntiChronologicalView}
-              >
-            
-                <FontAwesomeIcon
-                  icon={faArrowDown19}
-                />
-              </button>
-              
-            </div>
-            <div className='flex gap-1 text-sm gap-2 bg-[#1A4480] p-1.5 rounded-md'>
-            <input className='px-2 w-16 rounded text-gray-[#374151]' placeholder='Pg. #'type="number"
-                value={pageNumber}
-                onChange={handlePageInputChange}></input><button className='rounded bg-[#1351B4] px-2' onClick={handleSearchPage}>Ir</button>
-            </div>
+                <button
+                  className="text-md underline hover:text-gray-[#F3F4F6] w-5"
+                  onClick={showChronologicalView}
+                >
+
+                  <FontAwesomeIcon
+                    icon={faArrowUp19}
+                  />
+                </button>
+
+                <button
+                  className="text-md underline hover:text-gray-[#F3F4F6] w-5"
+                  onClick={showAntiChronologicalView}
+                >
+
+                  <FontAwesomeIcon
+                    icon={faArrowDown19}
+                  />
+                </button>
+
+              </div>
+              <div className='flex gap-1 text-sm gap-2 bg-[#1A4480] p-1.5 rounded-md'>
+                <input className='px-2 w-16 rounded text-gray-[#374151]' placeholder='Pg. #' type="number"
+                  value={pageNumber}
+                  onChange={handlePageInputChange}></input><button className='rounded bg-[#1351B4] px-2' onClick={handleSearchPage}>Ir</button>
+              </div>
             </div>
           )}
-          
+
 
         </div>
 

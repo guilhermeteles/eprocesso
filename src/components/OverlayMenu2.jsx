@@ -6,16 +6,21 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // Sample data structure for groups and items
 const groupsData = [
   {
-    title: "Tramitação do Processo 2",
-    color: "#FFE2D1",
+    title: "Juntada de Documento",
+    color: "#F9E7CF",
     items: [
-      { id: 1, title: "Alterar Localização Física", letter: "L" },
-      { id: 2, title: "Alterar Realização Atividade", letter: "A" },
-      { id: 3, title: "Arquivar", letter: "A" },
-      { id: 4, title: "Autodistribuir", letter: "D" },
-      { id: 5, title: "Definir Próxima Tarefa", letter: "N" },
-      { id: 6, title: "Tornar Físico", letter: "F" },
-      { id: 7, title: "Tornar Digital", letter: "D" },
+      { id: 1, title: "Definir Signatários do Documento", letter: "L" },
+      { id: 2, title: "Consultar Solicitação de Juntada ", letter: "A" },
+      { id: 3, title: "Copiar Documento de Outro Processo ", letter: "A" },
+      { id: 4, title: "Substituir Documento", letter: "D" },
+    ],
+  },
+  {
+    title: "Ciência",
+    color: "#D9F7DC",
+    items: [
+      { id: 1, title: "Consultar Comunicados e Intimações Emitidos", letter: "L" },
+      { id: 2, title: "Emitir Comunicado ou Intimação para Ciência", letter: "A" },
     ],
   },
 ];
@@ -146,20 +151,20 @@ const OverlayMenu2 = ({ isOpen, onClose, onAddItemToGroup3 }) => {
             .filter(group => group.items.length > 0) // Only show groups with items
             .map((group) => (
               <div key={group.title} className="mb-4">
-                <h2 className="text-sm px-4 py-2 rounded-md" style={{ backgroundColor: group.color }}>
+                <h2 className="text-sm px-4 py-2 rounded" style={{ backgroundColor: group.color }}>
                   {group.title}
                 </h2>
                 <ul>
                   {group.items.map((item) => (
                     <li key={item.id} className="flex items-center py-2 ">
-                      <ToggleButton
+                      {/* <ToggleButton
                         isToggled={toggles[item.id]}
                         onToggle={() => handleToggle(item.id, item.title, group.color, item.letter)}
                         color={group.color}
                         letter={item.letter}
 
-                      />
-                      <a className="ml-2 text-sm" href="#">{item.title}</a>
+                      /> */}
+                      <a className="text-sm hover:bg-gray-100 w-full p-2 rounded" href="#">{item.title}</a>
                     </li>
                   ))}
                 </ul>

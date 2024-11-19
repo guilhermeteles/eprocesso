@@ -7,18 +7,96 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const groupsData = [
   {
     title: "Tramitação do Processo",
-    color: "#FFE2D1",
+    color: "#F9E7CF",
     items: [
       { id: 1, title: "Alterar Localização Física", letter: "L" },
-      { id: 2, title: "Alterar Realização Atividade", letter: "A" },
+      { id: 2, title: "Alterar Realização Atividade", letter: "R" },
       { id: 3, title: "Arquivar", letter: "A" },
-      { id: 4, title: "Autodistribuir", letter: "D" },
-      { id: 5, title: "Definir Próxima Tarefa", letter: "N" },
+      { id: 4, title: "Desarquivar", letter: "D" },
+      { id: 5, title: "Definir Próxima Tarefa", letter: "P" },
       { id: 6, title: "Tornar Físico", letter: "F" },
-      { id: 7, title: "Tornar Digital", letter: "D" },
+      { id: 7, title: "Tornar Digital", letter: "T" },
+    ],
+  },
+  {
+    title: "Providência",
+    color: "#FEE685",
+    items: [
+      { id: 8, title: "Consultar", letter: "C" },
+      { id: 9, title: "Incluir", letter: "I" },
+    ],
+  },
+  {
+    title: "Gestão em Horas",
+    color: "#D9F7DC",
+    items: [
+      { id: 10, title: "Classificar ACT e Tema do Processo", letter: "C" },
+      { id: 11, title: "Consultar Fichas de Quesitos", letter: "F" },
+      { id: 12, title: "Consultar Histórico de Horas Estimadas", letter: "H" },
+      { id: 13, title: "Responder Ficha de Quesitos", letter: "R" },
+    ],
+  },
+  {
+    title: "Julgamento",
+    color: "#DFEACD",
+    items: [
+      { id: 14, title: "Consultar Histórico de Questionamentos", letter: "C" },
+      { id: 15, title: "Incluir ou Alterar ou Cancelar Questionamento", letter: "I" },
+      { id: 16, title: "Incluir ou Alterar ou Excluir Ementa", letter: "E" },
+      { id: 17, title: "Indicar para a Pauta de Julgamento", letter: "P" },
+      { id: 18, title: "Informar Resultado Monocrático", letter: "M" },
+      { id: 19, title: "Informar Resultado de Exame de Admissibilidade", letter: "A" },
+      { id: 20, title: "Retificar Resultado Monocrático", letter: "R" },
+      { id: 21, title: "Retirar Indicação para a Pauta de Julgamento", letter: "T" },
+      { id: 22, title: "Retirar Relator", letter: "L" },
+    ],
+  },
+  {
+    title: "Juntada de Processo e Vínculo",
+    color: "#FFE2D1",
+    items: [
+      { id: 23, title: "Consultar Solicitação de Juntada", letter: "C" },
+      { id: 24, title: "Desapensar", letter: "D" },
+      { id: 25, title: "Juntar por Anexação", letter: "A" },
+      { id: 26, title: "Juntar por Apensação", letter: "P" },
+      { id: 27, title: "Vincular", letter: "V" },
+    ],
+  },
+  {
+    title: "Alegações",
+    color: "#FAD4D4",
+    items: [
+      { id: 28, title: "Consultar Alegações", letter: "C" },
+      { id: 29, title: "Definir Últimas Alegações do Processo", letter: "D" },
+    ],
+  },
+  {
+    title: "Procuração",
+    color: "#C3EBFA",
+    items: [
+      { id: 30, title: "Procurações Vinculadas ao Processo", letter: "P" },
+    ],
+  },
+  {
+    title: "Tipo e Subtipo do Processo",
+    color: "#D8E5F1",
+    items: [
+      { id: 31, title: "Informar ou Alterar o Grupo, Tipo e Subtipo", letter: "I" },
+    ],
+  },
+  {
+    title: "Legado",
+    color: "#E0E0FF",
+    items: [
+      { id: 32, title: "Apurar Grau de Complexidade", letter: "A" },
+      { id: 33, title: "Visualizar Apuração de Grau de Complexidade", letter: "V" },
+      { id: 34, title: "Consultar Questionamentos", letter: "C" },
+      { id: 35, title: "Indicar Processo para Pauta de Julgamento", letter: "I" },
+      { id: 36, title: "Julgar Admissibilidade", letter: "J" },
     ],
   },
 ];
+
 
 const ToggleButton = ({ isToggled, onToggle, color, letter }) => {
   const filledStyle = {
@@ -152,14 +230,14 @@ const OverlayMenu = ({ isOpen, onClose, onAddItemToGroup3 }) => {
                 <ul>
                   {group.items.map((item) => (
                     <li key={item.id} className="flex items-center py-2 ">
-                      <ToggleButton
+                      {/* <ToggleButton
                         isToggled={toggles[item.id]}
                         onToggle={() => handleToggle(item.id, item.title, group.color, item.letter)}
                         color={group.color}
                         letter={item.letter}
 
-                      />
-                      <a className="ml-2 text-sm" href="#">{item.title}</a>
+                      /> */}
+                      <a className="text-sm hover:bg-gray-100 w-full p-2 rounded" href="#">{item.title}</a>
                     </li>
                   ))}
                 </ul>
