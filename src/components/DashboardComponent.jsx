@@ -73,7 +73,7 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="grid h-full w-full p-8 gap-4 items-start overflow-auto sm:overflow-y-none lg:container sm:grid-cols-[repeat(auto-fit,minmax(380px,1fr))]">
+    <div className="grid h-full w-full p-8 gap-4 items-start overflow-y-auto sm:overflow-y-none lg:container sm:grid-cols-[repeat(auto-fit,minmax(380px,1fr))]">
       <div className='bg-white px-6 pb-6 pt-4 shadow-[0_3px_10px_rgb(0,0,0,0.1)] flex flex-col gap-2 h-fit'>
         <h2 className="text-md font-semibold text-gray-[#1F2937] mb-3 mt-1">
           <FontAwesomeIcon icon={faList} className='mr-2' />
