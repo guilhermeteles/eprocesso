@@ -513,7 +513,7 @@ export const DocumentsAside = () => {
               </button>
               <div className='flex gap-1'>
 
-              <input className='px-2 w-14 rounded text-gray-[#374151]' placeholder='Pg. #'></input><button className='rounded bg-[#1351B4] px-2'>Ir</button>
+                <input className='px-2 w-14 rounded text-gray-[#374151]' placeholder='Pg. #'></input><button className='rounded bg-[#1351B4] px-2'>Ir</button>
               </div>
             </div>
           )}

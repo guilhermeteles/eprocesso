@@ -18,64 +18,6 @@ const groupsData = [
       { id: 7, title: "Tornar Digital", letter: "D" },
     ],
   },
-  {
-    title: "Juntada de Documento",
-    color: "#FEE685",
-    items: [
-      { id: 8, title: "Consultar Solicitação de Juntada", letter: "C" },
-      { id: 9, title: "Copiar Documento de outro Processo", letter: "D" },
-    ],
-  },
-  {
-    title: "Providência",
-    color: "#DFEACD",
-    items: [
-      { id: 10, title: "Consultar", letter: "C" },
-      { id: 11, title: "Incluir", letter: "I" },
-    ],
-  },
-  {
-    title: "Ciência",
-    color: "#C7EFE2",
-    items: [
-      { id: 12, title: "Consultar Comunicados e Intimações Emitidos", letter: "C" },
-      { id: 13, title: "Emitir Comunicado ou Intimação para Ciência", letter: "E" },
-    ],
-  },
-  {
-    title: "Gestão em Horas",
-    color: "#C3EBFA",
-    items: [
-      { id: 14, title: "Classificar ACT e Tema do Processo", letter: "C" },
-      { id: 15, title: "Consultar Fichas de Quesitos", letter: "F" },
-      { id: 16, title: "Consultar Histórico de Horas Estimadas", letter: "H" },
-      { id: 17, title: "Responder Ficha de Quesitos", letter: "R" },
-    ],
-  },
-  {
-    title: "Julgamento",
-    color: "#E0E0FF",
-    items: [
-      { id: 18, title: "Consultar Histórico de Questionamentos", letter: "C" },
-      { id: 19, title: "Incluir / Alterar / Cancelar Questionamento", letter: "I" },
-      { id: 20, title: "Incluir / Alterar / Excluir Ementa", letter: "E" },
-      { id: 21, title: "Indicar para Pauta", letter: "P" },
-      { id: 22, title: "Informar Resultado Monocrático", letter: "M" },
-      { id: 23, title: "Informar Resultado de Exame de Admissibilidade", letter: "E" },
-      { id: 24, title: "Retificar Resultado Monocrático", letter: "R" },
-    ],
-  },
-  {
-    title: "Legado",
-    color: "#EDEFF0",
-    items: [
-      { id: 25, title: "Apurar Grau do Processo", letter: "A" },
-      { id: 26, title: "Visualizar Apuração de Grau", letter: "V" },
-      { id: 27, title: "Consultar Questionamentos", letter: "C" },
-      { id: 28, title: "Indicar Processo para Pauta", letter: "I" },
-      { id: 29, title: "Julgar Admissibilidade", letter: "J" },
-    ],
-  },
 ];
 
 const ToggleButton = ({ isToggled, onToggle, color, letter }) => {

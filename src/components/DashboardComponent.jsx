@@ -12,14 +12,14 @@ import { formatDate } from './utils/formatDate';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 
 const notes = [
-    // { id: 1, group: "process", date: "2024-11-11", content: "Reviewed initial case documentation and identified missing forms. Follow-up needed with user.", name: 'Julio Cesar' },
-    // { id: 2, group: "process", date: "2024-11-12", content: "Updated case status to 'In Progress' after reviewing submitted documents. Awaiting team approval for next steps.", name: 'Maria Fernandes' },
-    // { id: 3, group: "team", date: "2024-11-10", content: "Scheduled a team meeting to discuss case priorities for the week and assigned roles.", name: 'Carlos Lima' },
-    // { id: 4, group: "team", date: "2024-11-13", content: "Meeting conducted successfully. Next steps were delegated, and deadlines were set for each case file.", name: 'Ana Sousa' },
-    // { id: 5, group: "user", date: "2024-11-09", content: "User requested additional information about the process timeline and necessary documents.", name: 'Julio Cesar' },
-    // { id: 6, group: "user", date: "2024-11-14", content: "User submitted missing documentation. Case review has been updated accordingly.", name: 'Pedro de Alcântara Francisco Antônio João Carlos Xavier de Paula Miguel Rafael Joaquim José Gonzaga Pascoal Cipriano Serafim de Bragança e Bourbon' },
-    // { id: 7, group: "process", date: "2024-11-14", content: "Finalized the report for the case summary. Forwarded it to the user for review.", name: 'Maria Fernandes' },
-    // { id: 8, group: "process", date: "2024-11-14", content: "Case closed with all actions documented. Archived case files for record-keeping.", name: 'Carlos Lima' },
+    { id: 1, group: "process", date: "2024-11-11", content: "Reviewed initial case documentation and identified missing forms. Follow-up needed with user.", name: 'Julio Cesar' },
+    { id: 2, group: "process", date: "2024-11-12", content: "Updated case status to 'In Progress' after reviewing submitted documents. Awaiting team approval for next steps.", name: 'Maria Fernandes' },
+    { id: 3, group: "team", date: "2024-11-10", content: "Scheduled a team meeting to discuss case priorities for the week and assigned roles.", name: 'Carlos Lima' },
+    { id: 4, group: "team", date: "2024-11-13", content: "Meeting conducted successfully. Next steps were delegated, and deadlines were set for each case file.", name: 'Ana Sousa' },
+    { id: 5, group: "user", date: "2024-11-09", content: "User requested additional information about the process timeline and necessary documents.", name: 'Julio Cesar' },
+    { id: 6, group: "user", date: "2024-11-14", content: "User submitted missing documentation. Case review has been updated accordingly.", name: 'Pedro de Alcântara Francisco Antônio João Carlos Xavier de Paula Miguel Rafael Joaquim José Gonzaga Pascoal Cipriano Serafim de Bragança e Bourbon' },
+    { id: 7, group: "process", date: "2024-11-14", content: "Finalized the report for the case summary. Forwarded it to the user for review.", name: 'Maria Fernandes' },
+    { id: 8, group: "process", date: "2024-11-14", content: "Case closed with all actions documented. Archived case files for record-keeping.", name: 'Carlos Lima' },
 ];
 
 
@@ -201,7 +201,7 @@ const Dashboard = () => {
       </div>
     )}
   </div>
-</div>
+            </div>
 
         </div>
     );
